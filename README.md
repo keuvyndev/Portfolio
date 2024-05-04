@@ -1,5 +1,5 @@
-**#Welcome! 👋**
-My name is Keuvyn Teixeira and I'm a software developer.
+## Welcome! 👋 My name is Keuvyn Teixeira and I'm a software developer.
+
 
 **ABOUT ME 🚀**
 
