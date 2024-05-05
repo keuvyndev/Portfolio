@@ -1,5 +1,6 @@
 # Anotações sobre o desenvolvimento do app barbershop.
 
+> Parei em 1h03m.
 > Crtl + Shift + V para visualizar.
 
 **Data de início:** 04 de MAR de 2024
@@ -14,6 +15,10 @@
 **Recursos:**
 Figma: [Clique aqui para acessar.](https://www.figma.com/file/TJquYVeL0si5dpXxJNtPkM/FSW-Barber-[Live]?type=design&node-id=0-1&mode=design&t=NW0xE8GdwZbNcfNS-0)
 Notion para seed do banco e mais informações: [Clique aqui para acessar.](https://www.notion.so/Primeira-Aula-6e3f7410c7384ff786eb6e08b48af8d1?pvs=4)
+
+**Extensões VSCode**
+Simple React Snippets: Usado para auxiliar na criação de comandos react.
+TailWind CSS: Usado para auxiliar na criação de comandos tailwind.
 
 ## ACESSO PRISMA
 GITHUB
@@ -45,6 +50,20 @@ Password: eq3B3gV9Pmdua87T
 | PRISMA | npx prisma init --datasource-provider postgresql | Inicializa o prisma com PostgreSQL. |
 | PRISMA | npx prisma migrate dev --name init | Cria o banco e as tabelas com base no schema.prisma definido. |
 | PRISMA | npx prisma db seed | Alimenta o banco com a seed (requer ts-node e configuração do package.json) |
+| PRISMA | npx prisma studio | Abre o banco. |
+
+##### SHADECN
+| TIPO    | COMANDO   | DESCRIÇÃO |
+| :-------: | :-------:   | :---------: |
+| SHADECN | [Site Oficial](https://ui.shadcn.com) | Saiba mais sobre clicando aqui. |
+| SHADECN | npx shadcn-ui@latest init | Instala a biblioteca do SHADCN que auxiliar na construção da interface. |
+| SHADECN | npx shadcn-ui@latest add card | Instala cards ao projeto. |
+| SHADECN | npx shadcn-ui@latest add button | Instala buttons ao projeto. |
+
+##### TAILWIND CSS
+| TIPO    | COMANDO   | DESCRIÇÃO |
+| :-------: | :-------:   | :---------: |
+| TAILWIND | [Site Oficial](https://tailwindcss.com) | Saiba mais sobre clicando aqui. |
 
 ##### OUTROS COMANDOS
 | TIPO    | COMANDO   | DESCRIÇÃO |
