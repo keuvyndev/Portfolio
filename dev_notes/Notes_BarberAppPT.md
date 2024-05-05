@@ -1,6 +1,6 @@
 # Anotações sobre o desenvolvimento do app barbershop.
 
-> Parei em 1h03m.
+> Parei em 1h20m.
 > Crtl + Shift + V para visualizar.
 
 **Data de início:** 04 de MAR de 2024
@@ -42,6 +42,7 @@ Password: eq3B3gV9Pmdua87T
 | NEXTJS | npx create-next-app@latest | Cria o app com NextJS. |
 | NEXTJS | npm run dev | Inicializa o serviço. |
 | NEXTJS | npm install -D ts-node | Instala o TS-Node que permiti executar arquivos typescript (usado para seed). |
+| NEXTJS | "use client"; | Refereciando no topo de componentes para indicar que o cliente poderá interagir com ele. |
 
 ##### PRISMA - ORM
 | TIPO    | COMANDO   | DESCRIÇÃO |
@@ -59,13 +60,32 @@ Password: eq3B3gV9Pmdua87T
 | SHADECN | npx shadcn-ui@latest init | Instala a biblioteca do SHADCN que auxiliar na construção da interface. |
 | SHADECN | npx shadcn-ui@latest add card | Instala cards ao projeto. |
 | SHADECN | npx shadcn-ui@latest add button | Instala buttons ao projeto. |
+| SHADECN | npx shadcn-ui@latest add input | Instala inputs ao projeto. |
 
 ##### TAILWIND CSS
 | TIPO    | COMANDO   | DESCRIÇÃO |
 | :-------: | :-------:   | :---------: |
 | TAILWIND | [Site Oficial](https://tailwindcss.com) | Saiba mais sobre clicando aqui. |
+| TAILWIND | p-[1-99] ou py[1-99] ou px[1-99] ou pt [1-99] | Altera o padding py, px ou pt (padding top). |
+| TAILWIND | justify-between | Define um alinhamento onde, o primeito item é alocado no início do eixo principal, e o último no final. Os demais são distribuiídos entre estes dois. |
+| TAILWIND | items-center | Garante que todos os flex-items dentro de um display flex vão centralizar (verticalmente e horizontalmente) |
+| TAILWIND | flex | Faz com que todos os elementos do container sejam organizados em uma linha (Habilita flex-row por padrão) |
+| TAILWIND | flex-row | Faz com que todos os elementos do container sejam organizados em uma linha. |
+| TAILWIND | flex-column | Faz com que todos os elementos do container sejam organizados em uma coluna. |
+| TAILWIND | gap[0-99] | Gera um espaçamento entre os elementos de X pixels. |
+
+##### CSS
+| CSS | className="" } | Habilita CSS em uma TAG |
+| CSS | className="capitalize" } | Faz com que apenas a primeira letra da palavra fique maiuscula. "Teste" |
+| CSS | className="text-sm" } | Define o tamanho da fonte pequeno. |
+| CSS | className="text xl" } | Define o tamanho da fonte para 20. |
+| CSS | className="font-bold" } | Define netrigo. |
 
 ##### OUTROS COMANDOS
 | TIPO    | COMANDO   | DESCRIÇÃO |
 | :-------: | :-------:   | :---------: |
-| ? | ? | ? |
+| LIB DATEFNS | [Site Oficial DATEFNS](https://date-fns.org/v3.6.0/docs/format) | Saiba mais sobre clicando aqui. |
+| LIB DATEFNS | npm i date-fns | Instala lib para datas |
+| LIB DATEFNS | {format(new Date()), } | Instala lib para datas |
+| LIB DATEFNS | {format(new Date(), "EEEE", {locale: ptBR})} | Mostra o dia da semana em Português |
+| LIB DATEFNS | {format(new Date(), " EEEE, dd 'de' MMMM", { locale: ptBR })} | Mostra o dia da semana, Dia do Mês e Mês em Português |
