@@ -43,6 +43,15 @@ Password: eq3B3gV9Pmdua87T
 | NEXTJS | npm run dev | Inicializa o serviço. |
 | NEXTJS | npm install -D ts-node | Instala o TS-Node que permiti executar arquivos typescript (usado para seed). |
 | NEXTJS | "use client"; | Refereciando no topo de componentes para indicar que o cliente poderá interagir com ele. |
+| NEXTJS | const nextConfig = {
+   images:{
+      remotePatterns: [ 
+         {
+         hostname: "utfs.io",
+         },
+      ],
+   },
+}; | Adiciona um host nas permisões do arquivo next.config |
 
 ##### PRISMA - ORM
 | TIPO    | COMANDO   | DESCRIÇÃO |
@@ -61,25 +70,52 @@ Password: eq3B3gV9Pmdua87T
 | SHADECN | npx shadcn-ui@latest add card | Instala cards ao projeto. |
 | SHADECN | npx shadcn-ui@latest add button | Instala buttons ao projeto. |
 | SHADECN | npx shadcn-ui@latest add input | Instala inputs ao projeto. |
+| SHADECN | npx shadcn-ui@latest add badge | Instala badges ao projeto. |
+| SHADECN | npx shadcn-ui@latest add avatar | Instala avatar ao projeto. |
 
 ##### TAILWIND CSS
 | TIPO    | COMANDO   | DESCRIÇÃO |
 | :-------: | :-------:   | :---------: |
 | TAILWIND | [Site Oficial](https://tailwindcss.com) | Saiba mais sobre clicando aqui. |
 | TAILWIND | p-[1-99] ou py[1-99] ou px[1-99] ou pt [1-99] | Altera o padding py, px ou pt (padding top). |
+| TAILWIND | mt-[1-99] ou mb[1-99] | Altera a margem top ou bot. |
 | TAILWIND | justify-between | Define um alinhamento onde, o primeito item é alocado no início do eixo principal, e o último no final. Os demais são distribuiídos entre estes dois. |
 | TAILWIND | items-center | Garante que todos os flex-items dentro de um display flex vão centralizar (verticalmente e horizontalmente) |
 | TAILWIND | flex | Faz com que todos os elementos do container sejam organizados em uma linha (Habilita flex-row por padrão) |
 | TAILWIND | flex-row | Faz com que todos os elementos do container sejam organizados em uma linha. |
-| TAILWIND | flex-column | Faz com que todos os elementos do container sejam organizados em uma coluna. |
+| TAILWIND | flex-col | Faz com que todos os elementos do container sejam organizados em uma coluna. |
 | TAILWIND | gap[0-99] | Gera um espaçamento entre os elementos de X pixels. |
+| TAILWIND | w-fit | Faz com que o elemento ocupe apenas o espaço necessário dentro de um display flex |
+| TAILWIND | border-l border-solid border-secondary | Adiciona uma borda a uma div |
+| TAILWIND | min-w-[0px-99px] max-w-[0px-99px] | Adiciona um limite mínimo e máximo para uso de espaço horizontal. |
+| TAILWIND | rounded-2xl | Faz com que um container/imagem ganhe borda curva. |
+| TAILWIND | text-ellipsis | Se não couber o texto ele colocar "..." três pontos. |
+| TAILWIND | text-nowrap | Não permite quebra de linha. |
+| TAILWIND | overflow-hidden | Não permite aumentar na vertical com scroll |
+| TAILWIND | overflow-x-auto | Faz com que um container de imagens possa ser rolado em sí mesmo (usado em div). |
+| TAILWIND | w-full ou h-full | Faz com que o elemento ocupe 100% da largura ou altura disponível |
+| TAILWIND | [&::-webkit-scrollbar]:hidden | Esconde a scrollbar. |
 
 ##### CSS
 | CSS | className="" } | Habilita CSS em uma TAG |
 | CSS | className="capitalize" } | Faz com que apenas a primeira letra da palavra fique maiuscula. "Teste" |
+| CSS | className="text-xs" } | Define o tamanho da fonte muito pequeno. |
 | CSS | className="text-sm" } | Define o tamanho da fonte pequeno. |
 | CSS | className="text xl" } | Define o tamanho da fonte para 20. |
 | CSS | className="font-bold" } | Define netrigo. |
+| CSS | className="uppercase" } | Deixa todo texto em maiúsculo. |
+| CSS | className="bg-[#221C3D] text-primary" } | Define uma cor de fundo e uma cor de texto. |
+| CSS | className="hover:bg-[#221C3D]" } | Define a cor de highlight ao passar o mouse. |
+| CSS |             <div className="px-1 relative w-full h-[159px]">
+            <Image 
+            alt={barbershop.name} 
+            src={barbershop.imageUrl} 
+            fill
+            sizes="100vw" 
+            className="rounded-2xl" 
+            style={{
+               objectFit: "cover",
+            }} } | Faz com que a imagem mantenha o aspecto rátio. |
 
 ##### OUTROS COMANDOS
 | TIPO    | COMANDO   | DESCRIÇÃO |
