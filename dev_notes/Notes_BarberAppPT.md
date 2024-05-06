@@ -43,15 +43,9 @@ Password: eq3B3gV9Pmdua87T
 | NEXTJS | npm run dev | Inicializa o serviço. |
 | NEXTJS | npm install -D ts-node | Instala o TS-Node que permiti executar arquivos typescript (usado para seed). |
 | NEXTJS | "use client"; | Refereciando no topo de componentes para indicar que o cliente poderá interagir com ele. |
-| NEXTJS | const nextConfig = {
-   images:{
-      remotePatterns: [ 
-         {
-         hostname: "utfs.io",
-         },
-      ],
-   },
-}; | Adiciona um host nas permisões do arquivo next.config |
+| NEXTJS | const nextConfig = { images:{ remotePatterns: [{ hostname: "utfs.io", }, ], }, ; | Adiciona um host nas permisões do arquivo next.config |
+| NEXTJS | const nextConfig = { images:{ remotePatterns: [{ hostname: "utfs.io", }, ], }, ; | Adiciona um host nas permisões do arquivo next.config |
+| NEXTJS | .flex.item-center.gap-2 | Cria rapidamente a div: <div className="flex item-center gap-2"> |
 
 ##### PRISMA - ORM
 | TIPO    | COMANDO   | DESCRIÇÃO |
@@ -95,6 +89,8 @@ Password: eq3B3gV9Pmdua87T
 | TAILWIND | overflow-x-auto | Faz com que um container de imagens possa ser rolado em sí mesmo (usado em div). |
 | TAILWIND | w-full ou h-full | Faz com que o elemento ocupe 100% da largura ou altura disponível |
 | TAILWIND | [&::-webkit-scrollbar]:hidden | Esconde a scrollbar. |
+| TAILWIND | relative | Faz com que um container receba um position relative. Muito usado para trabalhar com items (filho com position absolute) |
+| TAILWIND | absolute | Faz com que um container possa ser alinhado de forma absoluta usando com referencia o container pai (se houver) ou o documento (se não houver container pai) |
 
 ##### CSS
 | CSS | className="" } | Habilita CSS em uma TAG |
@@ -106,16 +102,8 @@ Password: eq3B3gV9Pmdua87T
 | CSS | className="uppercase" } | Deixa todo texto em maiúsculo. |
 | CSS | className="bg-[#221C3D] text-primary" } | Define uma cor de fundo e uma cor de texto. |
 | CSS | className="hover:bg-[#221C3D]" } | Define a cor de highlight ao passar o mouse. |
-| CSS |             <div className="px-1 relative w-full h-[159px]">
-            <Image 
-            alt={barbershop.name} 
-            src={barbershop.imageUrl} 
-            fill
-            sizes="100vw" 
-            className="rounded-2xl" 
-            style={{
-               objectFit: "cover",
-            }} } | Faz com que a imagem mantenha o aspecto rátio. |
+| CSS | <div className="px-1 relative w-full h-[159px]"> <Image alt={barbershop.name} src= barbershop. ImageUrl} fill sizes="100vw" className="rounded-2xl" style={{ objectFit: "cover", }} } | Faz com que a imagem mantenha o aspecto rátio. |
+| CSS | fill style={{objectFit:"cover",} | Faz com que a imagem mantenha o aspecto rátio de forma simplificada. A div precisa ser relative. |
 
 ##### OUTROS COMANDOS
 | TIPO    | COMANDO   | DESCRIÇÃO |
@@ -125,3 +113,7 @@ Password: eq3B3gV9Pmdua87T
 | LIB DATEFNS | {format(new Date()), } | Instala lib para datas |
 | LIB DATEFNS | {format(new Date(), "EEEE", {locale: ptBR})} | Mostra o dia da semana em Português |
 | LIB DATEFNS | {format(new Date(), " EEEE, dd 'de' MMMM", { locale: ptBR })} | Mostra o dia da semana, Dia do Mês e Mês em Português |
+| LUCID.DEV | [Site Oficial LUCID.DEV](https://lucide.dev/icons) | Abre a lista de todos os ícones possíveis para importar. |
+| LUCID.DEV | <ChevronLeftIcon />} | Importa o icone de seta esquerda do LucidDev (usado como botão) |
+| LUCID.DEV | <MenuIcon />} | Importa o icone de menu do LucidDev (usado como botão) |
+| LUCID.DEV | <MapPinIcon />} | Importa o icone de menu do mapa |
