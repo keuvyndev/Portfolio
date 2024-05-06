@@ -46,6 +46,8 @@ Password: eq3B3gV9Pmdua87T
 | NEXTJS | const nextConfig = { images:{ remotePatterns: [{ hostname: "utfs.io", }, ], }, ; | Adiciona um host nas permisões do arquivo next.config |
 | NEXTJS | const nextConfig = { images:{ remotePatterns: [{ hostname: "utfs.io", }, ], }, ; | Adiciona um host nas permisões do arquivo next.config |
 | NEXTJS | .flex.item-center.gap-2 | Cria rapidamente a div: <div className="flex item-center gap-2"> |
+| NEXTJS | const router = useRouter(); const handleBookingClick = () => { router.push(`/barbershops/${barbershop.id}`); } | Cria função de rota no componente para ir a um caminho especifico. |
+| NEXTJS |    const router = useRouter(); const handleBackClick = () => { router.back(); } | Cria função de rota no componente para retornar |
 
 ##### PRISMA - ORM
 | TIPO    | COMANDO   | DESCRIÇÃO |
