@@ -1,6 +1,6 @@
 # Anotações sobre o desenvolvimento do app barbershop.
 
-> Parei em 1h20m.
+> Parei em 59:13m.
 > Crtl + Shift + V para visualizar.
 
 **Data de início:** 04 de MAR de 2024
@@ -56,6 +56,7 @@ Password: eq3B3gV9Pmdua87T
 | PRISMA | npx prisma init --datasource-provider postgresql | Inicializa o prisma com PostgreSQL. |
 | PRISMA | npx prisma migrate dev --name init | Cria o banco e as tabelas com base no schema.prisma definido. |
 | PRISMA | npx prisma db seed | Alimenta o banco com a seed (requer ts-node e configuração do package.json) |
+| PRISMA | npx prisma format | Re-organiza o Schema. |
 | PRISMA | npx prisma studio | Abre o banco. |
 
 ##### SHADECN
@@ -93,6 +94,8 @@ Password: eq3B3gV9Pmdua87T
 | TAILWIND | [&::-webkit-scrollbar]:hidden | Esconde a scrollbar. |
 | TAILWIND | relative | Faz com que um container receba um position relative. Muito usado para trabalhar com items (filho com position absolute) |
 | TAILWIND | absolute | Faz com que um container possa ser alinhado de forma absoluta usando com referencia o container pai (se houver) ou o documento (se não houver container pai) |
+| TAILWIND | relative min-h-[110px] min-w-[110px] max-h-[110px] max-w-[110px] | Propriedade de className, define um limite mínimo e máximo para imagem. |
+| TAILWIND | <p className="text-primary font-bold">{Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL", }).format(Number(service.price))} </p> | Valor monetário. |
 
 ##### CSS
 | CSS | className="" } | Habilita CSS em uma TAG |
@@ -119,3 +122,8 @@ Password: eq3B3gV9Pmdua87T
 | LUCID.DEV | <ChevronLeftIcon />} | Importa o icone de seta esquerda do LucidDev (usado como botão) |
 | LUCID.DEV | <MenuIcon />} | Importa o icone de menu do LucidDev (usado como botão) |
 | LUCID.DEV | <MapPinIcon />} | Importa o icone de menu do mapa |
+| VSCODE | Collapse | Fecha todas pastas do VSCode |
+| NEXT.AUTH | npm install next-auth | Instala o sistema de autenticação para next |
+| NEXT.AUTH | [Provedor Google](https://next-auth.js.org/providers/google) | Lista de provedores |
+| NEXT.AUTH | [Adaptador Prisma](https://next-auth.js.org/adapters) | Lista de adapters (BD) |
+| NEXT.AUTH | npm install @auth/prisma-adapter | Instala adaptador do prisma para next.auth |
