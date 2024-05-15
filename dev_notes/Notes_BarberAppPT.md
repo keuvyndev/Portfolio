@@ -47,7 +47,9 @@ Password: eq3B3gV9Pmdua87T
 | NEXTJS | const nextConfig = { images:{ remotePatterns: [{ hostname: "utfs.io", }, ], }, ; | Adiciona um host nas permisões do arquivo next.config |
 | NEXTJS | .flex.item-center.gap-2 | Cria rapidamente a div: <div className="flex item-center gap-2"> |
 | NEXTJS | const router = useRouter(); const handleBookingClick = () => { router.push(`/barbershops/${barbershop.id}`); } | Cria função de rota no componente para ir a um caminho especifico. |
-| NEXTJS |    const router = useRouter(); const handleBackClick = () => { router.back(); } | Cria função de rota no componente para retornar |
+| NEXTJS | const router = useRouter(); const handleBackClick = () => { router.back(); } | Cria função de rota no componente para retornar |
+| NEXTJS | const router = useRouter(); const handleBackClick = () => { router.replace("/"); } | Cria função de rota no componente para retornar para home page fazendo substituição na URL. O que inibi o problema de retorno da seta do navegador |
+| NEXTJS | console.log({session}); | Gera um log no console |
 
 ##### PRISMA - ORM
 | TIPO    | COMANDO   | DESCRIÇÃO |
@@ -129,6 +131,7 @@ Password: eq3B3gV9Pmdua87T
 | NEXT.AUTH | [Provedor Google](https://next-auth.js.org/providers/google) | Lista de provedores |
 | NEXT.AUTH | [Adaptador Prisma](https://next-auth.js.org/adapters) | Lista de adapters (BD) |
 | NEXT.AUTH | npm install @auth/prisma-adapter | Instala adaptador do prisma para next.auth |
-| NEXT.AUTH | const {data, status} = useSession(); | Recebe os dados da sessão do usuário |
+| NEXT.AUTH | const {data, status} = useSession(); | Recebe os dados da sessão do usuário em user component |
+| NEXT.AUTH | const session = await getServerSession() | Recebe os dados da sessão do usuário em um server component
 | NEXT.AUTH | const handleLogoutClick = () => signOut(); | Instancia função de logout em um componente |
 | NEXT.AUTH | const handleLoginClick = () => signIn('google'); | Instancia função de login em um componente sem a pré-tela do google |
