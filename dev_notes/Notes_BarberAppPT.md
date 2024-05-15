@@ -1,6 +1,6 @@
 # Anotações sobre o desenvolvimento do app barbershop.
 
-> Parei em 59:13m.
+> Parei em 01:27m.
 > Crtl + Shift + V para visualizar.
 
 **Data de início:** 04 de MAR de 2024
@@ -69,14 +69,16 @@ Password: eq3B3gV9Pmdua87T
 | SHADECN | npx shadcn-ui@latest add input | Instala inputs ao projeto. |
 | SHADECN | npx shadcn-ui@latest add badge | Instala badges ao projeto. |
 | SHADECN | npx shadcn-ui@latest add avatar | Instala avatar ao projeto. |
+| SHADECN | npx shadcn-ui@latest add sheet | Instala avatar ao projeto. |
 
 ##### TAILWIND CSS
 | TIPO    | COMANDO   | DESCRIÇÃO |
 | :-------: | :-------:   | :---------: |
 | TAILWIND | [Site Oficial](https://tailwindcss.com) | Saiba mais sobre clicando aqui. |
 | TAILWIND | p-[1-99] ou py[1-99] ou px[1-99] ou pt [1-99] | Altera o padding py, px ou pt (padding top). |
-| TAILWIND | mt-[1-99] ou mb[1-99] | Altera a margem top ou bot. |
+| TAILWIND | mt-[1-99], mb[1-99], mr[1-99], ml[1-99] | Altera a margem top, bot, right, left. |
 | TAILWIND | justify-between | Define um alinhamento onde, o primeito item é alocado no início do eixo principal, e o último no final. Os demais são distribuiídos entre estes dois. |
+| TAILWIND | justify-start | Define um alinhamento onde, os items são alinhados a esquerda |
 | TAILWIND | items-center | Garante que todos os flex-items dentro de um display flex vão centralizar (verticalmente e horizontalmente) |
 | TAILWIND | flex | Faz com que todos os elementos do container sejam organizados em uma linha (Habilita flex-row por padrão) |
 | TAILWIND | flex-row | Faz com que todos os elementos do container sejam organizados em uma linha. |
@@ -127,3 +129,6 @@ Password: eq3B3gV9Pmdua87T
 | NEXT.AUTH | [Provedor Google](https://next-auth.js.org/providers/google) | Lista de provedores |
 | NEXT.AUTH | [Adaptador Prisma](https://next-auth.js.org/adapters) | Lista de adapters (BD) |
 | NEXT.AUTH | npm install @auth/prisma-adapter | Instala adaptador do prisma para next.auth |
+| NEXT.AUTH | const {data, status} = useSession(); | Recebe os dados da sessão do usuário |
+| NEXT.AUTH | const handleLogoutClick = () => signOut(); | Instancia função de logout em um componente |
+| NEXT.AUTH | const handleLoginClick = () => signIn('google'); | Instancia função de login em um componente sem a pré-tela do google |
