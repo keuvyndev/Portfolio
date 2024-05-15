@@ -1,7 +1,7 @@
 import { signIn, signOut, useSession } from "next-auth/react";
-import { SheetHeader, SheetTitle } from "./sheet";
-import { Avatar, AvatarImage } from "./avatar";
-import { Button } from "./button";
+import { SheetHeader, SheetTitle } from "./ui/sheet";
+import { Avatar, AvatarImage } from "./ui/avatar";
+import { Button } from "./ui/button";
 import { CalendarIcon, HomeIcon, LogInIcon, LogOutIcon, UserIcon } from "lucide-react";
 import Link from "next/link";
 

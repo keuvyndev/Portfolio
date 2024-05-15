@@ -49,6 +49,8 @@ Password: eq3B3gV9Pmdua87T
 | NEXTJS | const router = useRouter(); const handleBookingClick = () => { router.push(`/barbershops/${barbershop.id}`); } | Cria função de rota no componente para ir a um caminho especifico. |
 | NEXTJS | const router = useRouter(); const handleBackClick = () => { router.back(); } | Cria função de rota no componente para retornar |
 | NEXTJS | const router = useRouter(); const handleBackClick = () => { router.replace("/"); } | Cria função de rota no componente para retornar para home page fazendo substituição na URL. O que inibi o problema de retorno da seta do navegador |
+| NEXTJS | const timeList = useMemo(() => {return date ? generateDayTimeList(date) : []; }, [date]); | A função useMemo, garante que uma rotina só será executada caso haja alterações em dados significativos da pagina. |
+| NEXTJS | <Button variant={ hour === time ? 'default' : 'outline' }></Button> | Adiciona uma condição a um elemento do button, neste caso variant para fazer highlight |
 | NEXTJS | console.log({session}); | Gera um log no console |
 
 ##### PRISMA - ORM
@@ -71,7 +73,9 @@ Password: eq3B3gV9Pmdua87T
 | SHADECN | npx shadcn-ui@latest add input | Instala inputs ao projeto. |
 | SHADECN | npx shadcn-ui@latest add badge | Instala badges ao projeto. |
 | SHADECN | npx shadcn-ui@latest add avatar | Instala avatar ao projeto. |
-| SHADECN | npx shadcn-ui@latest add sheet | Instala avatar ao projeto. |
+| SHADECN | npx shadcn-ui@latest add sheet | Instala sheet ao projeto. |
+| SHADECN | npx shadcn-ui@latest add calendar | Instala calendar ao projeto. |
+| SHADECN | [Site Oficial](https://react-day-picker.js.org/using-daypicker/customization) | Página de personalização do calendar do shadcnUi. |
 
 ##### TAILWIND CSS
 | TIPO    | COMANDO   | DESCRIÇÃO |

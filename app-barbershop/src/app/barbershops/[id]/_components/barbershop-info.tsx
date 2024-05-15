@@ -2,7 +2,7 @@
 
 import { Button } from "@/app/_components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/app/_components/ui/sheet";
-import SideMenu from "@/app/_components/ui/side-menu";
+import SideMenu from "@/app/_components/side-menu";
 import { Barbershop } from "@prisma/client";
 import { ChevronLeftIcon, MenuIcon, MapPinIcon, StarIcon } from "lucide-react";
 import Image from "next/image";
