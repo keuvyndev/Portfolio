@@ -15,6 +15,9 @@ import { saveBooking } from "../../_actions/save-booking";
 import { setHours } from "date-fns/setHours";
 import { setMinutes } from "date-fns/setMinutes";
 import { Loader2 } from "lucide-react";
+import { toast } from "sonner";
+import { pt } from "date-fns/locale/pt";
+import { useRouter } from "next/router";
 
 interface ServiceItemProps {
    service: Service;
@@ -24,10 +27,12 @@ interface ServiceItemProps {
 
 const ServiceItem = ({ service, isAuthenticated, barbershop }: ServiceItemProps) => {
 
+   const router = useRouter();
    const {data} = useSession();
    const [date, setDate] = useState<Date | undefined>(undefined)
    const [hour, setHour] = useState<string | undefined>();
    const [submitIsLoading, setSubmitIsLoading] = useState(false);
+   const [sheetIsOpen, setSheetIsOpen] = useState(false);
 
    const handleDateClick = (date: Date | undefined) => {
       setDate(date);
@@ -70,6 +75,19 @@ const ServiceItem = ({ service, isAuthenticated, barbershop }: ServiceItemProps)
                userId: (data.user as any).id,
          })
 
+         setSheetIsOpen(false); // Fecha a sheet após finalizar o agendamento.
+         setHour(undefined);
+         setDate(undefined);
+         toast("Reserva realizada com sucesso!", { // Imprime mensagem de confirmação de agendamento
+            description: format(newDate, "'Para' dd 'de' MMMM 'às' HH':'mm'.' ", {
+               locale: ptBR,
+            }),
+            action: {
+               label: "Visualizar",
+               onClick: () => router.push("/bookings"),
+            }
+         })
+
       } catch (error){
          console.log(error);
       } finally{
@@ -102,7 +120,7 @@ const ServiceItem = ({ service, isAuthenticated, barbershop }: ServiceItemProps)
                      }).format(Number(service.price))}
                      </p>
                   
-                     <Sheet>
+                     <Sheet open={sheetIsOpen} onOpenChange={setSheetIsOpen}>
                         <SheetTrigger asChild>
                            <Button variant="secondary" onClick={handleBookingClick}>Reservar
                            </Button>

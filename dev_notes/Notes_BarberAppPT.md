@@ -54,6 +54,8 @@ Password: eq3B3gV9Pmdua87T
 | NEXTJS | const [submitIsLoading, setSubmitIsLoading] = useState(false); | Instancia um método de carregamento |
 | NEXTJS | setSubmitIsLoading(true); | Habilita ou desabilita o estado de carregamento, deve ser colocado dentro de um método |
 | NEXTJS | <Button onClick={handleBookingSubmit} disabled={(!hour || !date) || submitIsLoading}>{submitIsLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />} Confirmar reserva</Button> | O estado de carregamento é usado desta forma nos botões. |
+| NEXTJS |  const [sheetIsOpen, setSheetIsOpen] = useState(false); | Cria um estado para controlar a sheet. |
+| NEXTJS |  <Sheet open={sheetIsOpen} onOpenChange={setSheetIsOpen}> | Aplica o controle a sheet. | 
 | NEXTJS | console.log({session}); | Gera um log no console |
 
 ##### PRISMA - ORM
@@ -79,6 +81,7 @@ Password: eq3B3gV9Pmdua87T
 | SHADECN | npx shadcn-ui@latest add avatar | Instala avatar ao projeto. |
 | SHADECN | npx shadcn-ui@latest add sheet | Instala sheet ao projeto. |
 | SHADECN | npx shadcn-ui@latest add calendar | Instala calendar ao projeto. |
+| SHADECN | npx shadcn-ui@latest add sonner | Instala sonner ao projeto. |
 | SHADECN | [Site Oficial](https://react-day-picker.js.org/using-daypicker/customization) | Página de personalização do calendar do shadcnUi. |
 
 ##### TAILWIND CSS
@@ -136,7 +139,7 @@ Password: eq3B3gV9Pmdua87T
 | LUCID.DEV | <MapPinIcon />} | Importa o icone de menu do mapa |
 | VSCODE | Collapse | Fecha todas pastas do VSCode |
 | NEXT.AUTH | npm install next-auth | Instala o sistema de autenticação para next |
-| NEXT.AUTH | [Provedor Google](https://next-auth.js.org/providers/google) | Lista de provedores |
+| NEXT.AUTH | [Provedor Google](https://next-auth.js.org/providers/google) | Lista de provedores (O Credentials pode ser usado para user e senha) |
 | NEXT.AUTH | [Adaptador Prisma](https://next-auth.js.org/adapters) | Lista de adapters (BD) |
 | NEXT.AUTH | npm install @auth/prisma-adapter | Instala adaptador do prisma para next.auth |
 | NEXT.AUTH | const {data, status} = useSession(); | Recebe os dados da sessão do usuário em user component |
