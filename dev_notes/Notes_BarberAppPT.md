@@ -1,6 +1,6 @@
 # Anotações sobre o desenvolvimento do app barbershop.
 
-> Parei em 01:27m.
+> Parei em 49m.
 > Crtl + Shift + V para visualizar.
 
 **Data de início:** 04 de MAR de 2024
@@ -51,6 +51,9 @@ Password: eq3B3gV9Pmdua87T
 | NEXTJS | const router = useRouter(); const handleBackClick = () => { router.replace("/"); } | Cria função de rota no componente para retornar para home page fazendo substituição na URL. O que inibi o problema de retorno da seta do navegador |
 | NEXTJS | const timeList = useMemo(() => {return date ? generateDayTimeList(date) : []; }, [date]); | A função useMemo, garante que uma rotina só será executada caso haja alterações em dados significativos da pagina. |
 | NEXTJS | <Button variant={ hour === time ? 'default' : 'outline' }></Button> | Adiciona uma condição a um elemento do button, neste caso variant para fazer highlight |
+| NEXTJS | const [submitIsLoading, setSubmitIsLoading] = useState(false); | Instancia um método de carregamento |
+| NEXTJS | setSubmitIsLoading(true); | Habilita ou desabilita o estado de carregamento, deve ser colocado dentro de um método |
+| NEXTJS | <Button onClick={handleBookingSubmit} disabled={(!hour || !date) || submitIsLoading}>{submitIsLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />} Confirmar reserva</Button> | O estado de carregamento é usado desta forma nos botões. |
 | NEXTJS | console.log({session}); | Gera um log no console |
 
 ##### PRISMA - ORM
@@ -59,6 +62,7 @@ Password: eq3B3gV9Pmdua87T
 | PRISMA | npm install prisma --save-dev | Instala o prisma no projeto |
 | PRISMA | npx prisma init --datasource-provider postgresql | Inicializa o prisma com PostgreSQL. |
 | PRISMA | npx prisma migrate dev --name init | Cria o banco e as tabelas com base no schema.prisma definido. |
+| PRISMA | npx prisma generate | Atualiza as definições do TS após um migrate |
 | PRISMA | npx prisma db seed | Alimenta o banco com a seed (requer ts-node e configuração do package.json) |
 | PRISMA | npx prisma format | Re-organiza o Schema. |
 | PRISMA | npx prisma studio | Abre o banco. |
