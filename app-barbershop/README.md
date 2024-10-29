@@ -2,6 +2,8 @@
 
 **Project Description:** This is a project for an application aimed at barbershop clients, allowing them to find nearby barbershops, track reviews, view services and prices, as well as make and track appointments.
 
+> This project is originally based on a training by [felipemotarocha](https://github.com/felipemotarocha), with modifications and customizations made by me for learning purposes and to meet specific needs.
+
 ![Badge of Status](https://img.shields.io/badge/Status-In%20development-yellow) <!-- optional -->
 
 ## 📋Table of Contents
@@ -94,6 +96,8 @@ Follow the steps below to run the project in your local environment:
 # [PT] APP-BARBERSHOP 💈
 
 **Breve descrição do projeto:** Este é o projeto de um aplicativo voltado para clientes de barbearias, permitindo consultar barbearias próximas, acompanhar avaliações, visualizar serviços e valores, além de realizar e acompanhar agendamentos.
+
+> Este projeto é originalmente baseado em um treinamento de [felipemotarocha](https://github.com/felipemotarocha) com modificações e personalizações feitas por mim para fins de aprendizado e adequação a necessidades específicas.
 
 ![Badge de Status](https://img.shields.io/badge/Status-Em%20desenvolvimento-yellow) <!-- opcional -->
 
