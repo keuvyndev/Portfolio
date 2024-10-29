@@ -12,7 +12,7 @@ This repository serves as a hub for my most significant projects. Here, you’ll
 
 ## Repository Structure 🗂️
 
-- **`portfolio` branch**: Contains finalized exercises, tutorials, and other completed materials.
+- **`stable` branch**: Contains finalized exercises, tutorials, and other completed materials.
 - **`work-in-progress` branch**: Contains in-progress developments and experimentations for future tutorials and projects.
 
 ---
@@ -31,5 +31,5 @@ Este repositório serve como um hub para meus projetos mais significativos. Aqui
 
 ## Estrutura do Repositório 🗂️
 
-- **Branch `portfolio`**: Contém exercícios, tutoriais e outros materiais finalizados.
+- **Branch `stable`**: Contém exercícios, tutoriais e outros materiais finalizados.
 - **Branch `work-in-progress`**: Contém desenvolvimentos em andamento e experimentações para futuros tutoriais e projetos.
