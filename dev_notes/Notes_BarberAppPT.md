@@ -1,6 +1,6 @@
 # Anotações sobre o desenvolvimento do app barbershop.
 
-> Parei em 49m.
+> Parei em 1:51m.
 > Crtl + Shift + V para visualizar.
 
 **Data de início:** 04 de MAR de 2024
@@ -35,6 +35,8 @@ Password: eq3B3gV9Pmdua87T
 | GIT | git add . | Adiciona todas as alterações para commite. |
 | GIT | git add arquivo.txt | Adiciona um arquivo para commite. |
 | GIT | git log --oneline | Verifica ultimo commit realizado. |
+| GIT | git push origin | Sobe as alterações no repositório atual. |
+| GIT | git push origin -main | Sobe as alterações no repositório indicado "main". |
 
 ##### NEXTJS
 | TIPO    | COMANDO   | DESCRIÇÃO |

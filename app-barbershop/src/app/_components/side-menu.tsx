@@ -54,6 +54,7 @@ const SideMenu = () => {
                </Link>
             </Button>
 
+            {/* Se houver dados de usuário mostra o botão de agendamentos. */}
             {data?.user && (
                <Button variant="outline" className="justify-start" asChild>
                   <Link href="/bookings">

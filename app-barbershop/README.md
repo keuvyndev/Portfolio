@@ -1,36 +1,191 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# [US] APP-BARBERSHOP 💈
 
-## Getting Started
+**Project Description:** This is a project for an application aimed at barbershop clients, allowing them to find nearby barbershops, track reviews, view services and prices, as well as make and track appointments.
 
-First, run the development server:
+![Badge of Status](https://img.shields.io/badge/Status-In%20development-yellow) <!-- optional -->
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 📋 Table of Contents
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [About the Project](#about-the-project)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation and Usage](#installation-and-usage)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 📖 About the Project
 
-## Learn More
+This project was developed to **facilitate customer service in barbershops**. It offers features that benefit both clients and owners, providing:
 
-To learn more about Next.js, take a look at the following resources:
+- ✅ **Real-time tracking** of appointments for both clients and owners.
+- ✅ **Ease of finding suitable barbershops** with visible ratings, services, and prices.
+- ✅ **Direct scheduling in the app**, without the need for contact or travel to the location.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The application was built with a focus on modern design, intuitive navigation, and robust architecture, using a Docker container database to store information about barbershops, services, clients, and appointments.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 🎯 Features
 
-## Deploy on Vercel
+- **🔍 Barbershop View:** Access a complete list of registered barbershops.
+- **⭐ Barbershop Ratings:** Check the ratings of each barbershop.
+- **💼 Service Details:** View services, information, and prices for each barbershop.
+- **📅 Online Scheduling:** Make appointments showing only available days and times.
+- **🔒 Google Authentication:** Log in using your Google account.
+- **📲 Appointment Tracking:** See appointments made in real-time.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🛠️ Technologies Used
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The main technologies used in this project are:
+
+| Technology             | Description                                   |
+|------------------------|-----------------------------------------------|
+| **Next.js**            | React framework for web development           |
+| **Tailwind CSS**       | Styling library                               |
+| **TypeScript**         | Superset of JavaScript for typing             |
+| **Prisma ORM**         | ORM for database manipulation                  |
+| **Next-Auth**          | User authentication                            |
+| **PostgreSQL**         | Relational database                            |
+| **Docker**             | Container with PostgreSQL                     |
+| **Git**                | Version control                               |
+| **Lucid Dev, ShadeCN** | Auxiliary tools for development               |
+| **Date-fns**           | Date manipulation                             |
+
+## 🚀 Installation and Usage
+
+Follow the steps below to run the project in your local environment:
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/keuvyndev/portfolio.git
+
+2. **Install Docker:**
+   Access the [official Docker website](https://www.docker.com/products/docker-desktop) for download and installation.<br><br>
+
+3. **Navigate to the project directory:**
+   ```bash
+   cd app-barbershop
+
+4. **Start the Docker container:**
+   ```bash
+   docker-compose up -d
+
+5. **Check if the container started correctly:**
+   An instance named barber-db-postgres should appear active.<br><br>
+
+6. **Install dependencies:**
+   ```bash
+   npm install
+
+7. **Seed the database with test information:**
+   ```bash
+   npx prisma migrate dev --name init
+   npx prisma generate
+   npx prisma db seed
+
+8. **Start the project in development environment:**
+   ```bash
+   npm run dev
+
+9. **Access your localhost to view the project:**
+   ```bash
+   http://localhost:3000/
+
+---
+
+# [US] APP-BARBERSHOP 💈
+
+**Breve descrição do projeto:** Este é o projeto de um aplicativo voltado para clientes de barbearias, permitindo consultar barbearias próximas, acompanhar avaliações, visualizar serviços e valores, além de realizar e acompanhar agendamentos.
+
+![Badge de Status](https://img.shields.io/badge/Status-In%20development-yellow) <!-- opcional -->
+
+## 📋 Índice
+
+- [Sobre o Projeto](#sobre-o-projeto)
+- [Funcionalidades](#funcionalidades)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Instalação e Uso](#instalação-e-uso)
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Contribuindo](#contribuindo)
+- [Licença](#licença)
+- [Contato](#contato)
+
+---
+
+## 📖 Sobre o Projeto
+
+Este projeto foi desenvolvido para **facilitar o atendimento de clientes em barbearias**. Ele oferece funcionalidades que beneficiam tanto os clientes quanto os proprietários, proporcionando:
+
+- ✅ **Acompanhamento em tempo real** dos agendamentos por parte de clientes e donos.
+- ✅ **Facilidade para encontrar barbearias** adequadas, com avaliações, serviços e valores visíveis.
+- ✅ **Agendamento direto no aplicativo**, sem necessidade de contato ou deslocamento ao local.
+
+A aplicação foi construída com foco em design moderno, navegação intuitiva e arquitetura robusta, utilizando um banco de dados em container-docker para armazenar informações de barbearias, serviços, clientes e agendamentos.
+
+## 🎯 Funcionalidades
+
+- **🔍 Visualização de Barbearias:** Acesse a lista completa de barbearias cadastradas.
+- **⭐ Avaliação de Barbearias:** Consulte a avaliação de cada barbearia.
+- **💼 Detalhes de Serviços:** Visualize serviços, informações e valores de cada barbearia.
+- **📅 Agendamento Online:** Realize agendamentos mostrando apenas dias e horários disponíveis.
+- **🔒 Autenticação com Google:** Faça login usando sua conta Google.
+- **📲 Acompanhamento de Agendamentos:** Veja agendamentos realizados em tempo real.
+
+## 🛠️ Tecnologias Utilizadas
+
+As principais tecnologias usadas neste projeto são:
+
+| Tecnologia             | Descrição                                   |
+|------------------------|---------------------------------------------|
+| **Next.js**            | Framework React para desenvolvimento web    |
+| **Tailwind CSS**       | Biblioteca de estilização                  |
+| **TypeScript**         | Superset de JavaScript para tipagem         |
+| **Prisma ORM**         | ORM para manipulação de banco de dados      |
+| **Next-Auth**          | Autenticação de usuários                    |
+| **PostgreSQL**         | Banco de dados relacional                   |
+| **Docker**           | Container com PostgresSQL  |
+| **Git**                | Controle de versão                          |
+| **Lucid Dev, ShadeCN** | Ferramentas auxiliares para desenvolvimento|
+| **Date-fns**           | Manipulação de datas                        |
+
+## 🚀 Instalação e Uso
+
+Siga os passos abaixo para rodar o projeto em seu ambiente local:
+
+1. **Clone o repositório:**
+   ```bash
+   git clone https://github.com/keuvyndev/portfolio.git
+
+2. **Instale o Docker:**
+Acesse o [site oficial do Docker](https://www.docker.com/products/docker-desktop) para download e instalação.<br><br>
+
+3. **Acesse o diretório do projeto:**
+   ```bash
+   cd app-barbershop
+
+4. **Suba o container do Docker:**
+   ```bash
+   docker-compose up -d
+
+5. **Verifique se o container subiu corretamente:**
+   Deve aparecer uma instância com nome barber-db-postgres ativa.<br><br>
+
+6. **Instale as dependências:**
+   ```bash
+   npm install
+
+7. **Alimente o banco de dados com as informações de teste:**
+   ```bash
+   npx prisma migrate dev --name init
+   npx prisma generate
+   npx prisma db seed
+
+8. **Inicie o projeto em ambiente de desenvolvimento:**
+   ```bash
+   npm run dev
+
+9. **Acesse seu localhost para visualizar o projeto:**
+   ```bash
+   http://localhost:3000/
