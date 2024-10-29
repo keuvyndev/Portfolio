@@ -1,13 +1,13 @@
-## Welcome! 👋 My name is Keuvyn Teixeira and I'm a software developer.
+## [US] Work-in-Progress Branch 🚧
 
+Welcome to the **Work-in-Progress** branch! This section showcases my ongoing projects and experiments. Here, you will find various developments that are currently being refined and improved. 
 
-**ABOUT ME 🚀**
+Feel free to explore the code, provide feedback, or collaborate on these ideas. Your insights are valuable as I work toward creating better solutions!
 
-A technology lover and enthusiast, I have worked on several autonomous projects involving a
-variety of languages. My experience as a developer also contributed to my professional
-development, working both in the Back-end and Front-end where I had contact with the main
-languages on the market
+---
 
-**ABOUT THIS REPOSITORY** ℹ️
+## [BR] Branch em Andamento 🚧
 
-In this repository you can find the most relevant projects i have worked. I hope you like it!
+Bem-vindo à branch **Work-in-Progress**! Esta seção apresenta meus projetos e experimentos em andamento. Aqui, você encontrará diversos desenvolvimentos que estão sendo refinados e aprimorados.
+
+Sinta-se à vontade para explorar o código, fornecer feedback ou colaborar nessas ideias. Seus insights são valiosos enquanto trabalho para criar soluções melhores!
