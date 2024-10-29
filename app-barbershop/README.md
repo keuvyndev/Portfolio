@@ -4,20 +4,16 @@
 
 ![Badge of Status](https://img.shields.io/badge/Status-In%20development-yellow) <!-- optional -->
 
-## 📋 Table of Contents
+## 📋Table of Contents
 
 - [About the Project](#about-the-project)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Installation and Usage](#installation-and-usage)
-- [Project Structure](#project-structure)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
 
 ---
 
-## 📖 About the Project
+## About the Project
 
 This project was developed to **facilitate customer service in barbershops**. It offers features that benefit both clients and owners, providing:
 
@@ -27,7 +23,7 @@ This project was developed to **facilitate customer service in barbershops**. It
 
 The application was built with a focus on modern design, intuitive navigation, and robust architecture, using a Docker container database to store information about barbershops, services, clients, and appointments.
 
-## 🎯 Features
+## Features
 
 - **🔍 Barbershop View:** Access a complete list of registered barbershops.
 - **⭐ Barbershop Ratings:** Check the ratings of each barbershop.
@@ -36,7 +32,7 @@ The application was built with a focus on modern design, intuitive navigation, a
 - **🔒 Google Authentication:** Log in using your Google account.
 - **📲 Appointment Tracking:** See appointments made in real-time.
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 The main technologies used in this project are:
 
@@ -53,7 +49,7 @@ The main technologies used in this project are:
 | **Lucid Dev, ShadeCN** | Auxiliary tools for development               |
 | **Date-fns**           | Date manipulation                             |
 
-## 🚀 Installation and Usage
+## Installation and Usage
 
 Follow the steps below to run the project in your local environment:
 
@@ -95,11 +91,11 @@ Follow the steps below to run the project in your local environment:
 
 ---
 
-# [US] APP-BARBERSHOP 💈
+# [PT] APP-BARBERSHOP 💈
 
 **Breve descrição do projeto:** Este é o projeto de um aplicativo voltado para clientes de barbearias, permitindo consultar barbearias próximas, acompanhar avaliações, visualizar serviços e valores, além de realizar e acompanhar agendamentos.
 
-![Badge de Status](https://img.shields.io/badge/Status-In%20development-yellow) <!-- opcional -->
+![Badge de Status](https://img.shields.io/badge/Status-Em%20desenvolvimento-yellow) <!-- opcional -->
 
 ## 📋 Índice
 
@@ -107,14 +103,10 @@ Follow the steps below to run the project in your local environment:
 - [Funcionalidades](#funcionalidades)
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
 - [Instalação e Uso](#instalação-e-uso)
-- [Estrutura do Projeto](#estrutura-do-projeto)
-- [Contribuindo](#contribuindo)
-- [Licença](#licença)
-- [Contato](#contato)
 
 ---
 
-## 📖 Sobre o Projeto
+## Sobre o Projeto
 
 Este projeto foi desenvolvido para **facilitar o atendimento de clientes em barbearias**. Ele oferece funcionalidades que beneficiam tanto os clientes quanto os proprietários, proporcionando:
 
@@ -124,7 +116,7 @@ Este projeto foi desenvolvido para **facilitar o atendimento de clientes em barb
 
 A aplicação foi construída com foco em design moderno, navegação intuitiva e arquitetura robusta, utilizando um banco de dados em container-docker para armazenar informações de barbearias, serviços, clientes e agendamentos.
 
-## 🎯 Funcionalidades
+## Funcionalidades
 
 - **🔍 Visualização de Barbearias:** Acesse a lista completa de barbearias cadastradas.
 - **⭐ Avaliação de Barbearias:** Consulte a avaliação de cada barbearia.
@@ -133,7 +125,7 @@ A aplicação foi construída com foco em design moderno, navegação intuitiva 
 - **🔒 Autenticação com Google:** Faça login usando sua conta Google.
 - **📲 Acompanhamento de Agendamentos:** Veja agendamentos realizados em tempo real.
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 As principais tecnologias usadas neste projeto são:
 
@@ -145,12 +137,12 @@ As principais tecnologias usadas neste projeto são:
 | **Prisma ORM**         | ORM para manipulação de banco de dados      |
 | **Next-Auth**          | Autenticação de usuários                    |
 | **PostgreSQL**         | Banco de dados relacional                   |
-| **Docker**           | Container com PostgresSQL  |
+| **Docker**             | Container com PostgreSQL                    |
 | **Git**                | Controle de versão                          |
-| **Lucid Dev, ShadeCN** | Ferramentas auxiliares para desenvolvimento|
+| **Lucid Dev, ShadeCN** | Ferramentas auxiliares para desenvolvimento |
 | **Date-fns**           | Manipulação de datas                        |
 
-## 🚀 Instalação e Uso
+## Instalação e Uso
 
 Siga os passos abaixo para rodar o projeto em seu ambiente local:
 
