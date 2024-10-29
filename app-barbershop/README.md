@@ -79,7 +79,6 @@ Follow the steps below to run the project in your local environment:
 
 7. **Seed the database with test information:**
    ```bash
-   rm -rf ./.postgres-data
    npx prisma migrate dev --name init
    npx prisma generate
    npx prisma db seed
@@ -175,7 +174,6 @@ Acesse o [site oficial do Docker](https://www.docker.com/products/docker-desktop
 
 7. **Alimente o banco de dados com as informações de teste:**
    ```bash
-   rm -rf ./.postgres-data
    npx prisma migrate dev --name init
    npx prisma generate
    npx prisma db seed
