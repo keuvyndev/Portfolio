@@ -77,17 +77,20 @@ Follow the steps below to run the project in your local environment:
    ```bash
    npm install
 
-7. **Seed the database with test information:**
+7. **Configure the .env file:**
+   In the root folder of the application, rename the `example.env` file to `.env`. To test the Google login feature, enter your own values for the `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` variables.
+
+8. **Seed the database with test information:**
    ```bash
    npx prisma migrate dev --name init
    npx prisma generate
    npx prisma db seed
 
-8. **Start the project in development environment:**
+9. **Start the project in development environment:**
    ```bash
    npm run dev
 
-9. **Access your localhost to view the project:**
+10. **Access your localhost to view the project:**
    ```bash
    http://localhost:3000/
 
@@ -172,16 +175,20 @@ Acesse o [site oficial do Docker](https://www.docker.com/products/docker-desktop
    ```bash
    npm install
 
-7. **Alimente o banco de dados com as informações de teste:**
+7. **Configure o arquivo .env:**
+   Na pasta raiz da aplicação, renomeie o arquivo `example.env` para `.env`. Para testar a função de login com o Google, insira seus próprios valores nas variáveis `GOOGLE_CLIENT_ID` e `GOOGLE_CLIENT_SECRET`.
+
+8. **Alimente o banco de dados com as informações de teste:**
    ```bash
    npx prisma migrate dev --name init
    npx prisma generate
    npx prisma db seed
 
-8. **Inicie o projeto em ambiente de desenvolvimento:**
+9. **Inicie o projeto em ambiente de desenvolvimento:**
    ```bash
    npm run dev
 
-9. **Acesse seu localhost para visualizar o projeto:**
+10. **Acesse seu localhost para visualizar o projeto:**
    ```bash
    http://localhost:3000/
+
