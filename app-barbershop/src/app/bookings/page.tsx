@@ -16,19 +16,33 @@ const BookingsPage = async () => {
    if(!session?.user){
        return redirect("/");
    }
-   
-   const bookings = await db.booking.findMany({
-      where: {
-         userId: (session.user as any).id,
-      },
-      include:{
-         service: true,
-         barbershop: true
-      }
-   })
 
-   const bookingConfirmed = bookings.filter(booking => isFuture(booking.date)); 
-   const bookingFinished = bookings.filter(booking => isPast(booking.date)); 
+   const [confirmedBookings, finishedBookings] = await Promise.all([
+      db.booking.findMany({
+         where: {
+            userId: (session.user as any).id,
+            date: {
+               gte: new Date(),
+            },
+         },
+         include:{
+            service: true,
+            barbershop: true,
+         },
+      }),
+      db.booking.findMany({
+         where: {
+            userId: (session.user as any).id,
+            date: {
+               lt: new Date(),
+            },
+         },
+         include:{
+            service: true,
+            barbershop: true,
+         },
+      }),
+   ]);
 
    return ( 
       <>
@@ -39,14 +53,14 @@ const BookingsPage = async () => {
             
             <h2 className="text-gray-400 uppercase font-bold text-sm my-6 mb-3">Confirmados</h2>
             <div className="flex flex-col gap-3">
-               {bookingConfirmed.map( (booking) => (
+               {confirmedBookings.map( (booking) => (
                <BookingItem key ={booking.id} booking={booking} /> 
             ) )}
             </div>
 
             <h2 className="text-gray-400 uppercase font-bold text-sm my-6 mb-3">Finalizados</h2>
             <div className="flex flex-col gap-3">
-               {bookingFinished.map( (booking) => (
+               {finishedBookings.map( (booking) => (
                <BookingItem key ={booking.id} booking={booking} /> 
             ) )}
             </div>
