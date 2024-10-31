@@ -1,3 +1,4 @@
+"use client"
 import { signIn, signOut, useSession } from "next-auth/react";
 import { SheetHeader, SheetTitle } from "./ui/sheet";
 import { Avatar, AvatarImage } from "./ui/avatar";
@@ -30,8 +31,8 @@ const SideMenu = () => {
 
                      <h2 className="font-bold">{data.user.name}</h2>
                   </div>
-                  <Button variant="secondary" size="icon">
-                     <LogOutIcon onClick={handleLogoutClick} />
+                  <Button variant="secondary" size="icon" onClick={handleLogoutClick}>
+                     <LogOutIcon/>
                   </Button>
                </div>
             ) : (
