@@ -48,7 +48,7 @@ The main technologies used in this project are:
 | **PostgreSQL**         | Relational database                            |
 | **Docker**             | Container with PostgreSQL                     |
 | **Git**                | Version control                               |
-| **Lucid Dev, ShadeCN** | Auxiliary tools for development               |
+| **Figma, Lucid Dev, ShadeCN** | Auxiliary tools for development               |
 | **Date-fns**           | Date manipulation                             |
 
 ## Installation and Usage
@@ -146,7 +146,7 @@ As principais tecnologias usadas neste projeto são:
 | **PostgreSQL**         | Banco de dados relacional                   |
 | **Docker**             | Container com PostgreSQL                    |
 | **Git**                | Controle de versão                          |
-| **Lucid Dev, ShadeCN** | Ferramentas auxiliares para desenvolvimento |
+| **Figma, Lucid Dev, ShadeCN** | Ferramentas auxiliares para desenvolvimento |
 | **Date-fns**           | Manipulação de datas                        |
 
 ## Instalação e Uso

@@ -1,6 +1,7 @@
 "use server"
 
 import { db } from "@/app/_lib/prisma";
+import { revalidatePath } from "next/cache";
 
 // Efetua agendamento no banco de dados.
 
@@ -20,4 +21,8 @@ export const saveBooking = async (params: SaveBookingParams) => {
          barbershopId: params.barbershopId,
       }
    })
+
+   // Reseta o cache da página e recarrega.
+   revalidatePath("/");
+   revalidatePath("/bookings");
 }

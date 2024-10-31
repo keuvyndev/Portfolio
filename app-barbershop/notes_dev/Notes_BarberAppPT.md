@@ -82,6 +82,7 @@ Password: eq3B3gV9Pmdua87T
 | SHADECN | npx shadcn-ui@latest add badge | Instala badges ao projeto. |
 | SHADECN | npx shadcn-ui@latest add avatar | Instala avatar ao projeto. |
 | SHADECN | npx shadcn-ui@latest add sheet | Instala sheet ao projeto. |
+| SHADECN | npx shadcn@latest add alert-dialog | Instala alert-dialog ao projeto. |
 | SHADECN | npx shadcn-ui@latest add calendar | Instala calendar ao projeto. |
 | SHADECN | npx shadcn-ui@latest add sonner | Instala sonner ao projeto. |
 | SHADECN | [Site Oficial](https://react-day-picker.js.org/using-daypicker/customization) | Página de personalização do calendar do shadcnUi. |

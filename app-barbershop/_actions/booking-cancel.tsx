@@ -12,5 +12,6 @@ export const cancelBooking = async (bookingId: string) => {
    });
 
    // Reseta o cache da página e recarrega.
+   revalidatePath("/");
    revalidatePath("/bookings");
 };
