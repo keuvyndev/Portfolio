@@ -6,6 +6,7 @@ import { db } from "../_lib/prisma";
 import BookingItem from "../_components/booking-item";
 import { isFuture } from "date-fns/isFuture";
 import { isPast } from "date-fns/isPast";
+import Head from "next/head";
 
 const BookingsPage = async () => {
    
@@ -47,18 +48,22 @@ const BookingsPage = async () => {
    return ( 
       <>
          <Header />
-      
+
          <div className="px-5 py-6">
             <h1 className="text-xl font-bold">Agendamentos</h1>
             
-            <h2 className="text-gray-400 uppercase font-bold text-sm my-6 mb-3">Confirmados</h2>
+            {confirmedBookings.length > 0 && (
+               <h2 className="text-gray-400 uppercase font-bold text-sm my-6 mb-3">Confirmados</h2>
+            ) }
             <div className="flex flex-col gap-3">
                {confirmedBookings.map( (booking) => (
                <BookingItem key ={booking.id} booking={booking} /> 
             ) )}
             </div>
 
-            <h2 className="text-gray-400 uppercase font-bold text-sm my-6 mb-3">Finalizados</h2>
+            {finishedBookings.length > 0 && 
+               <h2 className="text-gray-400 uppercase font-bold text-sm my-6 mb-3">Finalizados</h2>
+             }
             <div className="flex flex-col gap-3">
                {finishedBookings.map( (booking) => (
                <BookingItem key ={booking.id} booking={booking} /> 

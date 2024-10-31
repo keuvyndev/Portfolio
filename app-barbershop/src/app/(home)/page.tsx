@@ -9,6 +9,7 @@ import { db } from "../_lib/prisma";
 import { getServerSession } from "next-auth";
 import { authOptions } from "../api/auth/[...nextauth]/route";
 import { isFuture } from "date-fns/isFuture";
+import Head from "next/head";
 
 export default async function Home() {
 
@@ -33,8 +34,11 @@ export default async function Home() {
   
   return (
 
-
     <div >
+
+      <Head>
+        <title>Teste</title>
+      </Head>
 
       {/* COMPONENTE GLOBAL HEADER */}
       <Header />
@@ -55,7 +59,10 @@ export default async function Home() {
 
       {/* COMPONENTE GLOBAL BOOKING-ITEM */}
       <div className="mt-6">
-        <h2 className="pl-5 text-xs mb-3 uppercase text-gray-400 font-bold">Agendamentos</h2>
+        
+        {confirmedBookings.length > 0 && 
+          <h2 className="pl-5 text-xs mb-3 uppercase text-gray-400 font-bold">Agendamentos</h2>
+        }
         <div className="px-5 flex gap-3 overflow-x-auto [&::-webkit-scrollbar]:hidden">
           {confirmedBookings.map(booking => <BookingItem key={booking.id} booking={booking} />)}
         </div>
@@ -78,7 +85,7 @@ export default async function Home() {
         <h2 className="px-5 text-xs mb-3 uppercase text-gray-400 font-bold">Populares</h2>
         
         <div className="flex px-5 gap-2 overflow-x-auto [&::-webkit-scrollbar]:hidden">
-          {barbershops.map((barbershop) => (
+          {barbershops.slice().reverse().map((barbershop) => (
             <BarbershopItem key={barbershop.id} barbershop={barbershop} />
           ))}
         </div>
