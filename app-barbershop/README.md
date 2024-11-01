@@ -90,7 +90,7 @@ Follow the steps below to run the project in your local environment:
 
 > Este projeto é originalmente baseado em um treinamento de [felipemotarocha](https://github.com/felipemotarocha) com modificações e personalizações feitas por mim para fins de aprendizado e adequação a necessidades específicas.
 
-![Badge de Status](https://img.shields.io/badge/Status-Em%20desenvolvimento-yellow) <!-- opcional -->
+![Badge of Status](https://img.shields.io/badge/Status-Concluido-green)
 
 ## 📋 Índice
 
