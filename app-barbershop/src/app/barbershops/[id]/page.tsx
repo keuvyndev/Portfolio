@@ -15,7 +15,7 @@ interface BarbershopDetailsPageProps {
 }
 
 export const metadata: Metadata ={
-   title: "Serviços",
+   title: "Catálogo de Serviços - FSW Barber",
    icons:{
      icon: '/icon.png',
      shortcut:'/icon.png',

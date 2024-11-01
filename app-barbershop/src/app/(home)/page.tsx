@@ -8,10 +8,9 @@ import { db } from "../_lib/prisma";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/_lib/auth";
 import { Metadata } from "next";
-import { addHours } from "date-fns/addHours";
 
 export const metadata: Metadata ={
-  title: "Página Inicial",
+  title: "Barbearias - FSW Barber",
   icons:{
     icon: '/icon.png',
     shortcut:'/icon.png',
@@ -43,10 +42,6 @@ export default async function Home() {
       },
     }) : Promise.resolve([]),
   ]);
-  
-  const todayDate = new Date();
-  const hourNow = addHours(todayDate.getTime(), 1);
-  
 
   return (
 
@@ -54,8 +49,6 @@ export default async function Home() {
 
       {/* COMPONENTE GLOBAL HEADER */}
       <Header />
-      <p>Horas atuais: {todayDate.getTime()}</p>
-      <p>Horas atuais: {format(hourNow,"hh:mm")}</p>
 
       {/* WELCOME */}
       <div className="px-5 pt-5">
