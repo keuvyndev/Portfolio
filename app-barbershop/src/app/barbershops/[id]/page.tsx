@@ -6,12 +6,26 @@ import BarbershopInfo from "./_components/barbershop-info";
 import ServiceItem from "./_components/service-item";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { Metadata } from "next";
 
 interface BarbershopDetailsPageProps {
    params: {
       id?: string;
    };
 }
+
+export const metadata: Metadata ={
+   title: "Serviços",
+   icons:{
+     icon: '/icon.png',
+     shortcut:'/icon.png',
+     apple:'/icon.png',
+     other:{
+       rel:'/icon.png',
+       url:'/icon.png',
+     },
+   },
+ }
 
 const BarbershopDetailsPage = async ({params}: BarbershopDetailsPageProps) => {
 

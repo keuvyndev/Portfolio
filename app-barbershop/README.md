@@ -66,18 +66,11 @@ Follow the steps below to run the project in your local environment:
    ```bash
    cd app-barbershop
 
-4. **Start the Docker container:**
-   ```bash
-   docker-compose up -d
-
-5. **Check if the container started correctly:**
-   An instance named barber-db-postgres should appear active.<br><br>
-
-6. **Install dependencies:**
+4. **Install dependencies:**
    ```bash
    npm install
 
-7. **Configure the .env file:**
+5. **Configure the .env file:**
    In the root folder of the application, rename the `example.env` file to `.env`. To test the Google login feature, enter your own values for the `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` variables.
 
 8. **Seed the database with test information:**

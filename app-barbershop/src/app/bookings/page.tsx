@@ -7,6 +7,20 @@ import BookingItem from "../_components/booking-item";
 import { isFuture } from "date-fns/isFuture";
 import { isPast } from "date-fns/isPast";
 import Head from "next/head";
+import { Metadata } from "next";
+
+export const metadata: Metadata ={
+   title: "Agendamentos",
+   icons:{
+     icon: '/icon.png',
+     shortcut:'/icon.png',
+     apple:'/icon.png',
+     other:{
+       rel:'/icon.png',
+       url:'/icon.png',
+     },
+   },
+ }
 
 const BookingsPage = async () => {
    

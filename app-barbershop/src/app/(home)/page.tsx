@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Header from "../_components/header";
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale/pt-BR";
@@ -8,8 +7,20 @@ import BarbershopItem from "./_components/barbershop-item";
 import { db } from "../_lib/prisma";
 import { getServerSession } from "next-auth";
 import { authOptions } from "../api/auth/[...nextauth]/route";
-import { isFuture } from "date-fns/isFuture";
-import Head from "next/head";
+import { Metadata } from "next";
+
+export const metadata: Metadata ={
+  title: "Página Inicial",
+  icons:{
+    icon: '/icon.png',
+    shortcut:'/icon.png',
+    apple:'/icon.png',
+    other:{
+      rel:'/icon.png',
+      url:'/icon.png',
+    },
+  },
+}
 
 export default async function Home() {
 
@@ -35,10 +46,6 @@ export default async function Home() {
   return (
 
     <div >
-
-      <Head>
-        <title>Teste</title>
-      </Head>
 
       {/* COMPONENTE GLOBAL HEADER */}
       <Header />
