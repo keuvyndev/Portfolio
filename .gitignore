@@ -1,0 +1,16 @@
+# Comentários começam com #
+# Ignora arquivos temporários ou gerados automaticamente
+*.tmp
+*.log
+*.bak
+
+# Ignora diretórios gerados por IDEs ou editores de texto
+.vscode/
+.idea/
+
+# Ignora arquivos de compilação
+*.class
+*.o
+
+# Ignora arquivos específicos
+config.ini

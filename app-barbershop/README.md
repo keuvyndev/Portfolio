@@ -46,7 +46,8 @@ The main technologies used in this project are:
 | **Prisma ORM**         | ORM for database manipulation                  |
 | **Next-Auth**          | User authentication                            |
 | **PostgreSQL**         | Relational database                            |
-| **Docker**             | Container with PostgreSQL                     |
+| **Docker**             | Container with PostgreSQL for local tests                     |
+| **Supabase**             | Platform for nanage database in cloud                     |
 | **Git**                | Version control                               |
 | **Figma, Lucid Dev, ShadeCN** | Auxiliary tools for development               |
 | **Date-fns**           | Date manipulation                             |
@@ -66,31 +67,18 @@ Follow the steps below to run the project in your local environment:
    ```bash
    cd app-barbershop
 
-4. **Start the Docker container:**
-   ```bash
-   docker-compose up -d
-
-5. **Check if the container started correctly:**
-   An instance named barber-db-postgres should appear active.<br><br>
-
-6. **Install dependencies:**
+4. **Install dependencies:**
    ```bash
    npm install
 
-7. **Configure the .env file:**
-   In the root folder of the application, rename the `example.env` file to `.env`. To test the Google login feature, enter your own values for the `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` variables.
+5. **Configure the .env file:**
+   To test the Google login feature, enter your own values for the `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` variables in .env file.
 
-8. **Seed the database with test information:**
-   ```bash
-   npx prisma migrate dev --name init
-   npx prisma generate
-   npx prisma db seed
-
-9. **Start the project in development environment:**
+6. **Start the project in development environment:**
    ```bash
    npm run dev
 
-10. **Access your localhost to view the project:**
+7. **Access your localhost to view the project:**
    ```bash
    http://localhost:3000/
 
@@ -144,7 +132,8 @@ As principais tecnologias usadas neste projeto são:
 | **Prisma ORM**         | ORM para manipulação de banco de dados      |
 | **Next-Auth**          | Autenticação de usuários                    |
 | **PostgreSQL**         | Banco de dados relacional                   |
-| **Docker**             | Container com PostgreSQL                    |
+| **Docker**             | Container com PostgreSQL para testes locais                    |
+| **SupaBase**             | Plataforma para gerenciar banco de dados em nuvem  |
 | **Git**                | Controle de versão                          |
 | **Figma, Lucid Dev, ShadeCN** | Ferramentas auxiliares para desenvolvimento |
 | **Date-fns**           | Manipulação de datas                        |
@@ -164,31 +153,17 @@ Acesse o [site oficial do Docker](https://www.docker.com/products/docker-desktop
    ```bash
    cd app-barbershop
 
-4. **Suba o container do Docker:**
-   ```bash
-   docker-compose up -d
-
-5. **Verifique se o container subiu corretamente:**
-   Deve aparecer uma instância com nome barber-db-postgres ativa.<br><br>
-
-6. **Instale as dependências:**
+4. **Instale as dependências:**
    ```bash
    npm install
 
-7. **Configure o arquivo .env:**
-   Na pasta raiz da aplicação, renomeie o arquivo `example.env` para `.env`. Para testar a função de login com o Google, insira seus próprios valores nas variáveis `GOOGLE_CLIENT_ID` e `GOOGLE_CLIENT_SECRET`.
+5. **Configure o arquivo .env:**
+   Para testar a função de login com o Google, insira seus próprios valores nas variáveis `GOOGLE_CLIENT_ID` e `GOOGLE_CLIENT_SECRET` no arquivo .env
 
-8. **Alimente o banco de dados com as informações de teste:**
-   ```bash
-   npx prisma migrate dev --name init
-   npx prisma generate
-   npx prisma db seed
-
-9. **Inicie o projeto em ambiente de desenvolvimento:**
+6. **Inicie o projeto em ambiente de desenvolvimento:**
    ```bash
    npm run dev
 
-10. **Acesse seu localhost para visualizar o projeto:**
+7. **Acesse seu localhost para visualizar o projeto:**
    ```bash
    http://localhost:3000/
-
