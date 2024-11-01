@@ -47,7 +47,7 @@ The main technologies used in this project are:
 | **Next-Auth**          | User authentication                            |
 | **PostgreSQL**         | Relational database                            |
 | **Docker**             | Container with PostgreSQL for local tests                     |
-| **Supabase**             | Platform for nanage database in cloud                     |
+| **Supabase, Vercel Storage**             | Platform for nanage database in cloud                     |
 | **Git**                | Version control                               |
 | **Figma, Lucid Dev, ShadeCN** | Auxiliary tools for development               |
 | **Date-fns**           | Date manipulation                             |
@@ -133,7 +133,7 @@ As principais tecnologias usadas neste projeto são:
 | **Next-Auth**          | Autenticação de usuários                    |
 | **PostgreSQL**         | Banco de dados relacional                   |
 | **Docker**             | Container com PostgreSQL para testes locais                    |
-| **SupaBase**             | Plataforma para gerenciar banco de dados em nuvem  |
+| **SupaBase, Vercel Storage**             | Plataforma para gerenciar banco de dados em nuvem  |
 | **Git**                | Controle de versão                          |
 | **Figma, Lucid Dev, ShadeCN** | Ferramentas auxiliares para desenvolvimento |
 | **Date-fns**           | Manipulação de datas                        |
