@@ -79,25 +79,41 @@ export default async function Home() {
 
       {/* COMPONENTE LOCAL BARBERSHOP-ITEM */}
       <div className="mt-6">
-        <h2 className="px-5 text-xs mb-3 uppercase text-gray-400 font-bold">Recomendados</h2>
+        <h2 className="px-5 text-xs mb-3 uppercase text-gray-400 font-bold">Recomendados PARA VOCÊ</h2>
         
         <div className="flex px-5 gap-2 overflow-x-auto [&::-webkit-scrollbar]:hidden">
           {barbershops.map((barbershop) => (
-            <BarbershopItem key={barbershop.id} barbershop={barbershop} />
+            <div key={barbershop.id}  className="w-[167px] max-w[167px]">
+              <BarbershopItem barbershop={barbershop} />
+            </div>
           ))}
         </div>
       </div>
 
       
       {/* COMPONENTE LOCAL POPULARES */}
-      <div className="mt-6 mb-[4.5rem]">
+      <div className="mt-6">
         <h2 className="px-5 text-xs mb-3 uppercase text-gray-400 font-bold">Populares</h2>
         
         <div className="flex px-5 gap-2 overflow-x-auto [&::-webkit-scrollbar]:hidden">
           {barbershops.slice().reverse().map((barbershop) => (
-            <BarbershopItem key={barbershop.id} barbershop={barbershop} />
+            <div key={barbershop.id}  className="w-[167px] max-w[167px]">
+              <BarbershopItem barbershop={barbershop} />
+            </div>
           ))}
         </div>
+      </div>
+
+      {/* MAIS BEM AVALIADOS */}
+      <div className="mt-6 mb-[4.5rem]">
+        <h2 className="px-5 text-xs mb-3 uppercase text-gray-400 font-bold">MAIS BEM AVALIADOS</h2>
+        
+        <div className="flex px-5 gap-2 overflow-x-auto [&::-webkit-scrollbar]:hidden">
+        {barbershops.slice(4).map((barbershop) => (
+            <BarbershopItem key={barbershop.id} barbershop={barbershop} />
+        ))}
+        </div>
+        
       </div>
 
     </div>
