@@ -1,13 +1,13 @@
 import { getServerSession } from "next-auth";
 import Header from "../_components/header";
-import { authOptions } from "../api/auth/[...nextauth]/route";
+import { authOptions } from "@/app/_lib/auth";
 import { redirect } from "next/navigation";
 import { db } from "../_lib/prisma";
 import BookingItem from "../_components/booking-item";
 import { isFuture } from "date-fns/isFuture";
 import { isPast } from "date-fns/isPast";
 import Head from "next/head";
-import { Metadata } from "next";
+import { Metadata } from "next"; 
 
 export const metadata: Metadata ={
    title: "Agendamentos",
