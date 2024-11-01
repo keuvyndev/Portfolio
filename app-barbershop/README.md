@@ -4,7 +4,7 @@
 
 > This project is originally based on a training by [felipemotarocha](https://github.com/felipemotarocha), with modifications and customizations made by me for learning purposes and to meet specific needs.
 
-![Badge of Status](https://img.shields.io/badge/Status-In%20development-yellow) <!-- optional -->
+![Badge of Status](https://img.shields.io/badge/Status-Completed-green)
 
 ## 📋Table of Contents
 
@@ -47,7 +47,7 @@ The main technologies used in this project are:
 | **Next-Auth**          | User authentication                            |
 | **PostgreSQL**         | Relational database                            |
 | **Docker**             | Container with PostgreSQL for local tests                     |
-| **Supabase**             | Platform for nanage database in cloud                     |
+| **Supabase, Vercel Storage**             | Platform for nanage database in cloud                     |
 | **Git**                | Version control                               |
 | **Figma, Lucid Dev, ShadeCN** | Auxiliary tools for development               |
 | **Date-fns**           | Date manipulation                             |
@@ -90,7 +90,7 @@ Follow the steps below to run the project in your local environment:
 
 > Este projeto é originalmente baseado em um treinamento de [felipemotarocha](https://github.com/felipemotarocha) com modificações e personalizações feitas por mim para fins de aprendizado e adequação a necessidades específicas.
 
-![Badge of Status](https://img.shields.io/badge/Status-Concluido-green)
+![Badge of Status](https://img.shields.io/badge/Status-Completed-green)
 
 ## 📋 Índice
 
@@ -133,7 +133,7 @@ As principais tecnologias usadas neste projeto são:
 | **Next-Auth**          | Autenticação de usuários                    |
 | **PostgreSQL**         | Banco de dados relacional                   |
 | **Docker**             | Container com PostgreSQL para testes locais                    |
-| **SupaBase**             | Plataforma para gerenciar banco de dados em nuvem  |
+| **SupaBase, Vercel Storage**             | Plataforma para gerenciar banco de dados em nuvem  |
 | **Git**                | Controle de versão                          |
 | **Figma, Lucid Dev, ShadeCN** | Ferramentas auxiliares para desenvolvimento |
 | **Date-fns**           | Manipulação de datas                        |
@@ -153,31 +153,17 @@ Acesse o [site oficial do Docker](https://www.docker.com/products/docker-desktop
    ```bash
    cd app-barbershop
 
-4. **Suba o container do Docker:**
-   ```bash
-   docker-compose up -d
-
-5. **Verifique se o container subiu corretamente:**
-   Deve aparecer uma instância com nome barber-db-postgres ativa.<br><br>
-
-6. **Instale as dependências:**
+4. **Instale as dependências:**
    ```bash
    npm install
 
-7. **Configure o arquivo .env:**
-   Na pasta raiz da aplicação, renomeie o arquivo `example.env` para `.env`. Para testar a função de login com o Google, insira seus próprios valores nas variáveis `GOOGLE_CLIENT_ID` e `GOOGLE_CLIENT_SECRET`.
+5. **Configure o arquivo .env:**
+   Para testar a função de login com o Google, insira seus próprios valores nas variáveis `GOOGLE_CLIENT_ID` e `GOOGLE_CLIENT_SECRET` no arquivo .env
 
-8. **Alimente o banco de dados com as informações de teste:**
-   ```bash
-   npx prisma migrate dev --name init
-   npx prisma generate
-   npx prisma db seed
-
-9. **Inicie o projeto em ambiente de desenvolvimento:**
+6. **Inicie o projeto em ambiente de desenvolvimento:**
    ```bash
    npm run dev
 
-10. **Acesse seu localhost para visualizar o projeto:**
+7. **Acesse seu localhost para visualizar o projeto:**
    ```bash
    http://localhost:3000/
-
