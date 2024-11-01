@@ -46,7 +46,8 @@ The main technologies used in this project are:
 | **Prisma ORM**         | ORM for database manipulation                  |
 | **Next-Auth**          | User authentication                            |
 | **PostgreSQL**         | Relational database                            |
-| **Docker**             | Container with PostgreSQL                     |
+| **Docker**             | Container with PostgreSQL for local tests                     |
+| **Supabase**             | Platform for nanage database in cloud                     |
 | **Git**                | Version control                               |
 | **Figma, Lucid Dev, ShadeCN** | Auxiliary tools for development               |
 | **Date-fns**           | Date manipulation                             |
@@ -71,19 +72,13 @@ Follow the steps below to run the project in your local environment:
    npm install
 
 5. **Configure the .env file:**
-   In the root folder of the application, rename the `example.env` file to `.env`. To test the Google login feature, enter your own values for the `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` variables.
+   To test the Google login feature, enter your own values for the `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` variables in .env file.
 
-8. **Seed the database with test information:**
-   ```bash
-   npx prisma migrate dev --name init
-   npx prisma generate
-   npx prisma db seed
-
-9. **Start the project in development environment:**
+6. **Start the project in development environment:**
    ```bash
    npm run dev
 
-10. **Access your localhost to view the project:**
+7. **Access your localhost to view the project:**
    ```bash
    http://localhost:3000/
 
@@ -137,7 +132,8 @@ As principais tecnologias usadas neste projeto são:
 | **Prisma ORM**         | ORM para manipulação de banco de dados      |
 | **Next-Auth**          | Autenticação de usuários                    |
 | **PostgreSQL**         | Banco de dados relacional                   |
-| **Docker**             | Container com PostgreSQL                    |
+| **Docker**             | Container com PostgreSQL para testes locais                    |
+| **SupaBase**             | Plataforma para gerenciar banco de dados em nuvem  |
 | **Git**                | Controle de versão                          |
 | **Figma, Lucid Dev, ShadeCN** | Ferramentas auxiliares para desenvolvimento |
 | **Date-fns**           | Manipulação de datas                        |
