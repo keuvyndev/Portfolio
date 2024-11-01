@@ -4,7 +4,7 @@
 
 > This project is originally based on a training by [felipemotarocha](https://github.com/felipemotarocha), with modifications and customizations made by me for learning purposes and to meet specific needs.
 
-![Badge of Status](https://img.shields.io/badge/Status-In%20development-yellow) <!-- optional -->
+![Badge of Status](https://img.shields.io/badge/Status-Completed-green)
 
 ## 📋Table of Contents
 
@@ -90,7 +90,7 @@ Follow the steps below to run the project in your local environment:
 
 > Este projeto é originalmente baseado em um treinamento de [felipemotarocha](https://github.com/felipemotarocha) com modificações e personalizações feitas por mim para fins de aprendizado e adequação a necessidades específicas.
 
-![Badge de Status](https://img.shields.io/badge/Status-Em%20desenvolvimento-yellow) <!-- opcional -->
+![Badge of Status](https://img.shields.io/badge/Status-Completed-green)
 
 ## 📋 Índice
 
