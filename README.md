@@ -15,6 +15,15 @@ This repository serves as a hub for my most significant projects. Here, you’ll
 - **`stable` branch**: Contains finalized exercises, tutorials, and other completed materials.
 - **`work-in-progress` branch**: Contains in-progress developments and experimentations for future tutorials and projects.
 
+## Published Applications 🌐
+
+Here are some of the applications I have developed and are available for access:
+
+| Application Name      | Link                                           | Description                                                                              |
+|-----------------------|------------------------------------------------|----------------------------------------------------------------------------------------|
+| **app-barbershop**    | [barbershop-app-gamma.vercel.app](https://barbershop-app-gamma.vercel.app/) | A platform that connects users to barbershops, allowing for service searches and bookings. |
+
+
 ---
 
 # [BR] Bem-vindo ao meu Portfólio no GitHub! 👋
@@ -33,3 +42,11 @@ Este repositório serve como um hub para meus projetos mais significativos. Aqui
 
 - **Branch `stable`**: Contém exercícios, tutoriais e outros materiais finalizados.
 - **Branch `work-in-progress`**: Contém desenvolvimentos em andamento e experimentações para futuros tutoriais e projetos.
+
+## Aplicações Publicadas 🌐
+
+Aqui estão algumas das aplicações que desenvolvi e que estão disponíveis para acesso:
+
+| Nome da Aplicação     | Link                                           | Descrição                                                                              |
+|-----------------------|------------------------------------------------|----------------------------------------------------------------------------------------|
+| **app-barbershop**    | [barbershop-app-gamma.vercel.app](https://barbershop-app-gamma.vercel.app/) | Uma plataforma que conecta usuários a barbearias, permitindo busca e agendamento de serviços. |
