@@ -10,7 +10,7 @@ import Head from "next/head";
 import { Metadata } from "next"; 
 
 export const metadata: Metadata ={
-   title: "Agendamentos",
+   title: "Meus agendamentos - FSW Barber",
    icons:{
      icon: '/icon.png',
      shortcut:'/icon.png',
@@ -66,6 +66,10 @@ const BookingsPage = async () => {
          <div className="px-5 py-6">
             <h1 className="text-xl font-bold mb-6">Agendamentos</h1>
             
+            {confirmedBookings.length === 0 && finishedBookings.length === 0 && (
+               <p className="text-gray-400">Você não possui agendamentos.</p>
+            )}
+
             {confirmedBookings.length > 0 && (
                <h2 className="text-gray-400 uppercase font-bold text-sm my-6">Confirmados</h2>
             ) }
