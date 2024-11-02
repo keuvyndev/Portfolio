@@ -110,7 +110,9 @@ export default async function Home() {
         
         <div className="flex px-5 gap-2 overflow-x-auto [&::-webkit-scrollbar]:hidden">
         {barbershops.slice(4).map((barbershop) => (
-            <BarbershopItem key={barbershop.id} barbershop={barbershop} />
+            <div key={barbershop.id} className="w-[450px] max-w[450px]">
+              <BarbershopItem barbershop={barbershop} />
+            </div>
         ))}
         </div>
         
