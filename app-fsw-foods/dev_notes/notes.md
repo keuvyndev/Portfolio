@@ -55,6 +55,18 @@ npx shadcn@latest add button
 
 ```
 
+Install automatic class sorting with prettier:
+
+```bash
+npm install -D prettier prettier-plugin-tailwindcss --legacy-peer-deps
+```
+* Put file ".prettierrc" into root folder with below code:
+```bash
+{
+   "plugins": ["prettier-plugin-tailwindcss"]
+ }
+```
+
 ## 4. Organize Project
 a) Move folds "lib" and "components" to "app".
 b) All folders there's not routes in next, put "_" like prefix of name folder.
@@ -62,3 +74,7 @@ c) Change some lins in file "components.json" to:
     "components": "@/app/components",
     "utils": "@/app/_lib/utils",
 d) Change file "globals.css" to change global colors of the project.
+e) Change favicon.ico
+
+## 5. Install Extensions for VSCode
+- Tailwind CSS IntelliSense.
