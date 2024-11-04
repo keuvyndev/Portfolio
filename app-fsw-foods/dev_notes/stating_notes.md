@@ -137,3 +137,18 @@ Crie o arquivo ".lintstagedrc.json" na pasta raiz. Coloque o código abaixo:
 ```
 
 **O que é? Garante que o eslint e o prettier serão chamados antes do commit do git (mas apenas em arquivos preparados).**
+
+## 8. Install Git Commit Msg Linter
+**O que é?** Valida se a mensagem do commit condiz com o assunto, baseado no conventional commits.
+
+Rode o seguinte comando no terminal para instalar:
+``` bash
+npx husky add .husky/commit-msg ".git/hooks/commit-msg \$1"
+```
+
+Cria um arquivo "commit-msg" na pasta ".husky". Cole o código abaixo:
+```bash
+. "$(dirname "$0")/_/husky.sh"
+
+.git/hooks/commit-msg $1
+```
