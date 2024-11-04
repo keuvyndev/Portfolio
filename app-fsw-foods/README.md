@@ -58,6 +58,7 @@ The main technologies used in this project include:
 | **Git**                | Version control                               |
 | **Design Tools**       | **Figma, Lucid Dev, ShadeCN** for visual planning |
 | **Date-fns**           | Library for date manipulation                 |
+| **Ts-node**           | To install seed in db |
 
 ---
 
@@ -121,3 +122,4 @@ As principais tecnologias usadas neste projeto são:
 | **Git**                | Controle de versão                          |
 | **Ferramentas de Design** | **Figma, Lucid Dev, ShadeCN** para planejamento visual |
 | **Date-fns**           | Biblioteca de manipulação de datas          |
+| **Ts-node**           | Para instalar o seed no banco de dados |

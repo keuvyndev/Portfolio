@@ -1,4 +1,4 @@
-import { PrismaClient } from "@prisma/client";
+const { PrismaClient } = require("@prisma/client");
 
 const prismaClient = new PrismaClient();
 
@@ -83,7 +83,7 @@ const createBurguers = async (
         name: "Cheese Burguer",
         price: 30,
         description: description,
-        discountPercentage: 10,
+        discountPercent: 10,
         imageUrl:
           "https://utfs.io/f/ae177fa1-129c-4f43-9928-aa8ac1080a18-yqapzx.png",
         restaurant: {
@@ -101,7 +101,7 @@ const createBurguers = async (
         name: "Double Cheese Burguer",
         price: 40,
         description: description,
-        discountPercentage: 7,
+        discountPercent: 7,
         imageUrl:
           "https://utfs.io/f/dca007fe-0025-422e-9328-16d40f0a1792-yqapzy.png",
         restaurant: {
@@ -119,7 +119,7 @@ const createBurguers = async (
         name: "Bacon Burguer",
         price: 35,
         description: description,
-        discountPercentage: 5,
+        discountPercent: 5,
         imageUrl:
           "https://utfs.io/f/4cb1ca21-0748-4296-a23d-88e52687506a-yqapzz.png",
         restaurant: {
@@ -137,7 +137,7 @@ const createBurguers = async (
         name: "Double Bacon Burguer",
         price: 45,
         description: description,
-        discountPercentage: 10,
+        discountPercent: 10,
         imageUrl:
           "https://utfs.io/f/ed9fde1e-0675-4829-8001-a775e2825dc6-yqaq00.png",
         restaurant: {
@@ -155,7 +155,7 @@ const createBurguers = async (
         name: "Chicken Burguer",
         price: 30,
         description: description,
-        discountPercentage: 7,
+        discountPercent: 7,
         imageUrl:
           "https://utfs.io/f/0aff860a-3e05-42fd-9b2a-53d03c744949-yqaq01.png",
         restaurant: {
@@ -173,7 +173,7 @@ const createBurguers = async (
         name: "Double Chicken Burguer",
         price: 40,
         description: description,
-        discountPercentage: 5,
+        discountPercent: 5,
         imageUrl:
           "https://utfs.io/f/d2157790-fcb7-4d09-b074-80af4bfb9892-yqaq02.png",
         restaurant: {
@@ -277,7 +277,7 @@ const createPizzas = async (
         name: "Pepperoni Pizza",
         price: 45,
         description: description,
-        discountPercentage: 0,
+        discountPercent: 0,
         imageUrl:
           "https://utfs.io/f/645ba997-00b1-44ed-9928-b9eb41e93896-berpub.jpg",
         restaurant: {
@@ -295,7 +295,7 @@ const createPizzas = async (
         name: "Margarita Pizza",
         price: 40,
         description: description,
-        discountPercentage: 5,
+        discountPercent: 5,
         imageUrl:
           "https://utfs.io/f/4ee1f69b-e0a3-4166-bae5-b666996bcd3b-berpua.png",
         restaurant: {
@@ -313,7 +313,7 @@ const createPizzas = async (
         name: "Hawaiian Pizza",
         price: 45,
         description: "A delicious hawaiian pizza",
-        discountPercentage: 5,
+        discountPercent: 5,
         imageUrl:
           "https://utfs.io/f/0bb7a869-f369-4506-94ea-6cc23c8dd92f-berpu9.png",
         restaurant: {
@@ -331,7 +331,7 @@ const createPizzas = async (
         name: "Vegetarian Pizza",
         price: 35,
         description: description,
-        discountPercentage: 0,
+        discountPercent: 0,
         imageUrl:
           "https://utfs.io/f/1bb04a24-361c-4e3a-ad2f-81255f2d53b9-berpux.png",
         restaurant: {
@@ -349,7 +349,7 @@ const createPizzas = async (
         name: "Meat Lovers Pizza",
         price: 50,
         description: description,
-        discountPercentage: 10,
+        discountPercent: 10,
         imageUrl:
           "https://utfs.io/f/ead919ee-2e3d-423f-b294-e525f9d6a5b7-berpuy.png",
         restaurant: {
@@ -453,7 +453,7 @@ const createJapanese = async (
         name: "Sushi Combo",
         price: 30,
         description: description,
-        discountPercentage: 5,
+        discountPercent: 5,
         imageUrl:
           "https://utfs.io/f/5ef70d5c-892b-424d-8655-6bc2716411e1-1lryd0.png",
         restaurant: {
@@ -471,7 +471,7 @@ const createJapanese = async (
         name: "Sashimi Combo",
         price: 40,
         description: description,
-        discountPercentage: 10,
+        discountPercent: 10,
         imageUrl:
           "https://utfs.io/f/e8b2fb18-d636-477f-8bed-cfe85358246f-1lryd1.png",
         restaurant: {
@@ -489,7 +489,7 @@ const createJapanese = async (
         name: "Nigiri Combo",
         price: 35,
         description: description,
-        discountPercentage: 7,
+        discountPercent: 7,
         imageUrl:
           "https://utfs.io/f/fd9458a3-153b-4833-aca1-61a882da1ce6-1lryd2.png",
         restaurant: {
@@ -507,7 +507,7 @@ const createJapanese = async (
         name: "Temaki Combo",
         price: 45,
         description: description,
-        discountPercentage: 0,
+        discountPercent: 0,
         imageUrl:
           "https://utfs.io/f/eec36a13-de2d-48ed-92d2-4f74477dad83-1lryd3.png",
         restaurant: {
@@ -525,7 +525,7 @@ const createJapanese = async (
         name: "Uramaki Combo",
         price: 30,
         description: description,
-        discountPercentage: 10,
+        discountPercent: 10,
         imageUrl:
           "https://utfs.io/f/c04a5df1-c1ac-4e28-ba48-27d856caa553-1lryd4.png",
         restaurant: {
@@ -543,7 +543,7 @@ const createJapanese = async (
         name: "Hosomaki Combo",
         price: 40,
         description: description,
-        discountPercentage: 0,
+        discountPercent: 0,
         imageUrl:
           "https://utfs.io/f/fd147569-14c6-428d-9a54-df64c61c6bb6-1lryd5.png",
         restaurant: {
@@ -647,7 +647,7 @@ const createBrazilian = async (
         name: "Camarão Citrus",
         price: 40,
         description: description,
-        discountPercentage: 5,
+        discountPercent: 5,
         imageUrl:
           "https://utfs.io/f/cecdeeb8-10e6-4be8-8553-0a120717d194-xf34p9.png",
         restaurant: {
@@ -665,7 +665,7 @@ const createBrazilian = async (
         name: "Picanha Especial",
         price: 45,
         description: description,
-        discountPercentage: 5,
+        discountPercent: 5,
         imageUrl:
           "https://utfs.io/f/089299df-fcb9-446a-a8cc-75e4e26b7357-xf34p8.png",
         restaurant: {
@@ -683,7 +683,7 @@ const createBrazilian = async (
         name: "Macarrão com Carne",
         price: 35,
         description: description,
-        discountPercentage: 5,
+        discountPercent: 5,
         imageUrl:
           "https://utfs.io/f/891eb8aa-635e-4cb3-b7fd-eb8d1c9f14e1-xf34p7.png",
         restaurant: {
@@ -701,7 +701,7 @@ const createBrazilian = async (
         name: "Carne com Salada",
         price: 35,
         description: description,
-        discountPercentage: 5,
+        discountPercent: 5,
         imageUrl:
           "https://utfs.io/f/43d9e18a-4ba9-47b6-9a87-6d4fedbd6f41-xf34ol.png",
         restaurant: {
@@ -719,7 +719,7 @@ const createBrazilian = async (
         name: "Filé Mignon com Fritas",
         price: 40,
         description: description,
-        discountPercentage: 0,
+        discountPercent: 0,
         imageUrl:
           "https://utfs.io/f/0cfa51a6-1a88-4114-a6c6-bf607a5a1cb0-xf34ok.png",
         restaurant: {
@@ -737,7 +737,7 @@ const createBrazilian = async (
         name: "Frango ao Molho",
         price: 40,
         description: description,
-        discountPercentage: 5,
+        discountPercent: 5,
         imageUrl:
           "https://utfs.io/f/9158a622-4b87-4ec6-a726-569dee27a093-xf34oj.png",
         restaurant: {
@@ -782,7 +782,7 @@ const createDeserts = async (restaurantId: string, categoryId: string) => {
       name: "Sorvete Especial",
       price: 30,
       description: description,
-      discountPercentage: 10,
+      discountPercent: 10,
       imageUrl:
         "https://utfs.io/f/b703fcaa-eb9c-4257-a08e-fba0f0e12fc1-pr8gxl.png",
       restaurant: {
@@ -800,7 +800,7 @@ const createDeserts = async (restaurantId: string, categoryId: string) => {
       name: "Bolo de Chocolate",
       price: 40,
       description: description,
-      discountPercentage: 7,
+      discountPercent: 7,
       imageUrl:
         "https://utfs.io/f/029befff-aba7-49b3-91c4-8da022e699b0-pr8gxm.png",
       restaurant: {
@@ -818,7 +818,7 @@ const createDeserts = async (restaurantId: string, categoryId: string) => {
       name: "Petit Gateau",
       price: 55,
       description: description,
-      discountPercentage: 5,
+      discountPercent: 5,
       imageUrl:
         "https://utfs.io/f/98f262f6-dc35-428b-bac9-ac443f9f41bb-pr8gxn.png",
       restaurant: {
@@ -836,7 +836,7 @@ const createDeserts = async (restaurantId: string, categoryId: string) => {
       name: "Bolo de Morango",
       price: 35,
       description: description,
-      discountPercentage: 5,
+      discountPercent: 5,
       imageUrl:
         "https://utfs.io/f/6e6ad97a-f1f1-4d4b-bb40-f5ff25ba97d4-pr8gxo.png",
       restaurant: {
@@ -854,7 +854,7 @@ const createDeserts = async (restaurantId: string, categoryId: string) => {
       name: "Biscoito de Chocolate",
       price: 30,
       description: description,
-      discountPercentage: 7,
+      discountPercent: 7,
       imageUrl:
         "https://utfs.io/f/4b8d0b7c-daa9-46f6-aebd-385cf5e086f7-pr8gxp.png",
       restaurant: {
@@ -872,7 +872,7 @@ const createDeserts = async (restaurantId: string, categoryId: string) => {
       name: "Torta de Morango",
       price: 45,
       description: description,
-      discountPercentage: 5,
+      discountPercent: 5,
       imageUrl:
         "https://utfs.io/f/4caadde1-0a1c-45a6-895b-4bfb6986099d-pr8gxq.png",
       restaurant: {
@@ -916,7 +916,7 @@ const createJuices = async (restaurantId: string, categoryId: string) => {
       name: "Suco de Cenoura",
       price: 15,
       description: description,
-      discountPercentage: 5,
+      discountPercent: 5,
       imageUrl:
         "https://utfs.io/f/5126e950-40ca-4ef1-a166-16274fec16bc-6b2vea.png",
       restaurant: {
@@ -934,7 +934,7 @@ const createJuices = async (restaurantId: string, categoryId: string) => {
       name: "Suco Cítrico",
       price: 20,
       description: description,
-      discountPercentage: 7,
+      discountPercent: 7,
       imageUrl:
         "https://utfs.io/f/6dbe915d-af87-4f2a-b841-864ba9427da8-6b2ve9.png",
       restaurant: {
@@ -952,7 +952,7 @@ const createJuices = async (restaurantId: string, categoryId: string) => {
       name: "Suco de Limão",
       price: 12,
       description: description,
-      discountPercentage: 5,
+      discountPercent: 5,
       imageUrl:
         "https://utfs.io/f/03aa4137-c949-4d2c-bdf2-bad6dd1f565e-6b2ve7.png",
       restaurant: {
@@ -970,7 +970,7 @@ const createJuices = async (restaurantId: string, categoryId: string) => {
       name: "Suco de Laranja",
       price: 12,
       description: description,
-      discountPercentage: 5,
+      discountPercent: 5,
       imageUrl:
         "https://utfs.io/f/ce2b8e30-b922-4b1e-bdde-656348cd25c3-6b2ve6.png",
       restaurant: {
@@ -988,7 +988,7 @@ const createJuices = async (restaurantId: string, categoryId: string) => {
       name: "Suco de Abacaxi",
       price: 12,
       description: description,
-      discountPercentage: 7,
+      discountPercent: 7,
       imageUrl:
         "https://utfs.io/f/c4202826-7014-4368-8941-fa1af9b9c8b2-6b2ve5.png",
       restaurant: {
@@ -1006,7 +1006,7 @@ const createJuices = async (restaurantId: string, categoryId: string) => {
       name: "Suco de Melancia",
       price: 12,
       description: description,
-      discountPercentage: 5,
+      discountPercent: 5,
       imageUrl:
         "https://utfs.io/f/a9ba878f-79a8-4c25-883c-5c2e1670b256-6b2ve4.png",
       restaurant: {
