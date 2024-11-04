@@ -143,6 +143,7 @@ Crie o arquivo ".lintstagedrc.json" na pasta raiz. Coloque o código abaixo:
 
 Rode o seguinte comando no terminal para instalar:
 ``` bash
+npm install git-commit-msg-linter --save-dev
 npx husky add .husky/commit-msg ".git/hooks/commit-msg \$1"
 ```
 
