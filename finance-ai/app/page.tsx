@@ -1,9 +1,14 @@
+import { Metadata } from "next";
 import { Button } from "./_components/ui/button"
 
-const Home = () => {
+export const metadata: Metadata = {
+  title: "Resumo de Finanças - Finance AI",
+}
+
+const HomePage = () => {
   return (
     <Button>Hello World!</Button>
   );
 }
 
-export default Home;
+export default HomePage;
