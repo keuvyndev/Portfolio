@@ -1,13 +1,24 @@
 import { Metadata } from "next";
-import { Button } from "./_components/ui/button"
+import { UserButton } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs/server";
+import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Resumo de Finanças - Finance AI",
 }
 
-const HomePage = () => {
+const HomePage = async () => {
+
+  // Se o usuário não estiver logado, deve ser redirecionado para homepage
+  const { userId } = await auth()
+  if (!userId) {
+    redirect("/login")
+  }
+
   return (
-    <Button>Hello World!</Button>
+    <div className="flex h-full items-center justify-center">
+      <UserButton showName />
+    </div>
   );
 }
 
