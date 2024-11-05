@@ -12,3 +12,43 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Transaction {
+  id            String                   @id @default(uuid())
+  type          TransactionType
+  name          String
+  amount        Decimal                  @db.Decimal(10, 2)
+  category      TransactionCategory
+  date          DateTime
+  paymentMethod TransactionPaymentMethod
+  cratedAt      DateTime                 @default(now())
+  updatedAt     DateTime                 @updatedAt
+}
+
+enum TransactionType {
+  DEPOSIT
+  EXPENSE
+  INVESTMENT
+}
+
+enum TransactionCategory {
+  HOUSING
+  TRANSPORTATION
+  FOOD
+  ENTERTAINMENT
+  HEALTH
+  UTILITY
+  SALARY
+  EDUCATION
+  OTHER
+}
+
+enum TransactionPaymentMethod {
+  CREDIT_CARD
+  DEBIT_CARD
+  BANK_TRANSFER
+  BANK_SLIP
+  CASH
+  PIX
+  OTHER
+}
