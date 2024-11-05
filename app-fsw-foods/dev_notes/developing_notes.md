@@ -62,4 +62,3 @@ Adicione no body:
     @apply text-foreground antialiased;
   }
 ```
-
