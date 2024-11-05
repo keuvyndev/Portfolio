@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Header from "./_components/header";
 
 export const metadata: Metadata ={
   title: "Delivery de Comida - FSW Food",
@@ -6,9 +7,7 @@ export const metadata: Metadata ={
 
 const Home = () => {
   return ( 
-    <div className="bg-red-500 px-10">
-      <h1 className="text-3xl">Hello TailWind</h1>
-    </div>
+      <Header />
   );
 }
  
