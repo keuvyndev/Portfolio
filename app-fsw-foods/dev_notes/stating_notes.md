@@ -15,7 +15,7 @@ Would you like to use Tailwind CSS with this project? √ Sim
 Would you like to use src/ directory with this project? √ Não  
 Would you like to use App Router (recommended)? √ Sim  
 Would you like to customize the default import alias? √ Sim  
-What import alias would you like configured? @/*  
+What import alias would you like configured? √ Não 
 
 ## 2. Commands to Config DB
 
@@ -23,6 +23,7 @@ Para configurar o banco de dados PostgreSQL com Prisma:
 
 ```bash
 npm install prisma --save-dev
+npx prisma init
 npx prisma init --datasource-provider postgresql
 npx prisma format
 npx prisma migrate dev --name init_database
@@ -61,7 +62,7 @@ npx prisma db seed
 Inicialize o ShadCN UI:
 
 ```bash
-npx shadcn-ui@latest init
+npx shadcn@latest init
 ```
 
 Durante a configuração, responda conforme abaixo:
@@ -86,9 +87,9 @@ npm install -D prettier prettier-plugin-tailwindcss --legacy-peer-deps
 * Coloque o arquivo ".prettierrc" na pasta raiz com o código abaixo:
 
 ```json
-{
-  "plugins": ["prettier-plugin-tailwindcss"]
-}
+  {
+    "plugins": ["prettier-plugin-tailwindcss"]
+  }
 ```
 
 ## 5. Organize Project
@@ -99,8 +100,10 @@ c) Altere algumas linhas no arquivo "components.json" para:
 
 ```json
 {
-  "components": "@/app/components",
-  "utils": "@/app/_lib/utils"
+  "components": "@/app/_components",
+  "utils": "@/app/_lib/utils",
+  "ui": "@/app/_components/ui",
+  "lib": "@/app/_lib",
 }
 ```
 
