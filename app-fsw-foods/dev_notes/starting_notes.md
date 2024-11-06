@@ -162,3 +162,31 @@ Cria um arquivo "commit-msg" na pasta ".husky". Cole o código abaixo:
 
 .git/hooks/commit-msg $1
 ```
+
+## 9. Add prisma.ts to \_libs folder
+
+**O que é?** Permite se comunicar com o banco em tempo de desenvolvimento..
+
+Vá até a pasta "app/\_lib" e crie um arquivo chamado "prisma.ts", coloque o código abaixo e salve:
+
+```bash
+/* eslint-disable no-var */
+/* eslint-disable no-unused-vars */
+import { PrismaClient } from "@prisma/client";
+
+declare global {
+  var cachedPrisma: PrismaClient;
+}
+
+let prisma: PrismaClient;
+if (process.env.NODE_ENV === "production") {
+  prisma = new PrismaClient();
+} else {
+  if (!global.cachedPrisma) {
+    global.cachedPrisma = new PrismaClient();
+  }
+  prisma = global.cachedPrisma;
+}
+
+export const db = prisma;
+```
