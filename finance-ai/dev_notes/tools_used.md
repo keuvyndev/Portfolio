@@ -15,3 +15,15 @@ npm install -D husky@9.1.6
 npm install -D lint-staged@12.3.2
 npx husky init
 ```
+
+## Mulish font from google
+
+Abra o arquivo layout.tsx as linhas de código abaixo:
+
+```bash
+import { Inter } from 'next/font/google'
+const mulish = Mulish({
+  subsets: ['latin-ext'],
+})
+<body className={`${mulish.className}>
+```
