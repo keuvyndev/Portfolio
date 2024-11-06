@@ -1,4 +1,3 @@
-
 # Projeto Next.js - Linha de Progresso
 
 ## 1. Commands to Create App
@@ -15,7 +14,7 @@ Would you like to use Tailwind CSS with this project? √ Sim
 Would you like to use src/ directory with this project? √ Não  
 Would you like to use App Router (recommended)? √ Sim  
 Would you like to customize the default import alias? √ Sim  
-What import alias would you like configured? √ Não 
+What import alias would you like configured? √ Não
 
 ## 2. Commands to Config DB
 
@@ -67,9 +66,9 @@ npx shadcn@latest init
 
 Durante a configuração, responda conforme abaixo:
 
-* Style: Padrão  
-* Base color: Slate  
-* CSS variables for theming: Sim  
+- Style: Padrão
+- Base color: Slate
+- CSS variables for theming: Sim
 
 Adicione um componente (exemplo: card) com ShadCN UI:
 
@@ -84,18 +83,18 @@ Instale a classificação automática de classes com Prettier:
 npm install -D prettier prettier-plugin-tailwindcss --legacy-peer-deps
 ```
 
-* Coloque o arquivo ".prettierrc" na pasta raiz com o código abaixo:
+- Coloque o arquivo ".prettierrc" na pasta raiz com o código abaixo:
 
 ```json
-  {
-    "plugins": ["prettier-plugin-tailwindcss"]
-  }
+{
+  "plugins": ["prettier-plugin-tailwindcss"]
+}
 ```
 
 ## 5. Organize Project
 
 a) Mova as pastas "lib" e "components" para "app".  
-b) Todas as pastas que não contêm rotas no Next, coloque "_" como prefixo do nome da pasta.  
+b) Todas as pastas que não contêm rotas no Next, coloque "\_" como prefixo do nome da pasta.  
 c) Altere algumas linhas no arquivo "components.json" para:
 
 ```json
@@ -104,6 +103,7 @@ c) Altere algumas linhas no arquivo "components.json" para:
   "utils": "@/app/_lib/utils",
   "ui": "@/app/_components/ui",
   "lib": "@/app/_lib",
+  "hooks": "@/app/_hooks"
 }
 ```
 
@@ -111,8 +111,11 @@ d) Altere o arquivo "globals.css" para mudar as cores globais do projeto.
 
 ## 6. Install Extensions for VSCode
 
-- Tailwind CSS IntelliSense.  
+- Tailwind CSS IntelliSense.
+- Simple React Snippet.
 - Prettier - Code formatter.
+  a) É necessário configurar "Prettier - Code formatter como "default formatter" nas configurações do VSCode.
+  b) É necessário habilitar o "Format On Save" nas configurações do VSCode.
 
 ## 7. Install Git Hooks with Husky
 
@@ -120,7 +123,7 @@ O que é? Garante que o prettier e o eslint serão executados antes do commit do
 
 ```bash
 npm install -D husky lint-staged
-npx husky init
+npx husky-init
 ```
 
 Abra o arquivo "pre-commit" que foi criado na pasta raiz. Coloque o código abaixo:
@@ -135,22 +138,25 @@ Crie o arquivo ".lintstagedrc.json" na pasta raiz. Coloque o código abaixo:
 
 ```json
 {
-   "*.ts?(x)": ["eslint --fix", "prettier --write"]
+  "*.ts?(x)": ["eslint --fix", "prettier --write"]
 }
 ```
 
 **O que é? Garante que o eslint e o prettier serão chamados antes do commit do git (mas apenas em arquivos preparados).**
 
 ## 8. Install Git Commit Msg Linter
+
 **O que é?** Valida se a mensagem do commit condiz com o assunto, baseado no conventional commits.
 
 Rode o seguinte comando no terminal para instalar:
-``` bash
+
+```bash
 npm install git-commit-msg-linter --save-dev
 npx husky add .husky/commit-msg ".git/hooks/commit-msg \$1"
 ```
 
 Cria um arquivo "commit-msg" na pasta ".husky". Cole o código abaixo:
+
 ```bash
 . "$(dirname "$0")/_/husky.sh"
 
