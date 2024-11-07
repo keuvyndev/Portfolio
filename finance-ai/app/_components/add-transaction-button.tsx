@@ -13,13 +13,17 @@ import { MoneyInput } from "./money-input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
 import { TRANSACTION_CATEGORY_OPTIONS, TRANSACTION_PAYMENT_METHOD_OPTIONS, TRANSACTION_TYPE_OPTIONS } from "../_constants/transactions";
 import { DatePicker } from "./ui/date-picker";
+import { addTransaction } from "../_actions/add-transactions";
+import { useState } from "react";
 
 const formSchema = z.object({
    name: z.string().trim().min(1, {
       message: "O nome é obrigatório.",
    }),
-   amount: z.string().trim().min(1, {
-      message: "O valor é obrigatório.",
+   amount: z.number({
+      required_error: "O valor é obrigatório.",
+   }).positive({
+      message: "O valor deve ser positivo.",
    }),
    type: z.nativeEnum(TransactionType, {
       required_error: "O tipo é obrigatório.",
@@ -38,11 +42,14 @@ const formSchema = z.object({
 type FormSchema = z.infer<typeof formSchema>
 const AddTransactionButton = () => {
 
+   // Para verificar se a operação ocorreu ou está ocorrendo.
+   const [dialogIsOpen, setDiaLogIsOpen] = useState(false);
+
    const form = useForm<FormSchema>({
       resolver: zodResolver(formSchema),
       defaultValues: {
          name: "",
-         amount: "",
+         amount: 50,
          type: undefined,
          paymentMethod: undefined,
          category: undefined,
@@ -50,16 +57,24 @@ const AddTransactionButton = () => {
          //paymentMethod: TransactionPaymentMethod.CASH,
          //category: TransactionCategory.OTHER,
          date: new Date(),
-
       },
    })
 
-   const onSubmit = (data: FormSchema) => {
-      console.log(data)
+   const onSubmit = async (data: FormSchema) => {
+
+      try {
+         //console.log(data)
+         await addTransaction(data);
+         setDiaLogIsOpen(false); // Força o fechamento da janela de adição
+         form.reset(); // Reseta os dados do formulário
+      } catch (error) {
+         console.log(error);
+      }
    };
 
    return (
-      <Dialog onOpenChange={(open) => {
+      <Dialog open={dialogIsOpen} onOpenChange={(open) => {
+         setDiaLogIsOpen(open);
          if (!open) {
             form.reset(); // Reseta o formulário se ele não estiver aberto.
          }
@@ -97,7 +112,17 @@ const AddTransactionButton = () => {
                         <FormItem>
                            <FormLabel>Valor</FormLabel>
                            <FormControl>
-                              <MoneyInput placeholder="Digite o valor..." {...field} />
+                              <MoneyInput
+                                 placeholder="Digite o valor..."
+                                 value={field.value}
+
+                                 // Necessário para tratar o change do valor
+                                 onValueChange={(floatValue) =>
+                                    field.onChange(floatValue)
+                                 }
+                                 onBlur={field.onBlur}
+                                 disabled={field.disabled}
+                              />
                            </FormControl>
                            <FormMessage />
                         </FormItem>
