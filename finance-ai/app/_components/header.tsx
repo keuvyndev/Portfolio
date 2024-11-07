@@ -9,7 +9,9 @@ const Header = () => {
    return (
       <div className="items-center justify-between flex h-[72px] border-b-2 border-solid">
          <div className="px-8 gap-8 justify-start flex">
-            <Image src="/logo.svg" alt="Finance AI" width={173} height={39} />
+            <Link href="/">
+               <Image src="/logo.svg" alt="Finance AI" width={173} height={39} />
+            </Link>
             <Link href="/">
                <Button variant={"ghost"} className="text-gray-400 font-semibold hover:bg-background hover:text-primary">Dashboard</Button>
             </Link>
