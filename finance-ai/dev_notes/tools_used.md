@@ -34,8 +34,120 @@ const mulish = Mulish({
 npx shadcn@latest add button
 npx shadcn@latest add card
 npx shadcn@latest add badge
+npx shadcn@latest add dialog
+npx shadcn@latest add input
 ```
 
 ## Shadcn-DataTables
 
 Para instalação e configuração é necessário seguir o guia dispoto no site: https://ui.shadcn.com/docs/components/data-table
+
+## Shadcn-Forms
+
+Observação: Utiliza ZOD e React-form
+
+- Requer:
+
+```bash
+npx shadcn@latest add form
+npx shadcn@latest add input
+npx shadcn@latest add select
+```
+
+### Adicione um input para valores monetários:
+
+```bash
+npm install react-number-format@latest
+```
+
+Crie um arquivo chamado "money-input.tsx" na pasta "app_components" e cole o código abaixo:
+
+```bash
+import React, { forwardRef } from "react";
+import { NumericFormat, NumericFormatProps } from "react-number-format";
+
+import { Input, InputProps } from "@/app/_components/ui/input";
+
+export const MoneyInput = forwardRef(
+   (
+      props: NumericFormatProps<InputProps>,
+      ref: React.ForwardedRef<HTMLInputElement>,
+   ) => {
+      return (
+         <NumericFormat
+            {...props}
+            thousandSeparator="."
+            decimalSeparator=","
+            prefix="R$ "
+            allowNegative={false}
+            customInput={Input}
+            getInputRef={ref}
+         />
+      );
+   },
+);
+
+MoneyInput.displayName = "MoneyInput";
+```
+
+### Adicione um input para datas:
+
+```bash
+npx shadcn@latest add popover
+npx shadcn@latest add calendar
+```
+
+Crie um arquivo chamado "date-picker.tsx" na pasta "app_components\ui" e cole o código abaixo:
+
+```bash
+"use client"
+
+import * as React from "react"
+import { Calendar as CalendarIcon } from "lucide-react"
+
+import { cn } from "@/app/_lib/utils"
+import { Button } from "./button"
+import { Calendar } from "./calendar"
+import {
+   Popover,
+   PopoverContent,
+   PopoverTrigger,
+} from "./popover"
+import { SelectSingleEventHandler } from "react-day-picker"
+
+interface DatePickerProps {
+   value?: Date;
+   onChange?: SelectSingleEventHandler;
+}
+
+export const DatePicker = ({ value, onChange }: DatePickerProps) => {
+   return (
+      <Popover>
+         <PopoverTrigger asChild>
+            <Button
+               variant={"outline"}
+               className={cn(
+                  "w-full justify-start text-left font-normal",
+                  !value && "text-muted-foreground"
+               )}
+            >
+               <CalendarIcon className="mr-2 h-4 w-4" />
+               {value ? new Date(value).toLocaleDateString("pt-Br", {
+                  day: "2-digit",
+                  month: "long",
+                  year: "numeric",
+               }) : <span>Selecione uma data...</span>}
+            </Button>
+         </PopoverTrigger>
+         <PopoverContent className="w-auto p-0">
+            <Calendar
+               mode="single"
+               selected={value}
+               onSelect={onChange}
+               initialFocus
+            />
+         </PopoverContent>
+      </Popover>
+   )
+}
+```

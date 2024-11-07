@@ -1,9 +1,8 @@
 import { Metadata } from "next";
-import { Button } from "../_components/ui/button";
-import { ArrowDownUp } from "lucide-react";
 import { DataTable } from "../_components/ui/data-table";
 import { transactionColumns } from "./_columns";
 import { db } from "../_lib/prisma";
+import AddTransactionButton from "../_components/add-transaction-button";
 
 export const metadata: Metadata = {
   title: "Transação - Finance AI",
@@ -20,7 +19,7 @@ const TransactionPage = async () => {
         <div className="flex items-center justify-between">
           {/* TÍTULO */}
           <h1 className="text-2xl font-bold">Transações</h1>
-          <Button className="rounded-full font-bold"> Adicionar Transação <ArrowDownUp /></Button>
+          <AddTransactionButton />
         </div>
         <DataTable columns={transactionColumns} data={transactions} />
       </div>
