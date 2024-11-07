@@ -1,7 +1,7 @@
 import { Metadata } from "next";
-import { UserButton } from "@clerk/nextjs";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
+import Header from "./_components/header";
 
 export const metadata: Metadata = {
   title: "Resumo de Finanças - Finance AI",
@@ -16,9 +16,12 @@ const HomePage = async () => {
   }
 
   return (
-    <div className="flex h-full items-center justify-center">
-      <UserButton showName />
-    </div>
+    <>
+      <Header />
+      <div className=" p-6 space-y-6">
+        <h1>Esta á minha página de Dashboard.</h1>
+      </div>
+    </>
   );
 }
 

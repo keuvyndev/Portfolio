@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Header from "../_components/header";
 
 export const metadata: Metadata = {
   title: "Assinatura - Finance AI",
@@ -7,7 +8,12 @@ export const metadata: Metadata = {
 
 const SubscriptionPage = () => {
   return (
-    <h1>Esta á minha página de assinatura.</h1>
+    <>
+      <Header />
+      <div className=" p-6 space-y-6">
+        <h1>Esta á minha página de assinatura.</h1>
+      </div>
+    </>
   );
 }
 
