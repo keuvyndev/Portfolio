@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { ptBR } from "date-fns/locale"
-import { Calendar as CalendarIcon } from "lucide-react"
+import { CalendarDays } from "lucide-react"
 
 import { cn } from "@/app/_lib/utils"
 import { Button } from "./button"
@@ -30,7 +30,7 @@ export const DatePicker = ({ value, onChange }: DatePickerProps) => {
                   !value && "text-muted-foreground"
                )}
             >
-               <CalendarIcon className="mr-2 h-4 w-4" />
+               <CalendarDays className="mr-2 h-4 w-4" />
                {value ? new Date(value).toLocaleDateString("pt-Br", {
                   day: "2-digit",
                   month: "long",

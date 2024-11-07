@@ -51,13 +51,14 @@ const UpsertTransactionDialog = ({ isOpen, setIsOpen, transactionId, defaultValu
       resolver: zodResolver(formSchema),
       defaultValues: defaultValues ?? { // Se houver defaultValues passa o segundo defaultValues
          name: "",
-         amount: 50,
-         type: TransactionType.EXPENSE,
-         paymentMethod: TransactionPaymentMethod.CASH,
-         category: TransactionCategory.OTHER,
-         //type: undefined,
-         //paymentMethod: undefined,
-         //category: undefined,
+         amount: undefined,
+         type: undefined,
+         paymentMethod: undefined,
+         category: TransactionPaymentMethod.OTHER,
+         //amount: 50,
+         //type: TransactionType.EXPENSE,
+         //paymentMethod: TransactionPaymentMethod.OTHER,
+         //category: TransactionCategory.OTHER,
          date: new Date(),
       },
    })
@@ -85,22 +86,22 @@ const UpsertTransactionDialog = ({ isOpen, setIsOpen, transactionId, defaultValu
          <DialogTrigger asChild>
          </DialogTrigger>
          <DialogContent>
-            <DialogHeader>
-               <DialogTitle>{isUpdate ? 'Atualizar' : "Criar"} transação</DialogTitle>
+            <DialogHeader className="items-center">
+               <DialogTitle>{isUpdate ? 'Atualizar' : "Adicionar"} transação</DialogTitle>
                <DialogDescription>Insira as informações abaixo</DialogDescription>
             </DialogHeader>
 
             <Form {...form}>
-               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
                   {/*CAMPO NOME*/}
                   <FormField
                      control={form.control}
                      name="name"
                      render={({ field }) => (
                         <FormItem>
-                           <FormLabel>Nome</FormLabel>
+                           <FormLabel>Título</FormLabel>
                            <FormControl>
-                              <Input placeholder="Digite o nome..." {...field} />
+                              <Input placeholder="Título" {...field} />
                            </FormControl>
                            <FormMessage />
                         </FormItem>
@@ -115,7 +116,7 @@ const UpsertTransactionDialog = ({ isOpen, setIsOpen, transactionId, defaultValu
                            <FormLabel>Valor</FormLabel>
                            <FormControl>
                               <MoneyInput
-                                 placeholder="Digite o valor..."
+                                 placeholder="R$ 0.000,00"
                                  value={field.value}
                                  onValueChange={({ floatValue }) =>
                                     field.onChange(floatValue)
@@ -134,40 +135,15 @@ const UpsertTransactionDialog = ({ isOpen, setIsOpen, transactionId, defaultValu
                      name="type"
                      render={({ field }) => (
                         <FormItem>
-                           <FormLabel>Tipo</FormLabel>
+                           <FormLabel>Tipo da transação</FormLabel>
                            <Select onValueChange={field.onChange} defaultValue={field.value}>
                               <FormControl>
-                                 <SelectTrigger className={field.value ? "" : "text-gray-400"}>
-                                    <SelectValue placeholder="Selecione o tipo de transação..." />
+                                 <SelectTrigger>
+                                    <SelectValue placeholder="Selecione" />
                                  </SelectTrigger>
                               </FormControl>
                               <SelectContent>
                                  {TRANSACTION_TYPE_OPTIONS.map(option => (
-                                    <SelectItem key={option.value} value={option.value}>
-                                       {option.label}
-                                    </SelectItem>
-                                 ))}
-                              </SelectContent>
-                           </Select>
-                           <FormMessage />
-                        </FormItem>
-                     )}
-                  />
-                  {/*CAMPO CATEGORIAS*/}
-                  <FormField
-                     control={form.control}
-                     name="category"
-                     render={({ field }) => (
-                        <FormItem>
-                           <FormLabel>Categoria</FormLabel>
-                           <Select onValueChange={field.onChange} defaultValue={field.value}>
-                              <FormControl>
-                                 <SelectTrigger className={field.value ? "" : "text-gray-400"}>
-                                    <SelectValue placeholder="Selecione a categoria..." />
-                                 </SelectTrigger>
-                              </FormControl>
-                              <SelectContent>
-                                 {TRANSACTION_CATEGORY_OPTIONS.sort().map(option => (
                                     <SelectItem key={option.value} value={option.value}>
                                        {option.label}
                                     </SelectItem>
@@ -187,12 +163,37 @@ const UpsertTransactionDialog = ({ isOpen, setIsOpen, transactionId, defaultValu
                            <FormLabel>Método de Pagamento</FormLabel>
                            <Select onValueChange={field.onChange} defaultValue={field.value}>
                               <FormControl>
-                                 <SelectTrigger className={field.value ? "" : "text-gray-400"}>
-                                    <SelectValue placeholder="Selecione o método de pagamento..." />
+                                 <SelectTrigger>
+                                    <SelectValue placeholder="Selecione" />
                                  </SelectTrigger>
                               </FormControl>
                               <SelectContent>
                                  {TRANSACTION_PAYMENT_METHOD_OPTIONS.map(option => (
+                                    <SelectItem key={option.value} value={option.value}>
+                                       {option.label}
+                                    </SelectItem>
+                                 ))}
+                              </SelectContent>
+                           </Select>
+                           <FormMessage />
+                        </FormItem>
+                     )}
+                  />
+                  {/*CAMPO CATEGORIAS*/}
+                  <FormField
+                     control={form.control}
+                     name="category"
+                     render={({ field }) => (
+                        <FormItem>
+                           <FormLabel>Categoria</FormLabel>
+                           <Select onValueChange={field.onChange} defaultValue={field.value}>
+                              <FormControl>
+                                 <SelectTrigger>
+                                    <SelectValue placeholder="Selecione" />
+                                 </SelectTrigger>
+                              </FormControl>
+                              <SelectContent>
+                                 {TRANSACTION_CATEGORY_OPTIONS.sort().map(option => (
                                     <SelectItem key={option.value} value={option.value}>
                                        {option.label}
                                     </SelectItem>
