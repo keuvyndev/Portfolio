@@ -52,12 +52,12 @@ const UpsertTransactionDialog = ({ isOpen, setIsOpen, transactionId, defaultValu
       defaultValues: defaultValues ?? { // Se houver defaultValues passa o segundo defaultValues
          name: "",
          amount: 50,
-         type: undefined,
-         paymentMethod: undefined,
-         category: undefined,
-         //type: TransactionType.EXPENSE,
-         //paymentMethod: TransactionPaymentMethod.CASH,
-         //category: TransactionCategory.OTHER,
+         type: TransactionType.EXPENSE,
+         paymentMethod: TransactionPaymentMethod.CASH,
+         category: TransactionCategory.OTHER,
+         //type: undefined,
+         //paymentMethod: undefined,
+         //category: undefined,
          date: new Date(),
       },
    })
@@ -117,9 +117,7 @@ const UpsertTransactionDialog = ({ isOpen, setIsOpen, transactionId, defaultValu
                               <MoneyInput
                                  placeholder="Digite o valor..."
                                  value={field.value}
-
-                                 // Necessário para tratar o change do valor
-                                 onValueChange={(floatValue) =>
+                                 onValueChange={({ floatValue }) =>
                                     field.onChange(floatValue)
                                  }
                                  onBlur={field.onBlur}

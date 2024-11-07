@@ -57,7 +57,7 @@ npx shadcn@latest add select
 ### Adicione um input para valores monetários:
 
 ```bash
-npm install react-number-format@latest
+npm install react-number-format@5.4.2
 ```
 
 Crie um arquivo chamado "money-input.tsx" na pasta "app_components" e cole o código abaixo:

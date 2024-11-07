@@ -5,7 +5,7 @@ import { db } from "../_lib/prisma";
 import AddTransactionButton from "../_components/add-transaction-button";
 
 export const metadata: Metadata = {
-  title: "Transação - Finance AI",
+  title: "Transações - Finance AI",
 }
 
 const TransactionPage = async () => {
