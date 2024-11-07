@@ -27,3 +27,15 @@ const mulish = Mulish({
 })
 <body className={`${mulish.className}>
 ```
+
+## Shadcn
+
+```bash
+npx shadcn@latest add button
+npx shadcn@latest add card
+npx shadcn@latest add badge
+```
+
+## Shadcn-DataTables
+
+Para instalação e configuração é necessário seguir o guia dispoto no site: https://ui.shadcn.com/docs/components/data-table
