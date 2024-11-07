@@ -7,11 +7,12 @@ import {
   TransactionPaymentMethod,
   TransactionType,
 } from "@prisma/client";
-import { addTransactionSchema } from "./schema";
+import { upsertTransactionSchema } from "./schema";
 import { revalidatePath } from "next/cache";
 
 // Definindo interface da operação
-interface AddTransactionParams {
+interface UpsertTransactionParams {
+  id?: string; // Recebe apenas se for uma atualização, por isso é "opcional".
   name: string;
   amount: number;
   type: TransactionType;
@@ -20,9 +21,9 @@ interface AddTransactionParams {
   date: Date;
 }
 
-export const addTransaction = async (params: AddTransactionParams) => {
+export const upsertTransaction = async (params: UpsertTransactionParams) => {
   // Validação a operação
-  addTransactionSchema.parse(params);
+  upsertTransactionSchema.parse(params);
 
   // Captura o userId do usuário para efetuar a adição
   const { userId } = await auth();
@@ -30,8 +31,16 @@ export const addTransaction = async (params: AddTransactionParams) => {
     throw new Error("Unauthorized");
   }
 
-  await db.transaction.create({
-    data: { ...params, userId },
+  /* Faz uma operação condicional
+  1. Se no banco houver uma ID igual a id que recebeu: Faz um UPDATE atualizando tudo.
+  2. Se não: Cria um novo usando todos os parâmetros.
+  */
+  await db.transaction.upsert({
+    where: {
+      id: params.id,
+    },
+    update: { ...params, userId },
+    create: { ...params, userId },
   });
 
   //Forçar recarregamento da página
