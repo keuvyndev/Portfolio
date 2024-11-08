@@ -36,7 +36,7 @@ const ProductDetails = ({ product, complemenataryProcuts }: ProductDetailsProps)
       });
 
    return (
-      <div className="py-5">
+      <div className="relative z-50 py-5 mt-[-1.5rem] rounded-tl-3xl rounded-tr-3xl bg-white">
          {/* RESTAURANTE */}
          <div className="flex items-center gap-[0.375rem] px-5">
             <div className="relative h-6 w-6">
