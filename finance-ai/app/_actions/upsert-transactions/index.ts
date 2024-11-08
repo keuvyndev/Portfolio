@@ -35,19 +35,13 @@ export const upsertTransaction = async (params: UpsertTransactionParams) => {
   1. Se no banco houver uma ID igual a id que recebeu: Faz um UPDATE atualizando tudo.
   2. Se não: Cria um novo usando todos os parâmetros.
   */
-  if (params.id) {
-    // Usa `upsert` apenas se `id` está definido
-    await db.transaction.upsert({
-      where: { id: params.id },
-      update: { ...params, userId },
-      create: { ...params, userId },
-    });
-  } else {
-    // Se `id` está ausente, cria um novo registro
-    await db.transaction.create({
-      data: { ...params, userId },
-    });
-  }
+  await db.transaction.upsert({
+    update: { ...params, userId },
+    create: { ...params, userId },
+    where: {
+      id: params?.id ?? "",
+    },
+  });
 
   //Forçar recarregamento da página
   revalidatePath("/transactions");

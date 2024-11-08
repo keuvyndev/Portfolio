@@ -10,7 +10,7 @@ import { z } from "zod"
 import { TransactionCategory, TransactionPaymentMethod, TransactionType } from "@prisma/client";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { upsertTransaction } from "../_actions/add-transactions";
+import { upsertTransaction } from "../_actions/upsert-transactions";
 
 type FormSchema = z.infer<typeof formSchema>
 
