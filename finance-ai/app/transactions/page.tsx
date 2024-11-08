@@ -4,6 +4,8 @@ import { transactionColumns } from "./_columns";
 import { db } from "../_lib/prisma";
 import AddTransactionButton from "../_components/add-transaction-button";
 import Navbar from "../_components/navbar";
+import { auth } from "@clerk/nextjs/server";
+import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Transações - Finance AI",
@@ -11,8 +13,19 @@ export const metadata: Metadata = {
 
 const TransactionPage = async () => {
 
-  // acessar as transações do banco
-  const transactions = await db.transaction.findMany({})
+  // Se o usuário não estiver logado, deve ser redirecionado para homepage
+  const { userId } = await auth()
+  if (!userId) {
+    redirect("/login")
+  }
+
+  // acessar as transações do banco: retorna somente as transações do usuário logado.
+  const transactions = await db.transaction.findMany({
+    where: {
+      userId,
+    }
+  });
+
 
   return (
     <>
