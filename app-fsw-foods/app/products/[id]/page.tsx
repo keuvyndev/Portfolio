@@ -1,11 +1,6 @@
-import { Button } from "@/app/_components/ui/button";
-import { calculateProductTotalPrice, formatCurrency } from "@/app/_helpers/price";
 import { db } from "@/app/_lib/prisma";
-import { ArrowDownIcon, ChevronLeftIcon } from "lucide-react";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import ProductImage from "./_components/product-image";
-import DiscountBadge from "@/app/_components/discount_badge";
 import ProductDetails from "./_components/product-details";
 
 interface ProductPageProps {
@@ -26,21 +21,24 @@ const ProductsPage = async ({ params: { id } }: ProductPageProps) => {
       }
    });
 
+   if (!product) {
+      return notFound();
+   }
+
    // Busca os dados de todos os sucos
    const juices = await db.product.findMany({
       where: {
          category: {
             name: 'Sucos',
          },
+         restaurant: {
+            id: product?.restaurantId
+         }
       },
       include: {
          restaurant: true,
       }
    });
-
-   if (!product) {
-      return notFound();
-   }
 
    return (
       <div>

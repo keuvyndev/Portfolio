@@ -18,17 +18,17 @@ const Home = async () => {
 
   const products = await db.product.findMany({
     where: {
-       discountPercent: {
-          gt:0,
-       }
+      discountPercent: {
+        gt: 0,
+      }
     },
     take: 10,
     include: {
-       restaurant: {
-          select: {
-             name: true,
-          }
-       }
+      restaurant: {
+        select: {
+          name: true,
+        }
+      }
     }
   });
 
