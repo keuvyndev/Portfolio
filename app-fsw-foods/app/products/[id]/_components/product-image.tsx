@@ -4,7 +4,7 @@ import { Button } from "@/app/_components/ui/button";
 import { Product } from "@prisma/client";
 import { ChevronLeftIcon } from "lucide-react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 
 interface ProductImageProps {
    product: Pick<Product, 'name' | 'imageUrl'>
@@ -13,7 +13,7 @@ interface ProductImageProps {
 const ProductImage = ({ product }: ProductImageProps) => {
 
    const router = useRouter();
-   const handleBackClick = () => router.back();
+   const handleBackClick = () => redirect("/");
 
    return (
       <>
