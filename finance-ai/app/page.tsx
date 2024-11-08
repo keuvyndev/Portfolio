@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
-import Header from "./_components/header";
+import Navbar from "./_components/navbar";
 
 export const metadata: Metadata = {
   title: "Resumo de Finanças - Finance AI",
@@ -17,7 +17,7 @@ const HomePage = async () => {
 
   return (
     <>
-      <Header />
+      <Navbar />
       <div className=" p-6 space-y-6">
         <h1>Esta á minha página de Dashboard.</h1>
       </div>
