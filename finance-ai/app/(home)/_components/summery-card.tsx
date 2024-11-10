@@ -7,13 +7,21 @@ interface SummeryCardProps {
    title: string;
    amount: number;
    size?: "small" | "large";
+   typebg?: "high-gray" | "medium-gray" | "";
 }
 
-const SummeryCard = async ({ icon, title, amount, size = "small" }: SummeryCardProps) => {
+const SummeryCard = async ({ icon, title, amount, size = "small", typebg = "" }: SummeryCardProps) => {
 
    return (
       <>
-         <Card>
+         <Card
+            className={`${typebg === "high-gray"
+               ? "bg-white bg-opacity-10"
+               : typebg === "medium-gray"
+                  ? "bg-[#1F1F21]"
+                  : ""
+               }`}
+         >
             <CardHeader className="flex-row items-center gap-4">
                {icon}
                <p

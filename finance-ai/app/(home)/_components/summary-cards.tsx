@@ -1,36 +1,16 @@
 import { PiggyBankIcon, TrendingDownIcon, TrendingUpIcon, WalletIcon } from "lucide-react";
 import SummeryCard from "./summery-card";
-import { db } from "@/app/_lib/prisma";
 
 interface SummaryCardsProps {
-   month: string;
+   month: string
+   balance: number;
+   depositsTotal: number;
+   investmentsTotal: number,
+   expensesTotal: number,
 }
 
-const SummaryCards = async ({ month }: SummaryCardsProps) => {
+const SummaryCards = async ({ balance, depositsTotal, investmentsTotal, expensesTotal }: SummaryCardsProps) => {
 
-   const where = { // Inclui validação do mês.
-      date: {
-         gte: new Date(`2024-${month}-01`),
-         lt: new Date(`2024-${month}-31`),
-      },
-   }
-
-   const depositsTotal = Number((await db.transaction.aggregate({ // Retorna o somátorio de depósitos encontrados no banco
-      where: { ...where, type: "DEPOSIT" },
-      _sum: { amount: true },
-   }))._sum?.amount);
-
-   const investmentsTotal = Number((await db.transaction.aggregate({ // Retorna o somátorio de investimentos encontrados no banco
-      where: { ...where, type: "INVESTMENT" },
-      _sum: { amount: true },
-   }))._sum?.amount);
-
-   const expensesTotal = Number((await db.transaction.aggregate({ // Retorna o somátorio de gastos encontrados no banco
-      where: { ...where, type: "EXPENSE" },
-      _sum: { amount: true },
-   }))._sum?.amount);
-
-   const balance = depositsTotal - expensesTotal - investmentsTotal;
 
    return (
       <div className="space-y-6">
@@ -40,6 +20,7 @@ const SummaryCards = async ({ month }: SummaryCardsProps) => {
             title={"Saldo"}
             amount={balance}
             size="large"
+            typebg="high-gray"
          />
 
          {/* OUTROS CARDS */}
@@ -48,6 +29,7 @@ const SummaryCards = async ({ month }: SummaryCardsProps) => {
                icon={<PiggyBankIcon size={16} />}
                title={"Investido"}
                amount={investmentsTotal}
+               typebg="medium-gray"
             />
 
             <SummeryCard
