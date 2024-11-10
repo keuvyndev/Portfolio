@@ -35,13 +35,13 @@ const SummaryCards = async ({ balance, depositsTotal, investmentsTotal, expenses
             <SummeryCard
                icon={<TrendingDownIcon className="text-primary" size={16} />}
                title={"Receita"}
-               amount={expensesTotal}
+               amount={depositsTotal}
             />
 
             <SummeryCard
                icon={<TrendingUpIcon className="text-red-500" size={16} />}
                title={"Despesas"}
-               amount={depositsTotal}
+               amount={expensesTotal}
             />
          </div>
       </div >

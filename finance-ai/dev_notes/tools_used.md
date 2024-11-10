@@ -96,6 +96,8 @@ MoneyInput.displayName = "MoneyInput";
 npx shadcn@latest add popover
 npx shadcn@latest add calendar
 npx shadcn@latest add chart
+npx shadcn@latest add scroll-area
+npx shadcn@latest add progress
 ```
 
 Crie um arquivo chamado "date-picker.tsx" na pasta "app_components\ui" e cole o código abaixo:
