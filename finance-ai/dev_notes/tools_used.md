@@ -154,3 +154,12 @@ export const DatePicker = ({ value, onChange }: DatePickerProps) => {
    )
 }
 ```
+
+# Stripe
+
+Função: Obter pagamento de produtos (planos da aplicação)
+
+```bash
+npm install stripe@latest
+npm install @stripe/stripe-js@latest
+```
