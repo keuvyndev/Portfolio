@@ -182,3 +182,32 @@ stripe listen --forward-to http://localhost:3000/api/webhooks/stripe
 Put the new secret key in file route.ts and .env
 
 More informations in website: https://dashboard.stripe.com/
+
+# OpenAI - ChatGPT
+
+Instale a lib com o código abaixo:
+
+```bash
+npm i openai@latest
+```
+
+# React Markdown (Para apresentar o relatório da IA)
+
+Instale a lib com o código abaixo:
+
+```bash
+npm i react-markdown@latest
+npm install -D @tailwindcss/typography@latest
+```
+
+Após instalar, abre o arquivo "tailwind.config.ts" e deixe esta linha:
+
+```bash
+  plugins: [require("tailwindcss-animate")
+```
+
+Assim:
+
+```bash
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
+```

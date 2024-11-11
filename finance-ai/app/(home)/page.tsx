@@ -10,6 +10,7 @@ import { getDashboard } from "../_data/get-dashboard";
 import ExpensesPerCategory from "./_components/expenses-per-category";
 import LastTransactions from "./_components/last-transactions";
 import { canUserAddTransactions } from "../_data/can-user-add-transactions";
+import AiReportButton from "./_components/ai-report-button";
 
 export const metadata: Metadata = {
   title: "Resumo de Finanças - Finance AI",
@@ -44,7 +45,10 @@ const HomePage = async ({ searchParams: { month } }: HomeProps) => {
       <div className="p-6 space-y-6 flex flex-col overflow-hidden">
         <div className="flex justify-between">
           <h1 className="text-2xl font-bold">Dashboard</h1>
-          <TimeSelect />
+          <div className="flex items-center gap-3">
+            <AiReportButton month={month} />
+            <TimeSelect />
+          </div>
         </div>
         <div className="grid grid-cols-[2fr,1fr] gap-6 overflow-hidden">
           <div className="flex flex-col gap-6 overflow-hidden">
