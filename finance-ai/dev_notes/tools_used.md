@@ -163,3 +163,21 @@ Função: Obter pagamento de produtos (planos da aplicação)
 npm install stripe@latest
 npm install @stripe/stripe-js@latest
 ```
+
+- Need to use webhooks (Destiny Events) to receive sucess payments. To this, config Stripe CLI and execute below codes:
+
+```bash
+stripe login
+```
+
+Now, create route with file "route.ts" in "app/api/webhooks/Stripe", and put the below code:
+
+Now execute this commands:
+
+```bash
+stripe listen --forward-to http://localhost:3000/api/webhooks/stripe
+```
+
+Put the new secret key in file route.ts and .env
+
+More informations in website: https://dashboard.stripe.com/

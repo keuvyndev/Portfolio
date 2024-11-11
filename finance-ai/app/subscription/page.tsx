@@ -1,11 +1,11 @@
 import { Metadata } from "next";
 import Navbar from "../_components/navbar";
-import { auth } from "@clerk/nextjs/server";
+import { auth, clerkClient } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { Card, CardContent, CardHeader } from "../_components/ui/card";
 import { CheckIcon, XIcon } from "lucide-react";
-import { Button } from "../_components/ui/button";
 import AcquirePlanButton from "./_components/acquire-plan-button";
+import { Badge } from "../_components/ui/badge";
 
 export const metadata: Metadata = {
   title: "Assinatura - Finance AI",
@@ -20,7 +20,8 @@ const SubscriptionPage = async () => {
     redirect("/login")
   }
 
-
+  const user = await (await clerkClient()).users.getUser(userId)
+  const hasPremiumPlano = user.publicMetadata.subscriptionPlan == "premium";
 
   return (
     <>
@@ -30,8 +31,11 @@ const SubscriptionPage = async () => {
         <div className="flex gap-6">
           {/* PLANO FREE */}
           <Card className="w-[450px]">
-            <CardHeader className="border-b border-solid py-8">
-              <h2 className="font-semibold text-center text-2xl">Plano Básico</h2>
+            <CardHeader className="border-b border-solid py-8 relative">
+              {!hasPremiumPlano && (
+                <Badge className="absolute left-16 top-12 bg-primary/10 text-primary">Ativo</Badge>
+              )}
+              < h2 className="font-semibold text-center text-2xl">Plano Básico</h2>
               <div className="flex items-center gap-3 justify-center">
                 <span className="4-xl">R$</span>
                 <span className="font-semibold text-6xl">0</span>
@@ -52,7 +56,10 @@ const SubscriptionPage = async () => {
 
           {/* PLANO PRO */}
           <Card className="w-[450px]">
-            <CardHeader className="border-b border-solid py-8">
+            <CardHeader className="border-b border-solid py-8 relative">
+              {hasPremiumPlano && (
+                <Badge className="absolute left-16 top-12 bg-primary/10 text-primary">Ativo</Badge>
+              )}
               <h2 className="font-semibold text-center text-2xl">Plano Premium</h2>
               <div className="flex items-center gap-3 justify-center">
                 <span className="4-xl">R$</span>
@@ -73,7 +80,7 @@ const SubscriptionPage = async () => {
             </CardContent>
           </Card>
         </div>
-      </div>
+      </div >
     </>
   );
 }

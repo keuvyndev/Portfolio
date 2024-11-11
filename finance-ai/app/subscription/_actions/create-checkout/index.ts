@@ -4,7 +4,8 @@ import { auth } from "@clerk/nextjs/server";
 import Stripe from "stripe";
 
 export const createStripeCheckout = async () => {
-  const userId = await auth();
+  const { userId } = await auth();
+
   if (!userId) {
     throw new Error("Unauthorized");
   }
