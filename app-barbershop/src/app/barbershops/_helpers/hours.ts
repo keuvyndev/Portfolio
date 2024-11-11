@@ -1,29 +1,36 @@
-import { setHours, setMinutes, format, addMinutes } from "date-fns";
-import { addHours } from "date-fns/addHours";
+import {
+  setHours,
+  setMinutes,
+  format,
+  addMinutes,
+  isAfter,
+  max,
+} from "date-fns";
 
 // Gera uma lista de horários com base em uma data.
-
-// Garante que só podem ser feitos agendamentos a partir de 1 hora a frente.
-const hourNow = addHours(new Date().getTime(), 1).getHours();
+// Define o horário de início com base na hora atual, limitado ao máximo de 21:00.
 
 export function generateDayTimeList(date: Date): string[] {
-    
-   // Set start time to 09:00
-    const startTime = setMinutes(setHours(date, hourNow), 0);
-    
-    // Set end time to 21:00
-    const endTime = setMinutes(setHours(date, 21), 0);
-    
-    // Interval in minutes
-    const interval = 45;
-    const timeList: string[] = [];
+  // Horário de abertura da barbearia (09:00) e fechamento (21:00)
+  const openingTime = setMinutes(setHours(date, 9), 0);
+  const closingTime = setMinutes(setHours(date, 21), 0);
 
-    let currentTime = startTime;
+  // Horário de início é o máximo entre a hora atual mais uma hora ou o horário de abertura
+  const startTime = max([openingTime, addMinutes(new Date(), 60)]);
 
-    while (currentTime < endTime) {
-        timeList.push(format(currentTime, "HH:mm"));
-        currentTime = addMinutes(currentTime, interval);
-    }
+  // Intervalo em minutos
+  const interval = 45;
+  const timeList: string[] = [];
+  let currentTime = startTime;
 
-    return timeList;
+  // Gera a lista de horários até o horário de fechamento
+  while (
+    isAfter(closingTime, currentTime) ||
+    currentTime.getTime() === closingTime.getTime()
+  ) {
+    timeList.push(format(currentTime, "HH:mm"));
+    currentTime = addMinutes(currentTime, interval);
+  }
+
+  return timeList;
 }
