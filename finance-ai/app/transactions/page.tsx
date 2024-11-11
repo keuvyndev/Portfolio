@@ -6,6 +6,7 @@ import AddTransactionButton from "../_components/add-transaction-button";
 import Navbar from "../_components/navbar";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
+import { canUserAddTransactions } from "../_data/can-user-add-transactions";
 
 export const metadata: Metadata = {
   title: "Transações - Finance AI",
@@ -26,6 +27,7 @@ const TransactionPage = async () => {
     }
   });
 
+  const canUserAddTransaction = await canUserAddTransactions();
 
   return (
     <>
@@ -34,7 +36,7 @@ const TransactionPage = async () => {
         <div className="flex items-center justify-between">
           {/* TÍTULO */}
           <h1 className="text-2xl font-bold">Transações</h1>
-          <AddTransactionButton />
+          <AddTransactionButton userCanAddTransaction={canUserAddTransaction} />
         </div>
         <DataTable columns={transactionColumns} data={transactions} />
       </div>

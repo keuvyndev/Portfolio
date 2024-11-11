@@ -52,6 +52,7 @@ Observação: Utiliza ZOD e React-form
 npx shadcn@latest add form
 npx shadcn@latest add input
 npx shadcn@latest add select
+npx shadcn@latest add tooltip
 ```
 
 ### Adicione um input para valores monetários:

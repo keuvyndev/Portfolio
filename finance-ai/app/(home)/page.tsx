@@ -9,6 +9,7 @@ import TransactionPieChart from "./_components/transactions-pie-chart";
 import { getDashboard } from "../_data/get-dashboard";
 import ExpensesPerCategory from "./_components/expenses-per-category";
 import LastTransactions from "./_components/last-transactions";
+import { canUserAddTransactions } from "../_data/can-user-add-transactions";
 
 export const metadata: Metadata = {
   title: "Resumo de Finanças - Finance AI",
@@ -35,6 +36,7 @@ const HomePage = async ({ searchParams: { month } }: HomeProps) => {
   }
 
   const dashboard_data = await getDashboard(month);
+  const userCanAddTransaction = await canUserAddTransactions()
 
   return (
     <>
@@ -46,7 +48,7 @@ const HomePage = async ({ searchParams: { month } }: HomeProps) => {
         </div>
         <div className="grid grid-cols-[2fr,1fr] gap-6 overflow-hidden">
           <div className="flex flex-col gap-6 overflow-hidden">
-            <SummaryCards month={month} {...dashboard_data}
+            <SummaryCards month={month} {...dashboard_data} userCanAddTransactions={userCanAddTransaction}
             //balance={dashboard_data.balance}
             //investmentsTotal={dashboard_data.investmentsTotal}
             //expensesTotal={dashboard_data.expensesTotal}

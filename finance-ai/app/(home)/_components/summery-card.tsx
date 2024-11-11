@@ -8,9 +8,10 @@ interface SummeryCardProps {
    amount: number;
    size?: "small" | "large";
    typebg?: "high-gray" | "medium-gray" | "";
+   userCanAddTransactions?: boolean;
 }
 
-const SummeryCard = async ({ icon, title, amount, size = "small", typebg = "" }: SummeryCardProps) => {
+const SummeryCard = async ({ icon, title, amount, size = "small", typebg = "", userCanAddTransactions }: SummeryCardProps) => {
 
    return (
       <>
@@ -45,7 +46,7 @@ const SummeryCard = async ({ icon, title, amount, size = "small", typebg = "" }:
                   }</p>
 
                {size === 'large' && (
-                  <AddTransactionButton />
+                  <AddTransactionButton userCanAddTransaction={userCanAddTransactions} />
                )}
             </CardContent>
          </Card>
