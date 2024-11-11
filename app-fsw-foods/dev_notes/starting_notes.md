@@ -175,6 +175,7 @@ Vá até a pasta "app/\_lib" e crie um arquivo chamado "prisma.ts", coloque o c�
 import { PrismaClient } from "@prisma/client";
 
 declare global {
+  // eslint-disable-next-line no-var
   var cachedPrisma: PrismaClient;
 }
 
@@ -189,4 +190,10 @@ if (process.env.NODE_ENV === "production") {
 }
 
 export const db = prisma;
+```
+
+Agora instale a biblioteca com o comando abaixo:
+
+```bash
+npm install @prisma/client@5.20.1
 ```
