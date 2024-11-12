@@ -24,6 +24,9 @@ const TransactionPage = async () => {
   const transactions = await db.transaction.findMany({
     where: {
       userId,
+    },
+    orderBy: {
+      date: "desc",
     }
   });
 
@@ -38,7 +41,8 @@ const TransactionPage = async () => {
           <h1 className="text-2xl font-bold">Transações</h1>
           <AddTransactionButton userCanAddTransaction={canUserAddTransaction} />
         </div>
-        <DataTable columns={transactionColumns} data={transactions} />
+        {/* JSON.parse(JSON.stringify(transactions) foi usado para retirar o warning do decimal */}
+        <DataTable columns={transactionColumns} data={JSON.parse(JSON.stringify(transactions))} />
       </div>
     </>
   );
