@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: fswfoods-db-postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - '5432:5432'
+    volumes:
+      - ./.postgres-data:/var/lib/postgresql/data
+      - ./init:/docker-entrypoint-initdb.d
+
+## Commands
+# Start Container: docker-compose up -d
+# Acess Container: docker exec -it barber-db-postgres psql -U postgres
+# Show DBs: \l
+# Access DB: \c postgres
+# Show Tables: \dt
+# Describle Table: \d table_name
+# Consult Table: SELECT * FROM table_name
+# To leave: \q
