@@ -19,10 +19,9 @@ This repository serves as a hub for my most significant projects. Here, you’ll
 
 Here are some of the applications I have developed and are available for access:
 
-| Application Name      | Link                                           | Description                                                                              |
-|-----------------------|------------------------------------------------|----------------------------------------------------------------------------------------|
-| **app-barbershop**    | [barbershop-app-gamma.vercel.app](https://barbershop-app-gamma.vercel.app/) | A platform that connects users to barbershops, allowing for service searches and bookings. |
-
+| Application Name   | Link                                                                        | Description                                                                                |
+| ------------------ | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| **app-barbershop** | [barbershop-app-gamma.vercel.app](https://barbershop-app-gamma.vercel.app/) | A platform that connects users to barbershops, allowing for service searches and bookings. |
 
 ---
 
@@ -47,6 +46,7 @@ Este repositório serve como um hub para meus projetos mais significativos. Aqui
 
 Aqui estão algumas das aplicações que desenvolvi e que estão disponíveis para acesso:
 
-| Nome da Aplicação     | Link                                           | Descrição                                                                              |
-|-----------------------|------------------------------------------------|----------------------------------------------------------------------------------------|
-| **app-barbershop**    | [barbershop-app-gamma.vercel.app](https://barbershop-app-gamma.vercel.app/) | Uma plataforma que conecta usuários a barbearias, permitindo busca e agendamento de serviços. |
+| Nome da Aplicação      | Link                                                                                       | Descrição                                                                                                                                                            |
+| ---------------------- | ------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **app-barbershop**     | [barbershop-app-gamma.vercel.app](https://barbershop-app-gamma.vercel.app/)                | Uma plataforma que conecta usuários a barbearias, permitindo busca e agendamento de serviços.                                                                        |
+| **desktop-finance-ai** | [finance-ai.vercel.app](https://portfolio-53przr4s2-keuvyn-teixeiras-projects.vercel.app/) | Uma plataforma que permite gerenciar e visualizar suas finanças, além de gerar relatórios com inteligencia artifical para obter dicas e insights de suas transações. |
