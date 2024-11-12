@@ -7,6 +7,7 @@ import Navbar from "../_components/navbar";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { canUserAddTransactions } from "../_data/can-user-add-transactions";
+import { ScrollArea } from "../_components/ui/scroll-area";
 
 export const metadata: Metadata = {
   title: "Transações - Finance AI",
@@ -24,6 +25,9 @@ const TransactionPage = async () => {
   const transactions = await db.transaction.findMany({
     where: {
       userId,
+    },
+    orderBy: {
+      date: "desc",
     }
   });
 
@@ -32,13 +36,18 @@ const TransactionPage = async () => {
   return (
     <>
       <Navbar />
-      <div className=" p-6 space-y-6">
-        <div className="flex items-center justify-between">
-          {/* TÍTULO */}
+      <div className=" p-6 space-y-6 overflow-hidden flex flex-col">
+        <div className="flex items-center justify-between w-full">
+          {/* TÍTULO E BOTÃO */}
           <h1 className="text-2xl font-bold">Transações</h1>
           <AddTransactionButton userCanAddTransaction={canUserAddTransaction} />
         </div>
-        <DataTable columns={transactionColumns} data={transactions} />
+        {/* JSON.parse(JSON.stringify(transactions) foi usado para retirar o warning do decimal */}
+        <ScrollArea className="h-full">
+          <DataTable
+            columns={transactionColumns}
+            data={JSON.parse(JSON.stringify(transactions))} />
+        </ScrollArea>
       </div>
     </>
   );
