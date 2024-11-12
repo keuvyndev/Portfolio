@@ -183,35 +183,14 @@ const ServiceItem = ({ service, isAuthenticated, barbershop }: ServiceItemProps)
                               <SheetTitle>Fazer Reserva</SheetTitle>
                            </SheetHeader>
 
-                           <div className="py-6 w-full min-w-[320px] max-w-[100vw]">
+                           <div className="py-2">
                               <Calendar
                                  mode="single"
                                  selected={date}
                                  onSelect={handleDateClick}
                                  locale={ptBR}
                                  fromDate={addDays(new Date(), 1)}
-                                 styles={{
-                                    head_cell: {
-                                       width: "100%",
-                                    },
-                                    button: {
-                                       width: "100%",
-                                    },
-                                    cell: {
-                                       width: "100%",
-                                    },
-                                    nav_button_previous: {
-                                       width: "32px",
-                                       height: "32px",
-                                    },
-                                    nav_button_next: {
-                                       width: "32px",
-                                       height: "32px",
-                                    },
-                                    caption: {
-                                       textTransform: "capitalize",
-                                    },
-                                 }}
+                                 className="w-full" // Forçando o Calendar a ocupar toda a largura
                               />
                            </div>
 
