@@ -1,28 +1,21 @@
-//ROUTE: localhost:3000/api/webhooks/stripe
-
-//Atualiza o plano do usuário
-
 import { clerkClient } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
 
 export const POST = async (request: Request) => {
-  if (!process.env.STRIPE_SECRET_KEY || !process.env.STRIPE_WEBHOOK_SECRET) {
-    return NextResponse.error(); // Retorna o erro na rota
-  }
+  //ROUTE: localhost:3000/api/webhooks/stripe
 
+  if (!process.env.STRIPE_SECRET_KEY || !process.env.STRIPE_WEBHOOK_SECRET) {
+    return NextResponse.error();
+  }
   const signature = request.headers.get("stripe-signature");
   if (!signature) {
     return NextResponse.error();
   }
-
   const text = await request.text();
-
   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
     apiVersion: "2024-10-28.acacia",
   });
-
-  //Garante que a chamada é do stripe
   const event = stripe.webhooks.constructEvent(
     text,
     signature,
@@ -31,17 +24,16 @@ export const POST = async (request: Request) => {
 
   switch (event.type) {
     case "invoice.paid": {
-      // Atualizar o usuário com o novo plano.
+      // Atualizar o usuário com o seu novo plano
       const { customer, subscription, subscription_details } =
         event.data.object;
       const clerkUserId = subscription_details?.metadata?.clerk_user_id;
-      console.log(clerkUserId);
       if (!clerkUserId) {
-        return NextResponse.error(); // Retorna o erro na rota
+        return NextResponse.error();
       }
-
-      //Insere informações do plano nos dados do usuário gerenciados pelo clerk
-      (await clerkClient()).users.updateUser(clerkUserId, {
+      await (
+        await clerkClient()
+      ).users.updateUser(clerkUserId, {
         privateMetadata: {
           stripeCustomerId: customer,
           stripeSubscriptionId: subscription,
@@ -61,18 +53,18 @@ export const POST = async (request: Request) => {
       if (!clerkUserId) {
         return NextResponse.error();
       }
-
-      (await clerkClient()).users.updateUser(clerkUserId, {
+      await (
+        await clerkClient()
+      ).users.updateUser(clerkUserId, {
         privateMetadata: {
           stripeCustomerId: null,
           stripeSubscriptionId: null,
         },
         publicMetadata: {
-          subscriptionPlano: null,
+          subscriptionPlan: null,
         },
       });
     }
   }
-
-  return NextResponse.json({ received: true }); //Retorna a API o status 200 de "Sucess"
+  return NextResponse.json({ received: true });
 };
