@@ -36,6 +36,8 @@ npx shadcn@latest add card
 npx shadcn@latest add badge
 npx shadcn@latest add dialog
 npx shadcn@latest add input
+npx shadcn@latest add alert-dialog
+npx shadcn@latest add sonner
 ```
 
 ## Shadcn-DataTables
