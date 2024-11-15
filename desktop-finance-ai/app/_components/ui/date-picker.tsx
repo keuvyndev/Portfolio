@@ -30,23 +30,28 @@ export const DatePicker = ({ value, onChange }: DatePickerProps) => {
                   !value && "text-muted-foreground"
                )}
             >
+
+
                <CalendarDays className="mr-2 h-4 w-4" />
                {value ? new Date(value).toLocaleDateString("pt-Br", {
                   day: "2-digit",
                   month: "long",
                   year: "numeric",
                }) : <span>Selecione uma data...</span>}
+
             </Button>
          </PopoverTrigger>
          <PopoverContent className="w-auto p-0">
-            <Calendar
-               mode="single"
-               selected={value}
-               onSelect={onChange}
-               initialFocus
-               locale={ptBR}
-               className="capitalize"
-            />
+            <div className="relative w-[300px]">
+               <Calendar
+                  mode="single"
+                  selected={value}
+                  onSelect={onChange}
+                  initialFocus
+                  locale={ptBR}
+                  className="capitalize"
+               />
+            </div>
          </PopoverContent>
       </Popover>
    )
