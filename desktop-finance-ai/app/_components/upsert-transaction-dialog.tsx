@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from "./ui/button";
 import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "./ui/form";
@@ -11,6 +13,9 @@ import { TransactionCategory, TransactionPaymentMethod, TransactionType } from "
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { upsertTransaction } from "../_actions/upsert-transactions";
+import { useState } from "react";
+import { Loader2Icon } from "lucide-react";
+import { toast } from "sonner";
 
 type FormSchema = z.infer<typeof formSchema>
 
@@ -51,30 +56,38 @@ const UpsertTransactionDialog = ({ isOpen, setIsOpen, transactionId, defaultValu
       resolver: zodResolver(formSchema),
       defaultValues: defaultValues ?? { // Se houver defaultValues passa o segundo defaultValues
          name: "",
-         amount: undefined,
-         type: undefined,
-         paymentMethod: undefined,
          category: TransactionPaymentMethod.OTHER,
-         //amount: 50,
-         //type: TransactionType.EXPENSE,
-         //paymentMethod: TransactionPaymentMethod.OTHER,
+         amount: 50,
+         type: TransactionType.EXPENSE,
+         paymentMethod: TransactionPaymentMethod.CREDIT_CARD,
+         // amount: undefined,
+         // type: undefined,
+         // paymentMethod: undefined,
          //category: TransactionCategory.OTHER,
          date: new Date(),
       },
    })
 
+   const isUpdate = Boolean(transactionId);
+   const [operationIsLoading, setOperationIsLoading] = useState(false)
+
    const onSubmit = async (data: FormSchema) => {
+      setOperationIsLoading(true)
       try {
          //console.log(data)
          await upsertTransaction({ ...data, id: transactionId });
          setIsOpen(false); // Força o fechamento da janela de adição
          form.reset(); // Reseta os dados do formulário
+         setOperationIsLoading(false)
+         toast.success(`Transação ${isUpdate ? 'atualizada' : "adicionada"} realizada com sucesso!`);
       } catch (error) {
          console.log(error);
+         setOperationIsLoading(false)
+         toast.error(`Ocorreu um erro ao ${isUpdate ? 'atualizar' : "adicionar"} a transação.`);
+      } finally {
+         setOperationIsLoading(false)
       }
    };
-
-   const isUpdate = Boolean(transactionId);
 
    return (
       <Dialog open={isOpen} onOpenChange={(open) => {
@@ -211,7 +224,9 @@ const UpsertTransactionDialog = ({ isOpen, setIsOpen, transactionId, defaultValu
                      render={({ field }) => (
                         <FormItem>
                            <FormLabel>Data</FormLabel>
-                           <DatePicker value={field.value} onChange={field.onChange} />
+                           <DatePicker value={field.value} onChange={(value) => {
+                              field.onChange(value);
+                           }} />
                            <FormMessage />
                         </FormItem>
                      )}
@@ -220,7 +235,7 @@ const UpsertTransactionDialog = ({ isOpen, setIsOpen, transactionId, defaultValu
                      <DialogClose asChild>
                         <Button type="button" variant="outline">Cancelar</Button>
                      </DialogClose>
-                     <Button type="submit">{isUpdate ? "Atualizar" : "Adicionar"}</Button>
+                     <Button type="submit" disabled={operationIsLoading}>{operationIsLoading && <Loader2Icon className="animate-spin" />} {isUpdate ? "Atualizar" : "Adicionar"}</Button>
                   </DialogFooter>
                </form>
             </Form>

@@ -11,7 +11,9 @@ interface EditTransactionButtonProps {
    transaction: Transaction,
 }
 
+
 const EditTransactionButton = ({ transaction }: EditTransactionButtonProps) => {
+
 
    // Para verificar se a operação ocorreu ou está ocorrendo.
    const [dialogIsOpen, setDiaLogIsOpen] = useState(false);
@@ -27,6 +29,7 @@ const EditTransactionButton = ({ transaction }: EditTransactionButtonProps) => {
             defaultValues={{
                // Passa os dados de transaction mas converte o dado amount.
                ...transaction,
+               date: new Date(transaction.date),
                amount: Number(transaction.amount),
             }}
             transactionId={transaction.id}

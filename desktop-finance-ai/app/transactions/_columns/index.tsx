@@ -9,6 +9,13 @@ import DeleteTransactionButton from "../_components/delete-transaction-button"
 
 export const transactionColumns: ColumnDef<Transaction>[] = [
    {
+      accessorKey: "indice",
+      header: "Índice",
+      cell: (index) => (
+         <p>{((Number(index.row.id)) + 1).toString()}</p>
+      ),
+   },
+   {
       accessorKey: "name",
       header: "Nome",
    },
