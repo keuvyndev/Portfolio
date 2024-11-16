@@ -38,6 +38,7 @@ const HomePage = async ({ searchParams: { month } }: HomeProps) => {
 
   const dashboard_data = await getDashboard(month);
   const userCanAddTransaction = await canUserAddTransactions()
+
   const user = (await clerkClient()).users.getUser(userId);
 
   return (

@@ -224,7 +224,9 @@ const UpsertTransactionDialog = ({ isOpen, setIsOpen, transactionId, defaultValu
                      render={({ field }) => (
                         <FormItem>
                            <FormLabel>Data</FormLabel>
-                           <DatePicker value={field.value} onChange={field.onChange} />
+                           <DatePicker value={field.value} onChange={(value) => {
+                              field.onChange(value);
+                           }} />
                            <FormMessage />
                         </FormItem>
                      )}
