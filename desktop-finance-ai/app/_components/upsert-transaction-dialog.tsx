@@ -79,7 +79,7 @@ const UpsertTransactionDialog = ({ isOpen, setIsOpen, transactionId, defaultValu
          setIsOpen(false); // Força o fechamento da janela de adição
          form.reset(); // Reseta os dados do formulário
          setOperationIsLoading(false)
-         toast.success(`Transação ${isUpdate ? 'atualizada' : "adicionada"} realizada com sucesso!`);
+         toast.success(`Transação ${isUpdate ? 'atualizada' : "adicionada"} com sucesso!`);
       } catch (error) {
          console.log(error);
          setOperationIsLoading(false)
