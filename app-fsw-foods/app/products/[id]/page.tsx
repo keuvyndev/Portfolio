@@ -19,7 +19,8 @@ const ProductsPage = async ({ params: { id } }: ProductPageProps) => {
       include: {
          restaurant: true,
       }
-   });
+   }).then((data) => JSON.parse(JSON.stringify(data))); // Retira o Warning do "Decimal"
+
 
    if (!product) {
       return notFound();
@@ -38,7 +39,7 @@ const ProductsPage = async ({ params: { id } }: ProductPageProps) => {
       include: {
          restaurant: true,
       }
-   });
+   }).then((data) => JSON.parse(JSON.stringify(data))); // Retira o Warning do "Decimal"
 
    return (
       <div>

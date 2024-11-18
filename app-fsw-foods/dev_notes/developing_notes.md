@@ -1,9 +1,9 @@
-
 # Projeto Next.js - Comandos de Desenvolvimento
 
 ## 1. Commands to Create App
 
 #Shadecn
+
 ```bash
 npx shadcn@latest add card
 npx shadcn@latest add button
@@ -11,9 +11,10 @@ npx shadcn@latest add input
 ```
 
 ## 2. Add prisma.ts to instance client in development
+
 Função: Permite que o banco possa ser consultado em tempo de desenvolvimento instanciando apenas 1 cliente mesmo que a tela seja reiniciada.
 
-Crie um arquivo chamado "prisma.ts" em app/_lib, e cole o seguinte código:
+Crie um arquivo chamado "prisma.ts" em app/\_lib, e cole o seguinte código:
 
 ```typescript
 import { PrismaClient } from "@prisma/client";
@@ -36,6 +37,7 @@ export const db = prisma;
 ```
 
 ## 3. Add domain to allows image render from url
+
 Função: Permite usar imagens de um domínio externo.
 
 Abra o arquivo "next.config.mjs" e coloque o código abaixo:
@@ -44,21 +46,28 @@ Abra o arquivo "next.config.mjs" e coloque o código abaixo:
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  images:{
-    remotePatterns:[{hostname: "utfs.io"}]
-  }
+  images: {
+    remotePatterns: [{ hostname: "utfs.io" }],
+  },
 };
 
 export default nextConfig;
 ```
 
 ## 4. Changed background from aplication
+
 Função: Permite usar imagens de um domínio externo.
 
 Adicione no body:
 
 ```css
-  body {
-    @apply text-foreground antialiased;
-  }
+body {
+  @apply text-foreground antialiased;
+}
+```
+
+## 1. Prisma
+
+```bash
+npx prisma reset
 ```

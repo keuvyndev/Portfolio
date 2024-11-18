@@ -1,5 +1,6 @@
 "use client"
 
+import DeliveryInfo from "@/app/_components/delivery-info";
 import DiscountBadge from "@/app/_components/discount_badge";
 import ProductList from "@/app/_components/products-list";
 import { Button } from "@/app/_components/ui/button";
@@ -87,33 +88,10 @@ const ProductDetails = ({ product, complemenataryProcuts }: ProductDetailsProps)
             </div>
 
          </div>
-         {/* DADOS DA ENTREGA */}
+
+         {/* INFORMAÇÕES DA ENTREGA */}
          <div className="px-5">
-            <Card className="flex justify-around py-2 mt-6 px-5">
-
-               {/* CUSTO DE ENTREGA */}
-               <div className="flex flex-col items-center gap-y-1">
-                  <div className="flex items-center gap-1 text-muted-foreground">
-                     <span className="text-xs">Entrega</span>
-                     <BikeIcon size={14} />
-                  </div>
-
-                  {Number(product.restaurant.deliveryFee) > 0 ? (
-                     <p className="text-xs font-semibold">{formatCurrency(Number(product.restaurant.deliveryFee))}</p>
-                  ) : (
-                     <p className="text-xs font-semibold">Grátis</p>
-                  )}
-               </div>
-
-               {/* TEMPO DE ENTREGA */}
-               <div className="flex flex-col items-center gap-y-1">
-                  <div className="flex items-center gap-1 text-muted-foreground">
-                     <span className="text-xs">Entrega</span>
-                     <TimerIcon size={14} />
-                  </div>
-                  <p className="text-xs font-semibold">{product.restaurant.deliveryTimeMinutes} min</p>
-               </div>
-            </Card>
+            <DeliveryInfo restaurant={product.restaurant} />
          </div>
 
          {/* SOBRE */}
