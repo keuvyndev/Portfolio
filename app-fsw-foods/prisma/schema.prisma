@@ -28,7 +28,8 @@ model Category {
   name        String
   imageUrl    String
   restaurants Restaurant[] // Relation many-to-many with restaurant
-  products     Product[]
+  products    Product[]
+  createdAt   DateTime     @default(now())
 }
 
 model Product {
@@ -42,4 +43,5 @@ model Product {
   restaurant      Restaurant @relation(fields: [restaurantId], references: [id]) // Create relation with by restaurantId and id (of table restaraunt), require npx prisma format.
   categoryId      String
   category        Category   @relation(fields: [categoryId], references: [id]) // Create relation with by categoryId and id (of table category), require npx prisma format.
+  createdAt       DateTime   @default(now())
 }
