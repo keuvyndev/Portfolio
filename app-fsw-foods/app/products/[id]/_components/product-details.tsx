@@ -128,6 +128,10 @@ const ProductDetails = ({ product, complemenataryProcuts }: ProductDetailsProps)
             <ProductList products={complemenataryProcuts} />
          </div>
 
+         <div className="mt-6 px-5">
+            <Button className="w-full font-semibold">Adicionar à sacola</Button>
+         </div>
+
       </div>
    );
 }
