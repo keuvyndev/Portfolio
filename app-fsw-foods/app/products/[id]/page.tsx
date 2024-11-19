@@ -9,7 +9,9 @@ interface ProductPageProps {
    }
 }
 
-const ProductsPage = async ({ params: { id } }: ProductPageProps) => {
+const ProductsPage = async ({ params }: ProductPageProps) => {
+
+   const { id } = await params; // Aguarda a resolução para usá-lo
 
    // Busca os dados de um único produto no banco
    const product = await db.product.findUnique({

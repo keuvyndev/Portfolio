@@ -8,6 +8,8 @@
 npx shadcn@latest add card
 npx shadcn@latest add button
 npx shadcn@latest add input
+npx shadcn@latest add sheet
+npx shadcn@latest add separator
 ```
 
 ## 2. Add prisma.ts to instance client in development
@@ -67,6 +69,14 @@ body {
 ```
 
 ## 1. Prisma
+
+```bash
+npx prisma reset
+```
+
+## 2. Context API
+
+Objetivo: Usado para trabalhar com componentes de Estado Global.
 
 ```bash
 npx prisma reset

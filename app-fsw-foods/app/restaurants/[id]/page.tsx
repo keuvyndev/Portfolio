@@ -12,7 +12,9 @@ interface RestaurantPageProps {
    }
 }
 
-const RestaurantPage = async ({ params: { id } }: RestaurantPageProps) => {
+const RestaurantPage = async ({ params }: RestaurantPageProps) => {
+
+   const { id } = await params; // Aguarda a resolução para usá-lo
 
    // Busca as informações do restaurante, os produtos, e as categorias com seus produtos
    const restaurant = await db.restaurant.findUnique({
