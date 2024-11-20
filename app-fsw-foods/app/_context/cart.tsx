@@ -24,15 +24,19 @@ interface ICartContext {
    subTotalPrice: Number,
    totalPrice: Number,
    totalDiscounts: Number,
-   addProductToCart: (product: Prisma.ProductGetPayload<{
-      include: {
-         restaurant: {
-            select: {
-               deliveryFee: true;
+   addProductToCart: ({ product, quantity, emptyCart, }: {
+      product: Prisma.ProductGetPayload<{
+         include: {
+            restaurant: {
+               select: {
+                  deliveryFee: true;
+               };
             };
          };
-      };
-   }>, quantity: number) => void;
+      }>;
+      quantity: number;
+      emptyCart?: boolean;
+   }) => void
    decreaseProductQuantity: (productId: string) => void;
    increaseProductQuantity: (productId: string) => void;
    removeProductFromCart: (productId: string) => void;
@@ -71,15 +75,28 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
    const totalDiscounts = totalPrice - subTotalPrice;
 
    // Método para adicionar items ao carrinho
-   const addProductToCart = (product: Prisma.ProductGetPayload<{
-      include: {
-         restaurant: {
-            select: {
-               deliveryFee: true,
-            }
-         }
+   const addProductToCart = ({
+      product,
+      quantity,
+      emptyCart,
+   }: {
+      product: Prisma.ProductGetPayload<{
+         include: {
+            restaurant: {
+               select: {
+                  deliveryFee: true;
+               };
+            };
+         };
+      }>;
+      quantity: number;
+      emptyCart?: boolean;
+   }) => {
+
+      // Se o produto for de outro restaurante, limpa a sacola
+      if (emptyCart) {
+         setProducts([]);
       }
-   }>, quantity: number) => {
 
       console.log("Entrou na função")
       // Verificar se o produto está no carrinho

@@ -40,9 +40,9 @@ const Cart = () => {
 
                      <div className="justify-between flex items-center text-xs ">
                         <span className="text-muted-foreground">Entrega</span>
-                        {Number(products[0].restaurant.deliveryFee) === 0
+                        {Number(products?.[0].restaurant.deliveryFee) === 0
                            ? <span className="uppercase text-primary">Grátis</span>
-                           : <span>formatCurrency(Number(products[0].restaurant.deliveryFee))</span>
+                           : <span>formatCurrency(Number(products?.[0].restaurant.deliveryFee))</span>
                         }
                      </div>
 

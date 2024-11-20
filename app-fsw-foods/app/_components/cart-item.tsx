@@ -60,7 +60,7 @@ const CartItem = ({ cartProduct }: CartItemProps) => {
                   >
                      <ChevronLeftIcon size={16} />
                   </Button>
-                  <span className="w-3 text-xs block">{cartProduct.quantity}</span>
+                  <span className="w-2 text-xs block">{cartProduct.quantity}</span>
                   <Button size="icon" className="h-7 w-7" onClick={handleIncreaseQuantityClick} >
                      <ChevronRightIcon size={16} />
                   </Button>

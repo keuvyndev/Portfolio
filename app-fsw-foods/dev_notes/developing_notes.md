@@ -10,6 +10,7 @@ npx shadcn@latest add button
 npx shadcn@latest add input
 npx shadcn@latest add sheet
 npx shadcn@latest add separator
+npx shadcn@latest add alert-dialog
 ```
 
 ## 2. Add prisma.ts to instance client in development
