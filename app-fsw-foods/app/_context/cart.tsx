@@ -68,11 +68,11 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
    const totalPrice = useMemo(() => {
       return products.reduce((acc, product) => {
          return acc + calculateProductTotalPrice(product) * product.quantity
-      }, 0) - Number(products?.[0]?.restaurant?.deliveryFee);
+      }, 0) + Number(products?.[0]?.restaurant?.deliveryFee);
    }, [products]);
 
    // Retorna o total de todos os produtos da lista.
-   const totalDiscounts = totalPrice - subTotalPrice;
+   const totalDiscounts = totalPrice - subTotalPrice + Number(products?.[0]?.restaurant?.deliveryFee);
 
    // Método para adicionar items ao carrinho
    const addProductToCart = ({
