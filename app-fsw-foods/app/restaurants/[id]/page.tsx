@@ -6,6 +6,7 @@ import DeliveryInfo from "@/app/_components/delivery-info";
 import ProductList from "@/app/_components/products-list";
 import { db } from "@/app/_lib/prisma";
 import { Metadata } from "next";
+import CartBanner from "./_components/cart-banner";
 
 interface RestaurantPageProps {
    params: {
@@ -110,8 +111,11 @@ const RestaurantPage = async ({ params }: RestaurantPageProps) => {
                <ProductList products={category.products} />
             </div>
          ))}
-      </div>
 
+
+         <CartBanner restaurant={restaurant} />
+
+      </div>
    );
 }
 
