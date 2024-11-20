@@ -1,12 +1,17 @@
 import Header from "@/app/_components/header";
 import ProductItem from "@/app/_components/product-item";
 import { db } from "@/app/_lib/prisma";
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 interface CategoriesPageProps {
    params: {
       id: string,
    }
+}
+
+export const metadata: Metadata = {
+   title: `Apenas Categoria - FSW Food`,
 }
 
 const CategoriesPage = async ({ params: { id } }: CategoriesPageProps) => {

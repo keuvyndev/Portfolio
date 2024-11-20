@@ -2,11 +2,16 @@ import { db } from "@/app/_lib/prisma";
 import { notFound } from "next/navigation";
 import ProductImage from "./_components/product-image";
 import ProductDetails from "./_components/product-details";
+import { Metadata } from "next";
 
 interface ProductPageProps {
    params: {
       id: string,
    }
+}
+
+export const metadata: Metadata = {
+   title: `Detalhes do Produto - FSW Food`,
 }
 
 const ProductsPage = async ({ params }: ProductPageProps) => {
@@ -22,6 +27,7 @@ const ProductsPage = async ({ params }: ProductPageProps) => {
          restaurant: true,
       }
    }).then((data) => JSON.parse(JSON.stringify(data))); // Retira o Warning do "Decimal"
+
 
 
    if (!product) {

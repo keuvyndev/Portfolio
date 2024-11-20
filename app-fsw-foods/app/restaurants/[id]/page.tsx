@@ -5,11 +5,16 @@ import { StarIcon } from "lucide-react";
 import DeliveryInfo from "@/app/_components/delivery-info";
 import ProductList from "@/app/_components/products-list";
 import { db } from "@/app/_lib/prisma";
+import { Metadata } from "next";
 
 interface RestaurantPageProps {
    params: {
       id: string
    }
+}
+
+export const metadata: Metadata = {
+   title: `Catálogo do Restaurante - FSW Food`,
 }
 
 const RestaurantPage = async ({ params }: RestaurantPageProps) => {
