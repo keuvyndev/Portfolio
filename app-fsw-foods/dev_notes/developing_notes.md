@@ -11,6 +11,7 @@ npx shadcn@latest add input
 npx shadcn@latest add sheet
 npx shadcn@latest add separator
 npx shadcn@latest add alert-dialog
+npx shadcn@latest add avatar
 ```
 
 ## 2. Add prisma.ts to instance client in development
@@ -205,6 +206,8 @@ model VerificationToken {
 
 ```bash
 npx prisma migrate dev --name add_auth_tables
+npx prisma generate
+npm run dev
 ```
 
 4. Crie o arquivo "auth.tsx" no caminho especificado com o código:
@@ -235,4 +238,75 @@ export default AuthProvider;
   <AuthProvider>
     <CartProvider>{children}</CartProvider>
   </ AuthProvider>
+```
+
+6. Configure sua aplicação no Google Cloud para usar o OAuth:
+
+Site: https://console.cloud.google.com/cloud-resource-manager?pli=1&inv=1&invt=Abi6yQ
+
+6.1 Create Project
+6.2 Clique em "SELECT PROJECT"
+6.3 Vá em "API & Services/Credentials"
+6.4 Clique em CREATE CREDENTIALS e depois em "OAuth Client ID".
+6.5 Clique no botão "Configure Consent Screen".
+6.6 Selecione o "User Type": "External" e clique em "Create"
+6.7 Informe os dados:
+
+- App Name;
+- E-mail qualquer;
+- Não inclua LOGO;
+- Não inclua App Domain ou Authorized domains;
+- Coloque um e-mail qualquer em developer contact informations;
+- Clique em Save;
+  6.8 Clique em "Save and Continue" novamente;
+  6.9 Clique em "Save and Continue" novamente;
+
+7. Clique em "Back to Dashboard";
+   7.1 Agora no menu lateral escolha "OAuth consent screen" e na área "Publishing status", em "Testing" aperte o botão "PUBLISH APP"
+8. No menu lateral escolha "Credentials", e depois em "+ CREATE CREDENTIALS", e escolha "OAuth client ID".
+   8.1 Para "Application Type" marque "WebApplication".
+   8.2 Preencha as demais informações:
+
+- Name: Nome do aplicativo
+- Authorized redirect URIs, inclua: http://localhost:3000/api/auth/callback/google
+- Authorized JavaScript origins, inclua: http://localhost:3000
+
+9. Copie as chaves e cole-as no seu .env com nome:
+
+- GOOGLE_CLIENT_ID = "SUA CHAVE"
+- GOOGLE_CLIENT_SECRET = "SUA CHAVE"
+
+10. Adicione o botão de login do google em um componente:
+
+```bash (qualquer componente)
+"use client"
+
+import {signIn} from 'next-auth/react'
+
+return (
+  <Button onClick={() => signIn}>Login</Button>
+)
+```
+
+11. Use hook para tratar usuário logado:
+
+Explicação: "useSession" obtem os dados do usuario e armazena em "data". Dentro do componente, valida se o usuario possui nome, se houver, renderiza um h1, caso contrário, o botão de Login.
+
+```bash (qualquer componente)
+"use client"
+
+import { signIn, signOut, useSession } from 'next-auth/react'
+
+const {data} = useSession()
+
+return (
+  {data?.user?.name ? (
+    <div className="flex items-center gap-2">
+        <h1>{data.user.name}</h1>
+        <Button onClick={() => signOut()}>Sair</Button>
+    </div>
+  ) : (
+    <Button onClick={() => signIn()}>Login</Button>
+  )}
+)
 ```
