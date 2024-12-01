@@ -10,10 +10,12 @@ export interface CartProduct
       include: {
          restaurant: {
             select: {
-               deliveryFee: true,
-            }
-         }
-      }
+               id: true;
+               deliveryFee: true;
+               deliveryTimeMinutes: true;
+            };
+         };
+      };
    }> {
    quantity: number;
 }
@@ -30,7 +32,9 @@ interface ICartContext {
          include: {
             restaurant: {
                select: {
+                  id: true;
                   deliveryFee: true;
+                  deliveryTimeMinutes: true;
                };
             };
          };
@@ -41,6 +45,7 @@ interface ICartContext {
    decreaseProductQuantity: (productId: string) => void;
    increaseProductQuantity: (productId: string) => void;
    removeProductFromCart: (productId: string) => void;
+   clearCart: () => void;
 }
 
 // Define os valores padrão
@@ -54,9 +59,11 @@ export const CartContext = createContext<ICartContext>({
    decreaseProductQuantity: () => { },
    increaseProductQuantity: () => { },
    removeProductFromCart: () => { },
+   clearCart: () => { },
 })
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
+
    const [products, setProducts] = useState<CartProduct[]>([]);
 
    // Retorna o subtotal de todos os produtos da lista.
@@ -83,6 +90,11 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
    // Retorna o total de todos os produtos da lista.
    const totalDiscounts = totalPrice - subTotalPrice + Number(products?.[0]?.restaurant?.deliveryFee);
 
+   // Função que limpa o carrinho
+   const clearCart = () => {
+      return setProducts([]);
+   }
+
    // Método para adicionar items ao carrinho
    const addProductToCart = ({
       product,
@@ -107,7 +119,6 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
          setProducts([]);
       }
 
-      console.log("Entrou na função")
       // Verificar se o produto está no carrinho
       const isProductAlreadyOnCart = products.some((cartProduct) => cartProduct.id === product.id);
 
@@ -184,6 +195,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
             decreaseProductQuantity,
             increaseProductQuantity,
             removeProductFromCart,
+            clearCart,
          }} >
 
          {children}
