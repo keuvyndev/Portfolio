@@ -45,7 +45,15 @@ const Cart = () => {
             user: {
                connect: { id: data.user.id },
             },
-         })
+            products: {
+               createMany: {
+                  data: products.map((product) => ({
+                     productId: product.id,
+                     quantity: product.quantity
+                  })),
+               },
+            },
+         });
 
          // Limpa o carrinho após finalizar o pedido
          clearCart();
@@ -129,7 +137,7 @@ const Cart = () => {
                   <AlertDialogDescription>Ao finalizar seu pedido, com os termos e condições da nossa plataforma.</AlertDialogDescription>
                </AlertDialogHeader>
                <AlertDialogFooter>
-                  <AlertDialogCancel disabled={isSubmintLoading}>Cancelar</AlertDialogCancel>
+                  <AlertDialogCancel>Cancelar</AlertDialogCancel>
                   <AlertDialogAction onClick={handleFinishOrderClick} disabled={isSubmintLoading}>
                      {isSubmintLoading && (
                         <Loader2Icon className="mr-2 h-4 w-4 animate-spin" />

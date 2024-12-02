@@ -44,8 +44,17 @@ model Product {
   restaurant      Restaurant @relation(fields: [restaurantId], references: [id]) // Create relation with by restaurantId and id (of table restaraunt), require npx prisma format.
   categoryId      String
   category        Category   @relation(fields: [categoryId], references: [id]) // Create relation with by categoryId and id (of table category), require npx prisma format.
-  orders          Order[]
   createdAt       DateTime   @default(now())
+  OrderProduct OrderProduct[]
+}
+
+model OrderProduct {
+  id String @id @default(uuid())
+  orderId String
+  order Order @relation(fields: [orderId], references: [id])
+  productId String
+  product Product @relation(fields: [productId], references: [id])
+  quantity Int
 }
 
 // deliveryFee, subtotalPrice, totalPrice, totalDiscounts serão salvos na order para que:
@@ -55,7 +64,7 @@ model Order {
   id                  String      @id @default(uuid())
   userId              String
   user                User        @relation(fields: [userId], references: [id])
-  products            Product[]
+  products            OrderProduct[]
   restaurant          Restaurant  @relation(fields: [restaurantId], references: [id])
   restaurantId        String
   deliveryFee         Decimal     @db.Decimal(10, 2)
