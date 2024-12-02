@@ -154,7 +154,7 @@ const ProductDetails = ({ product, complemenataryProcuts }: ProductDetailsProps)
                   <SheetTitle>Sacola</SheetTitle>
                </SheetHeader>
 
-               <Cart />
+               <Cart setIsOpen={setIsCartOpen} />
             </SheetContent>
          </Sheet>
 
