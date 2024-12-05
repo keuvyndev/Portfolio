@@ -3,7 +3,7 @@ import { revalidatePath } from "next/cache";
 import { db } from "../_lib/prisma";
 
 // Cria um registro na tabela userFavoriteRestaurant
-export const toogleFavoriteRestaurant = async (
+export const toggleFavoriteRestaurant = async (
   userId: string,
   restaurantId: string,
 ) => {

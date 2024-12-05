@@ -8,7 +8,7 @@ import { formatCurrency } from "../_helpers/price";
 import Link from "next/link";
 import { cn } from "../_lib/utils";
 import { toast } from "sonner";
-import { toogleFavoriteRestaurant } from "../_actions/restaurants";
+import { toggleFavoriteRestaurant } from "../_actions/restaurants";
 import { useSession } from "next-auth/react";
 
 interface RestaurantItemProps {
@@ -21,28 +21,28 @@ const RestaurantItem = ({ restaurant, className, userFavoriteRestaurants }: Rest
 
    const { data } = useSession();
 
+   const isFavorite = userFavoriteRestaurants.some(
+      (fav) => fav.restaurantId === restaurant.id
+   )
+
    const handleFavoriteClick = async () => {
 
       if (!data?.user.id) return;
 
       try {
-
-         await toogleFavoriteRestaurant(data?.user.id, restaurant.id)
+         await toggleFavoriteRestaurant(data?.user.id, restaurant.id)
          toast.success(
             isFavorite
                ? "Restaurante removido dos favoritos."
                : "Restaurante favoritado com sucesso!",
          )
-
       } catch (error) {
          toast.success("Você já possui este restaurante nos seus favoritos.")
          console.error(error);
       }
    }
 
-   const isFavorite = userFavoriteRestaurants.some(
-      (fav) => fav.restaurantId === restaurant.id
-   )
+
 
 
 
