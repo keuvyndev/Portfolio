@@ -390,3 +390,17 @@ const handler = NextAuth({
   secret: process.env.NEXTAUTH_SECRET,
 });
 ```
+
+2. Modificar o arquivo "package.json" para incluir a rotina do "npx prisma generate"
+
+```bash
+{
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "prepare": "husky && prisma generate"
+  },
+}
+```
