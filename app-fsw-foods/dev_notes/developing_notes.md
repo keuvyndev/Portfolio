@@ -404,3 +404,7 @@ const handler = NextAuth({
   },
 }
 ```
+
+3. Colocar o domínio da vercen no "Google Developer Console". Em API & Services/Credentials/OAuth 2.0 Client IDs e selecione o seu projeto.
+   3.1 Em "Authorized JavaScript origins" inclua o domínio gerado no vercel. Exemplo (fullstackweek-foods-henna.vercel.app)
+   3.2 Em "Authorized redirect URIs" inclua o domínio tal como: fullstackweek-foods-henna.vercel.app/api/auth/callback/google

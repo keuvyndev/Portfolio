@@ -14,14 +14,15 @@ datasource db {
 }
 
 model Restaurant {
-  id                  String     @id @default(uuid())
+  id                  String                   @id @default(uuid())
   name                String
   imageUrl            String
-  deliveryFee         Decimal    @db.Decimal(13, 2)
+  deliveryFee         Decimal                  @db.Decimal(13, 2)
   deliveryTimeMinutes Int
   categories          Category[] // Relation many-to-many with category
   products            Product[]
   orders              Order[]
+  favoriteForUsers    UserFavoriteRestaurant[]
 }
 
 model Category {
@@ -34,45 +35,45 @@ model Category {
 }
 
 model Product {
-  id              String     @id @default(uuid())
+  id              String         @id @default(uuid())
   name            String
   description     String
   imageUrl        String
-  price           Decimal    @db.Decimal(10, 2)
+  price           Decimal        @db.Decimal(10, 2)
   restaurantId    String
-  discountPercent Int        @default(0)
-  restaurant      Restaurant @relation(fields: [restaurantId], references: [id]) // Create relation with by restaurantId and id (of table restaraunt), require npx prisma format.
+  discountPercent Int            @default(0)
+  restaurant      Restaurant     @relation(fields: [restaurantId], references: [id]) // Create relation with by restaurantId and id (of table restaraunt), require npx prisma format.
   categoryId      String
-  category        Category   @relation(fields: [categoryId], references: [id]) // Create relation with by categoryId and id (of table category), require npx prisma format.
-  createdAt       DateTime   @default(now())
-  OrderProduct OrderProduct[]
+  category        Category       @relation(fields: [categoryId], references: [id]) // Create relation with by categoryId and id (of table category), require npx prisma format.
+  createdAt       DateTime       @default(now())
+  OrderProduct    OrderProduct[]
 }
 
 model OrderProduct {
-  id String @id @default(uuid())
-  orderId String
-  order Order @relation(fields: [orderId], references: [id])
+  id        String  @id @default(uuid())
+  orderId   String
+  order     Order   @relation(fields: [orderId], references: [id])
   productId String
-  product Product @relation(fields: [productId], references: [id])
-  quantity Int
+  product   Product @relation(fields: [productId], references: [id])
+  quantity  Int
 }
 
 // deliveryFee, subtotalPrice, totalPrice, totalDiscounts serão salvos na order para que:
 // - Caso o pedido seja realizado, este será salvo com os valores no momento em que foi salvo.
 // - Portanto caso os valores sejam alterados, se manterão os valores anteriores referentes as datas em que os pedidos foi feitos.
 model Order {
-  id                  String      @id @default(uuid())
+  id                  String         @id @default(uuid())
   userId              String
-  user                User        @relation(fields: [userId], references: [id])
+  user                User           @relation(fields: [userId], references: [id])
   products            OrderProduct[]
-  restaurant          Restaurant  @relation(fields: [restaurantId], references: [id])
+  restaurant          Restaurant     @relation(fields: [restaurantId], references: [id])
   restaurantId        String
-  deliveryFee         Decimal     @db.Decimal(10, 2)
+  deliveryFee         Decimal        @db.Decimal(10, 2)
   deliveryTimeMinutes Int
-  subTotalPrice       Decimal     @db.Decimal(10, 2)
-  totalPrice          Decimal     @db.Decimal(10, 2)
-  totalDiscounts      Decimal     @db.Decimal(10, 2)
-  createdAt           DateTime    @default(now())
+  subTotalPrice       Decimal        @db.Decimal(10, 2)
+  totalPrice          Decimal        @db.Decimal(10, 2)
+  totalDiscounts      Decimal        @db.Decimal(10, 2)
+  createdAt           DateTime       @default(now())
   status              OrderStatus
 }
 
@@ -82,6 +83,15 @@ enum OrderStatus {
   PREPARING
   DELIVERING
   COMPLETED
+}
+
+model UserFavoriteRestaurant {
+  id           String     @id @default(uuid())
+  userId       String
+  user         User       @relation(fields: [userId], references: [id])
+  restaurantId String
+  restaurant   Restaurant @relation(fields: [restaurantId], references: [id])
+  createdAt    DateTime   @default(now())
 }
 
 model Account {
@@ -115,14 +125,15 @@ model Session {
 }
 
 model User {
-  id            String    @id @default(cuid())
-  name          String?
-  email         String?   @unique
-  emailVerified DateTime? @map("email_verified")
-  image         String?
-  accounts      Account[]
-  sessions      Session[]
-  orders        Order[]
+  id                  String                   @id @default(cuid())
+  name                String?
+  email               String?                  @unique
+  emailVerified       DateTime?                @map("email_verified")
+  image               String?
+  accounts            Account[]
+  sessions            Session[]
+  orders              Order[]
+  favoriteRestaurants UserFavoriteRestaurant[]
 
   @@map("users")
 }
