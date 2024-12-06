@@ -29,7 +29,12 @@ const CartItem = ({ cartProduct }: CartItemProps) => {
          <div className="flex items-center gap-4">
             {/* IMAGEM */}
             <div className="w-20 h-20 relative rounded-lg">
-               <Image src={cartProduct.imageUrl} alt={cartProduct.name} fill className="rounded-lg object-cover" />
+               <Image
+                  src={cartProduct.imageUrl}
+                  alt={cartProduct.name}
+                  fill
+                  sizes="100%"
+                  className="rounded-lg object-cover" />
             </div>
 
             {/* TEXTO */}

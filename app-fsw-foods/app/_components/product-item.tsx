@@ -32,6 +32,7 @@ const ProductItem = ({ product, className }: ProductItemProps) => {
                      alt={product.name}
                      className="object-cover rounded-lg shadow-md"
                      fill
+                     sizes="100%"
                   />
 
                   {product.discountPercent && (

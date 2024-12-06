@@ -18,11 +18,16 @@ const Header = () => {
 
    return (
       <div className="flex justify-between pt-6 px-5">
-         <div className="relative h-[30px] w-[100px]">
-            <Link href="/">
-               <Image src="/logo.png" alt="FSW Foods" fill className="object-cover" />
-            </Link>
-         </div>
+         <Link href="/">
+            <div className="relative h-[30px] w-[100px]">
+               <Image
+                  src="/logo.png"
+                  alt="FSW Foods"
+                  fill
+                  sizes="100%"
+                  className="object-cover" />
+            </div>
+         </Link>
 
          <Sheet>
             <SheetTrigger asChild>

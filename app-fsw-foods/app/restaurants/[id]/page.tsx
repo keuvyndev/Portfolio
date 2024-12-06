@@ -83,7 +83,7 @@ const RestaurantPage = async ({ params }: RestaurantPageProps) => {
             {/* TÍTULO */}
             <div className="flex items-center gap-[0.375rem]">
                <div className="relative h-8 w-8">
-                  <Image src={restaurant.imageUrl} alt={restaurant.name} fill className="rounded-full object-cover" />
+                  <Image src={restaurant.imageUrl} alt={restaurant.name} fill sizes="100%" className="rounded-full object-cover" />
                </div>
                <h1 className="font-semibold text-xl">{restaurant.name}</h1>
             </div>
