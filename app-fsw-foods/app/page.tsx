@@ -14,9 +14,8 @@ export const metadata: Metadata = {
   title: "Delivery de Comida - FSW Food",
 }
 
-const Home = async () => {
-
-  const products = await db.product.findMany({
+const fetch = async () => {
+  const getProducts = db.product.findMany({
     where: {
       discountPercent: {
         gt: 0,
@@ -32,6 +31,27 @@ const Home = async () => {
     }
   });
 
+  const getBurguersCategory = db.category.findFirst({
+    where: {
+      name: "Hambúrgueres"
+    }
+  })
+
+  const getPizzaCategory = db.category.findFirst({
+    where: {
+      name: "Pizzas"
+    }
+  })
+
+  const [products, burguerCategory, pizzaCategory] = await Promise.all([getProducts, getBurguersCategory, getPizzaCategory])
+
+  return { products, burguerCategory, pizzaCategory };
+}
+
+const Home = async () => {
+
+  const { products, burguerCategory, pizzaCategory } = await fetch();
+
   return (
     <>
       <Header />
@@ -44,7 +64,9 @@ const Home = async () => {
       </div>
 
       <div className="px-5 pt-6">
-        <PromoBanner src="/promo-banner-01.png" alt="Até 30% de desconto em pizzas!" />
+        <Link href={`/categories/${pizzaCategory?.id}/products`}>
+          <PromoBanner src="/promo-banner-01.png" alt="Até 30% de desconto em pizzas!" />
+        </Link>
       </div>
 
       <div className="pt-6 space-y-4">
@@ -61,7 +83,9 @@ const Home = async () => {
       </div>
 
       <div className="px-5 pt-6">
-        <PromoBanner src="/promo-banner-02.png" alt="a partir de R$ 17,90 em lanches!" />
+        <Link href={`/categories/${burguerCategory?.id}/products`}>
+          <PromoBanner src="/promo-banner-02.png" alt="a partir de R$ 17,90 em lanches!" />
+        </Link>
       </div>
 
 
