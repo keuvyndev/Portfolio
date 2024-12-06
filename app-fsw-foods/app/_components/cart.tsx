@@ -74,7 +74,7 @@ const Cart = ({ setIsOpen }: CartProps) => {
          });
 
       } catch (error) {
-         //console.error(error);
+         console.error(error);
       } finally {
          setIsSubmitLoading(false);
       }

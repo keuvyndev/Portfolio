@@ -1,7 +1,7 @@
 "use client"
 
 import { Prisma } from "@prisma/client"
-import { createContext, ReactNode, useMemo, useState } from "react"
+import { createContext, ReactNode, useState } from "react"
 import { calculateProductTotalPrice } from "../_helpers/price";
 
 //A classe foi estendida para obter o valor da quantidade existente no carrinho. O Pay load para obter o deliveryFee.
