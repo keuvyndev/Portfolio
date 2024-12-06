@@ -28,7 +28,26 @@ const fetch = async () => {
           name: true,
         }
       }
-    }
+    },
+    orderBy: {
+      categoryId: 'asc',
+    },
+  });
+
+  const getProductsHamburguer = db.product.findMany({
+    where: {
+      name: {
+        contains: "Burguer",
+      },
+    },
+    take: 10,
+    include: {
+      restaurant: {
+        select: {
+          name: true,
+        }
+      }
+    },
   });
 
   const getBurguersCategory = db.category.findFirst({
@@ -43,14 +62,14 @@ const fetch = async () => {
     }
   })
 
-  const [products, burguerCategory, pizzaCategory] = await Promise.all([getProducts, getBurguersCategory, getPizzaCategory])
+  const [products, burguerProducts, burguerCategory, pizzaCategory] = await Promise.all([getProducts, getProductsHamburguer, getBurguersCategory, getPizzaCategory])
 
-  return { products, burguerCategory, pizzaCategory };
+  return { products, burguerProducts, burguerCategory, pizzaCategory };
 }
 
 const Home = async () => {
 
-  const { products, burguerCategory, pizzaCategory } = await fetch();
+  const { products, burguerProducts, burguerCategory, pizzaCategory } = await fetch();
 
   return (
     <>
@@ -88,6 +107,18 @@ const Home = async () => {
         </Link>
       </div>
 
+      <div className="pt-6 space-y-4">
+        <div className="px-5 flex justify-between items-center">
+          <h2 className="font-semibold">Mais Pedidos</h2>
+          <Button variant="ghost" className="h-fit p-0 text-primary hover:bg-transparent" asChild>
+            <Link href={`/categories/${burguerCategory?.id}/products`}>
+              Ver todos
+              <ChevronRightIcon size={16} />
+            </Link>
+          </Button>
+        </div>
+        <ProductList products={burguerProducts} />
+      </div>
 
       <div className="py-6 space-y-4">
         <div className="px-5 flex justify-between items-center">
