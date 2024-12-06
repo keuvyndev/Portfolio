@@ -25,7 +25,7 @@ const Header = () => {
          </div>
 
          <Sheet>
-            <SheetTrigger>
+            <SheetTrigger asChild>
                <Button
                   size="icon"
                   variant="outline"
@@ -87,7 +87,7 @@ const Header = () => {
                      </Button>
 
                      <Button variant="ghost" className="space-x-3 justify-start w-full text-sm font-normal rounded-full" asChild>
-                        <Link href="/my-favorite-restaurants">
+                        <Link href="/my-favorite-restaurant">
                            <HeartIcon size={16} />
                            <span className="block">Restaurantes Favoritos</span>
                         </Link>
