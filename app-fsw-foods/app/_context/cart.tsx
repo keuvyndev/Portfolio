@@ -1,6 +1,6 @@
 "use client"
 
-import { Prisma, Product } from "@prisma/client"
+import { Prisma } from "@prisma/client"
 import { createContext, ReactNode, useMemo, useState } from "react"
 import { calculateProductTotalPrice } from "../_helpers/price";
 
@@ -27,19 +27,11 @@ interface ICartContext {
    totalPrice: number;
    totalDiscounts: number;
    totalQuantity: number;
-   addProductToCart: ({ product, quantity, emptyCart, }: {
-      product: Prisma.ProductGetPayload<{
-         include: {
-            restaurant: {
-               select: {
-                  id: true;
-                  deliveryFee: true;
-                  deliveryTimeMinutes: true;
-               };
-            };
-         };
-      }>;
-      quantity: number;
+   addProductToCart: ({
+      product,
+      emptyCart,
+   }: {
+      product: CartProduct;
       emptyCart?: boolean;
    }) => void
    decreaseProductQuantity: (productId: string) => void;
@@ -67,25 +59,19 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
    const [products, setProducts] = useState<CartProduct[]>([]);
 
    // Retorna o subtotal de todos os produtos da lista.
-   const subTotalPrice = useMemo(() => {
-      return products.reduce((acc, product) => {
-         return acc + Number(product.price) * product.quantity
-      }, 0)
-   }, [products]);
+   const subTotalPrice = products.reduce((acc, product) => {
+      return acc + Number(product.price) * product.quantity;
+   }, 0);
 
    // Retorna o total de todos os produtos da lista.
-   const totalPrice = useMemo(() => {
-      return products.reduce((acc, product) => {
-         return acc + calculateProductTotalPrice(product) * product.quantity
-      }, 0) + Number(products?.[0]?.restaurant?.deliveryFee);
-   }, [products]);
+   const totalPrice = products.reduce((acc, product) => {
+      return acc + calculateProductTotalPrice(product) * product.quantity
+   }, 0) + Number(products?.[0]?.restaurant?.deliveryFee);
 
    // Retorna o total de todos os produtos da lista.
-   const totalQuantity = useMemo(() => {
-      return products.reduce((acc, product) => {
-         return acc + product.quantity
-      }, 0);
-   }, [products]);
+   const totalQuantity = products.reduce((acc, product) => {
+      return acc + product.quantity
+   }, 0);
 
    // Retorna o total de todos os produtos da lista.
    const totalDiscounts = totalPrice - subTotalPrice + Number(products?.[0]?.restaurant?.deliveryFee);
@@ -96,24 +82,9 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
    }
 
    // Método para adicionar items ao carrinho
-   const addProductToCart = ({
+   const addProductToCart: ICartContext['addProductToCart'] = ({
       product,
-      quantity,
       emptyCart,
-   }: {
-      product: Prisma.ProductGetPayload<{
-         include: {
-            restaurant: {
-               select: {
-                  id: true;
-                  deliveryFee: true;
-                  deliveryTimeMinutes: true;
-               };
-            };
-         };
-      }>;
-      quantity: number;
-      emptyCart?: boolean;
    }) => {
 
       // Se o produto for de outro restaurante, limpa a sacola
@@ -131,7 +102,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
                if (cartProduct.id === product.id) {
                   return {
                      ...cartProduct,
-                     quantity: cartProduct.quantity + quantity,
+                     quantity: cartProduct.quantity + product.quantity,
                   };
                }
 
@@ -141,12 +112,12 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
       }
 
       // Se não estiver no carrinho, adiciona o novo produto junto a quantidade
-      setProducts((prev) => [...prev, { ...product, quantity: quantity }]);
+      setProducts((prev) => [...prev, product]);
 
    }
 
    // Método para decrescer a quantidade do produto
-   const decreaseProductQuantity = (productId: string) => {
+   const decreaseProductQuantity: ICartContext['decreaseProductQuantity'] = (productId: string) => {
       return setProducts((prev) =>
          prev.map((cartProduct) => {
             if (cartProduct.id === productId) {
@@ -165,7 +136,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
    }
 
    // Método para acrescentar a quantidade do produto
-   const increaseProductQuantity = (productId: string) => {
+   const increaseProductQuantity: ICartContext['increaseProductQuantity'] = (productId: string) => {
       return setProducts((prev) =>
          prev.map((cartProduct) => {
             if (cartProduct.id === productId) {
@@ -181,7 +152,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
    }
 
    // Método para remover o produto da lista.
-   const removeProductFromCart = (productId: string) => {
+   const removeProductFromCart: ICartContext['removeProductFromCart'] = (productId: string) => {
       return setProducts((prev) => prev.filter((product) => product.id !== productId));
    }
 
