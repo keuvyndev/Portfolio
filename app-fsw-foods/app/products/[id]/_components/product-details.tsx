@@ -126,7 +126,7 @@ const ProductDetails = ({ product, complemenataryProcuts }: ProductDetailsProps)
 
             {/* INFORMAÇÕES DA ENTREGA */}
             <div className="px-5">
-               <DeliveryInfo restaurant={product.restaurant} />
+               <DeliveryInfo restaurant={JSON.parse(JSON.stringify(product.restaurant))} />
             </div>
 
             {/* SOBRE */}

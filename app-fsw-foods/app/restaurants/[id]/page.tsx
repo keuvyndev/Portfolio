@@ -77,7 +77,7 @@ const RestaurantPage = async ({ params }: RestaurantPageProps) => {
 
    return (
       <div>
-         <RestaurantImage restaurant={restaurant} userFavoriteRestaurants={userFavoriteRestaurants} />
+         <RestaurantImage restaurant={JSON.parse(JSON.stringify(restaurant))} userFavoriteRestaurants={userFavoriteRestaurants} />
 
          <div className="flex justify-between items-center px-5 pt-5 relative z-50 py-5 mt-[-1.5rem] rounded-tl-3xl rounded-tr-3xl bg-white">
             {/* TÍTULO */}
@@ -97,7 +97,7 @@ const RestaurantPage = async ({ params }: RestaurantPageProps) => {
 
          {/* INFORMAÇÕES DA ENTREGA */}
          <div className="px-5">
-            <DeliveryInfo restaurant={restaurant} />
+            <DeliveryInfo restaurant={JSON.parse(JSON.stringify(restaurant))} />
          </div>
 
          <div className="flex overflow-x-scroll gap-4 [&::-webkit-scrollbar]:hidden px-5 mt-3">
@@ -122,7 +122,7 @@ const RestaurantPage = async ({ params }: RestaurantPageProps) => {
          ))}
 
 
-         <CartBanner restaurant={restaurant} />
+         <CartBanner restaurant={JSON.parse(JSON.stringify(restaurant))} />
 
       </div>
    );
