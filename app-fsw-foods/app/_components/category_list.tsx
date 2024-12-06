@@ -9,7 +9,7 @@ const CategoryList = async () => {
 
    return (
       <>
-         <div className="flex flex-row overflow-x-scroll space-x-3 [&::-webkit-scrollbar]:hidden">
+         <div className="flex flex-row -my-2 gap-3 px-5 py-2 overflow-x-scroll [&::-webkit-scrollbar]:hidden">
             {categories.map(category =>
                <>
                   <CategoryItem key={category.id} category={category} />
