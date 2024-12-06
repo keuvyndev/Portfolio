@@ -9,14 +9,17 @@ interface CategoryItemProps {
 const CategoryItem = ({ category }: CategoryItemProps) => {
    return (
       <>
-         <Link href={`/categories/${category.id}/products`} className="flex justify-center items-center gap-3 py-3 px-4 bg-white shadow-md rounded-full">
-            <Image
-               src={category.imageUrl}
-               alt={category.name}
-               height={30}
-               width={30}
-            />
-            <span className="font-semibold text-sm">{category.name}</span>
+         <Link href={`/categories/${category.id}/products`}>
+            <div className="flex shadow-md items-center rounded-full my-3 px-4 gap-x-2 h-10">
+               <Image
+                  src={category.imageUrl}
+                  alt={category.name}
+                  height={30}
+                  width={30}
+                  className="max-h-[25px]"
+               />
+               <span className="font-semibold text-sm mr-5">{category.name}</span>
+            </div>
          </Link>
       </>
    );

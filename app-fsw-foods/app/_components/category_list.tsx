@@ -7,15 +7,17 @@ const CategoryList = async () => {
    // Pegar as categorias do banco de dados
    // Renderizar cada item do banco de dados.
 
-   return ( 
-     <>
-      <div className="grid grid-cols-2 gap-3">
-      {categories.map(category => 
-         <CategoryItem key={category.id} category={category} />
-      )}
-      </div>
-     </>
+   return (
+      <>
+         <div className="flex flex-row overflow-x-scroll space-x-3 [&::-webkit-scrollbar]:hidden">
+            {categories.map(category =>
+               <>
+                  <CategoryItem key={category.id} category={category} />
+               </>
+            )}
+         </div>
+      </>
    );
 }
- 
+
 export default CategoryList;

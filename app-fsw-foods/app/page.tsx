@@ -59,7 +59,7 @@ const Home = async () => {
         <Search />
       </div>
 
-      <div className="px-5 py-6">
+      <div className="px-5">
         <CategoryList />
       </div>
 
