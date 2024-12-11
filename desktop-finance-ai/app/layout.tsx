@@ -4,6 +4,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
 import { Mulish } from 'next/font/google'
 import { Toaster } from "./_components/ui/sonner";
+import { Analytics } from "@vercel/analytics/react"
 
 const mulish = Mulish({
   subsets: ['latin-ext'],
@@ -32,7 +33,8 @@ export default function RootLayout({
           <div className="flex flex-col h-full overflow-hide">
             {children}
           </div>
-        </ClerkProvider>
+        </ ClerkProvider>
+        <Analytics />
         <Toaster />
       </body>
     </html>
