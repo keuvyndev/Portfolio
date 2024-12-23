@@ -5,17 +5,19 @@ import { db } from "@/app/_lib/prisma";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-interface CategoriesPageProps {
-   params: {
-      id: string,
-   }
-}
-
 export const metadata: Metadata = {
    title: `Apenas Categoria - FSW Food`,
+};
+
+interface CategoriesPageProps {
+   params: {
+      id: string;
+   };
 }
 
-const CategoriesPage = async ({ params: { id } }: CategoriesPageProps) => {
+const CategoriesPage = async ({ params }: CategoriesPageProps) => {
+   const { id } = params;
+
    const category = await db.category.findUnique({
       where: {
          id,
@@ -31,7 +33,7 @@ const CategoriesPage = async ({ params: { id } }: CategoriesPageProps) => {
             },
          },
       },
-   })
+   });
 
    if (!category) {
       notFound();
@@ -44,12 +46,16 @@ const CategoriesPage = async ({ params: { id } }: CategoriesPageProps) => {
             <h2 className="mb-6 font-semibold text-lg">{category.name}</h2>
             <div className="grid grid-cols-2 gap-6">
                {category.products.map((product: any) => (
-                  <ProductItem key={product.id} product={product} className="min-w-full" />
+                  <ProductItem
+                     key={product.id}
+                     product={product}
+                     className="min-w-full"
+                  />
                ))}
             </div>
          </div>
       </>
    );
-}
+};
 
 export default CategoriesPage;
