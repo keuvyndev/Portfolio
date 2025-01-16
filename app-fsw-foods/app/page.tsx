@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import Header from "./_components/header";
-import Search from "./_components/search";
 import CategoryList from "./_components/category_list";
 import ProductList from "./_components/products-list";
 import { Button } from "./_components/ui/button";
@@ -74,9 +73,13 @@ const Home = async () => {
   return (
     <>
       <Header />
-      <div className="px-5 py-6">
+      {
+        /*
+        <div className="px-5 py-6">
         <Search />
-      </div>
+        </div>
+        */
+      }
 
       <div className="px-5">
         <CategoryList />
