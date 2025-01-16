@@ -8,6 +8,7 @@ import { db } from "./_lib/prisma";
 import PromoBanner from "./_components/promo-banner";
 import RestaurantList from "./_components/restaurant-list";
 import Link from "next/link";
+import Search from "./_components/search";
 
 export const metadata: Metadata = {
   title: "Delivery de Comida - FSW Food",
@@ -74,11 +75,9 @@ const Home = async () => {
     <>
       <Header />
       {
-        /*
         <div className="px-5 py-6">
-        <Search />
+          <Search />
         </div>
-        */
       }
 
       <div className="px-5">
