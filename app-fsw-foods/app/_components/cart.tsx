@@ -7,7 +7,7 @@ import { Separator } from "./ui/separator";
 import { Button } from "./ui/button";
 import { createOrder } from "../_actions/order";
 import { OrderStatus } from "@prisma/client";
-import { useSession } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import { Loader2Icon } from "lucide-react";
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from "./ui/alert-dialog";
 import { AlertDialogDescription } from "@radix-ui/react-alert-dialog";
@@ -27,7 +27,16 @@ const Cart = ({ setIsOpen }: CartProps) => {
    const { products, subTotalPrice, totalPrice, totalDiscounts, clearCart } = useContext(CartContext);
    //console.log(products)
 
-   const { data } = useSession();
+   const { data, status } = useSession();
+
+   const checkLoginFinish = () => {
+      if (status === "authenticated") {
+         setisConfirmedDialogOpen(true)
+      } else {
+         toast.error("É necessário fazer login para finalizar uma compra")
+         return signIn('google');
+      }
+   }
 
    const handleFinishOrderClick = async () => {
 
@@ -135,7 +144,7 @@ const Cart = ({ setIsOpen }: CartProps) => {
                   {/* FINALIZAR PEDIDO */}
                   <Button
                      className="w-full mt-6"
-                     onClick={() => setisConfirmedDialogOpen(true)}
+                     onClick={checkLoginFinish}
                      disabled={isSubmintLoading}
                   >
                      Finalizar Pedido

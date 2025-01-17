@@ -9,6 +9,8 @@ import PromoBanner from "./_components/promo-banner";
 import RestaurantList from "./_components/restaurant-list";
 import Link from "next/link";
 import Search from "./_components/search";
+import { getServerSession } from "next-auth";
+import { authOptions } from "./_lib/auth";
 
 export const metadata: Metadata = {
   title: "Delivery de Comida - FSW Food",
@@ -68,6 +70,8 @@ const fetch = async () => {
 }
 
 const Home = async () => {
+
+  const session = await getServerSession(authOptions);
 
   const { products, burguerProducts, burguerCategory, pizzaCategory } = await fetch();
 
