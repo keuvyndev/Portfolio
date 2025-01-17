@@ -28,7 +28,7 @@ const Restaurants = ({ userFavoritesRestaurants }: RestaurantsProps) => {
       }
 
       fetchRestaurants();
-   }, [searchParams])
+   }, [searchFor, searchParams])
 
    if (!searchFor) {
       return notFound();

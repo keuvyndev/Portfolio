@@ -10,13 +10,13 @@ export const metadata: Metadata = {
 };
 
 interface CategoriesPageProps {
-   params: {
+   params: Promise<{
       id: string;
-   };
+   }>;
 }
 
 const CategoriesPage = async ({ params }: CategoriesPageProps) => {
-   const { id } = params;
+   const { id } = await params;
 
    const category = await db.category.findUnique({
       where: {

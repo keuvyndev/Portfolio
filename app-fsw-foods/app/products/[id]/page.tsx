@@ -5,9 +5,9 @@ import ProductDetails from "./_components/product-details";
 import { Metadata } from "next";
 
 interface ProductPageProps {
-   params: {
+   params: Promise<{
       id: string,
-   }
+   }>
 }
 
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 const ProductsPage = async ({ params }: ProductPageProps) => {
 
-   const { id } = await params; // Aguarda a resolução para usá-lo
+   const { id } = await params;
 
    // Busca os dados de um único produto no banco
    const product = await db.product.findUnique({

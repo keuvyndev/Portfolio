@@ -12,18 +12,17 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/_lib/auth";
 
 interface RestaurantPageProps {
-   params: {
-      id: string
-   }
+   params: Promise<{ id: string }>,
 }
 
 export const metadata: Metadata = {
    title: `Catálogo do Restaurante - FSW Food`,
 }
+const RestaurantPage = async ({ params }: RestaurantPageProps): Promise<JSX.Element> => {
 
-const RestaurantPage = async ({ params }: RestaurantPageProps) => {
-
-   const { id } = await params; // Aguarda a resolução para usá-lo
+   // Aguardar a Promise de 'params' ser resolvida
+   const resolvedParams = await params;
+   const { id } = resolvedParams;
 
    // Busca as informações do restaurante, os produtos, e as categorias com seus produtos
    const restaurant = await db.restaurant.findUnique({
