@@ -8,7 +8,7 @@
 
 ## Access the Application
 
-Click here to open: [fsw-foods-app-mobile.vercel.app](https://fsw-foods-app-mobile.vercel.app/)
+Click here to open: <a href="https://fsw-foods-app-mobile.vercel.app/" target="_blank">fsw-foods-app-mobile.vercel.app</a>
 
 ---
 
@@ -73,7 +73,7 @@ The main technologies used in this project include:
 
 ## Acesse a Aplicação
 
-Clique aqui para abrir: [fsw-foods-app-mobile.vercel.app](https://fsw-foods-app-mobile.vercel.app/)
+Clique aqui para abrir: <a href="https://fsw-foods-app-mobile.vercel.app/" target="_blank">fsw-foods-app-mobile.vercel.app</a>
 
 ---
 

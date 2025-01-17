@@ -7,7 +7,8 @@
 ![Badge of Status](https://img.shields.io/badge/Status-Completed-green)
 
 ## Access the Live Application
-Click here to open: [barbershop-app-gamma.vercel.app](https://barbershop-app-gamma.vercel.app/)
+
+Click here to open: <a href="https://barbershop-app-gamma.vercel.app/" target="_blank">barbershop-app-gamma.vercel.app</a>
 
 ## 📋Table of Contents
 
@@ -44,20 +45,20 @@ The application was built with a focus on modern design, intuitive navigation, a
 
 The main technologies used in this project are:
 
-| Technology             | Description                                   |
-|------------------------|-----------------------------------------------|
-| **Next.js**            | React framework for web development           |
-| **Tailwind CSS**       | Styling library                               |
-| **TypeScript**         | Superset of JavaScript for typing             |
-| **Prisma ORM**         | ORM for database manipulation                  |
-| **Next-Auth**          | User authentication                            |
-| **PostgreSQL**         | Relational database                            |
-| **Docker**             | Container with PostgreSQL for local tests                     |
-| **Vercel**             | Application publication                |
-| **Supabase, Vercel Storage**             | Platform for nanage database in cloud                     |
-| **Git**                | Version control                               |
-| **Figma, Lucid Dev, ShadeCN** | Auxiliary tools for development               |
-| **Date-fns**           | Date manipulation                             |
+| Technology                    | Description                               |
+| ----------------------------- | ----------------------------------------- |
+| **Next.js**                   | React framework for web development       |
+| **Tailwind CSS**              | Styling library                           |
+| **TypeScript**                | Superset of JavaScript for typing         |
+| **Prisma ORM**                | ORM for database manipulation             |
+| **Next-Auth**                 | User authentication                       |
+| **PostgreSQL**                | Relational database                       |
+| **Docker**                    | Container with PostgreSQL for local tests |
+| **Vercel**                    | Application publication                   |
+| **Supabase, Vercel Storage**  | Platform for nanage database in cloud     |
+| **Git**                       | Version control                           |
+| **Figma, Lucid Dev, ShadeCN** | Auxiliary tools for development           |
+| **Date-fns**                  | Date manipulation                         |
 
 ---
 
@@ -70,7 +71,8 @@ The main technologies used in this project are:
 ![Badge of Status](https://img.shields.io/badge/Status-Completed-green)
 
 ## Acesse a aplicação
-Clique aqui para abrir: [barbershop-app-gamma.vercel.app](https://barbershop-app-gamma.vercel.app/)
+
+Clique aqui para abrir: <a href="https://barbershop-app-gamma.vercel.app/" target="_blank">barbershop-app-gamma.vercel.app</a>
 
 ## 📋 Índice
 
@@ -107,17 +109,17 @@ A aplicação foi construída com foco em design moderno, navegação intuitiva 
 
 As principais tecnologias usadas neste projeto são:
 
-| Tecnologia             | Descrição                                   |
-|------------------------|---------------------------------------------|
-| **Next.js**            | Framework React para desenvolvimento web    |
-| **Tailwind CSS**       | Biblioteca de estilização                  |
-| **TypeScript**         | Superset de JavaScript para tipagem         |
-| **Prisma ORM**         | ORM para manipulação de banco de dados      |
-| **Next-Auth**          | Autenticação de usuários                    |
-| **PostgreSQL**         | Banco de dados relacional                   |
-| **Docker**             | Container com PostgreSQL para testes locais                    |
-| **Vercel**             | Publicação da aplicação                 |
-| **SupaBase, Vercel Storage**             | Plataforma para gerenciar banco de dados em nuvem  |
-| **Git**                | Controle de versão                          |
-| **Figma, Lucid Dev, ShadeCN** | Ferramentas auxiliares para desenvolvimento |
-| **Date-fns**           | Manipulação de datas                        |
+| Tecnologia                    | Descrição                                         |
+| ----------------------------- | ------------------------------------------------- |
+| **Next.js**                   | Framework React para desenvolvimento web          |
+| **Tailwind CSS**              | Biblioteca de estilização                         |
+| **TypeScript**                | Superset de JavaScript para tipagem               |
+| **Prisma ORM**                | ORM para manipulação de banco de dados            |
+| **Next-Auth**                 | Autenticação de usuários                          |
+| **PostgreSQL**                | Banco de dados relacional                         |
+| **Docker**                    | Container com PostgreSQL para testes locais       |
+| **Vercel**                    | Publicação da aplicação                           |
+| **SupaBase, Vercel Storage**  | Plataforma para gerenciar banco de dados em nuvem |
+| **Git**                       | Controle de versão                                |
+| **Figma, Lucid Dev, ShadeCN** | Ferramentas auxiliares para desenvolvimento       |
+| **Date-fns**                  | Manipulação de datas                              |

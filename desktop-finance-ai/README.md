@@ -9,7 +9,7 @@ This is a SaaS platform designed to simplify personal financial management. With
 
 ## 🌐 Access the Application
 
-👉 [Click here to open](https://finance-ai-gamma-ebon.vercel.app/)
+Click here to open: <a href="https://finance-ai-gamma-ebon.vercel.app/" target="_blank">finance-ai-gamma-ebon.vercel.app</a>
 
 ---
 
@@ -84,7 +84,7 @@ Esta é uma plataforma SaaS projetada para facilitar a gestão financeira pessoa
 
 ## 🌐 Acesse a Aplicação
 
-👉 [Clique aqui para abrir](https://finance-ai-gamma-ebon.vercel.app/)
+Clique aqui para abrir: <a href="https://finance-ai-gamma-ebon.vercel.app/" target="_blank">finance-ai-gamma-ebon.vercel.app</a>
 
 ---
 
