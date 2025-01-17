@@ -4,10 +4,11 @@
 
 > This project is based on training by [felipemotarocha](https://github.com/felipemotarocha), with adaptations and customizations made by me to enhance learning and meet specific needs.
 
-![Badge of Status](https://img.shields.io/badge/Status-In_Development-yellow)
+![Badge of Status](https://img.shields.io/badge/Status-Completed-green)
 
-## Access the Application  
-The link will be available here once the application is ready.
+## Access the Application
+
+Click here to open: [fsw-foods-app-mobile.vercel.app](https://fsw-foods-app-mobile.vercel.app/)
 
 ---
 
@@ -44,21 +45,21 @@ The app features a robust architecture, cloud database, and modern design for in
 
 The main technologies used in this project include:
 
-| Technology             | Description                                   |
-|------------------------|---------------------------------------------|
-| **Next.js**            | React framework for modern web development    |
-| **Tailwind CSS**       | Styling library for responsive design         |
-| **TypeScript**         | JavaScript superset with static typing        |
-| **Prisma ORM**         | ORM for database management                   |
-| **Next-Auth**          | User authentication solution                  |
-| **PostgreSQL**         | Relational database                           |
-| **Docker**             | Development environments with PostgreSQL      |
-| **Vercel**             | Application hosting                          |
-| **Neon Console**       | Cloud database management                     |
-| **Git**                | Version control                               |
-| **Design Tools**       | **Figma, Lucid Dev, ShadeCN** for visual planning |
-| **Date-fns**           | Library for date manipulation                 |
-| **Ts-node**           | To install seed in db |
+| Technology       | Description                                       |
+| ---------------- | ------------------------------------------------- |
+| **Next.js**      | React framework for modern web development        |
+| **Tailwind CSS** | Styling library for responsive design             |
+| **TypeScript**   | JavaScript superset with static typing            |
+| **Prisma ORM**   | ORM for database management                       |
+| **Next-Auth**    | User authentication solution                      |
+| **PostgreSQL**   | Relational database                               |
+| **Docker**       | Development environments with PostgreSQL          |
+| **Vercel**       | Application hosting                               |
+| **Neon Console** | Cloud database management                         |
+| **Git**          | Version control                                   |
+| **Design Tools** | **Figma, Lucid Dev, ShadeCN** for visual planning |
+| **Date-fns**     | Library for date manipulation                     |
+| **Ts-node**      | To install seed in db                             |
 
 ---
 
@@ -70,8 +71,9 @@ The main technologies used in this project include:
 
 ![Badge of Status](https://img.shields.io/badge/Status-Em_desenvolvimento-yellow)
 
-## Acesse a Aplicação  
-O link será disponibilizado aqui assim que a aplicação estiver pronta.
+## Acesse a Aplicação
+
+Clique aqui para abrir: [fsw-foods-app-mobile.vercel.app](https://fsw-foods-app-mobile.vercel.app/)
 
 ---
 
@@ -108,18 +110,18 @@ A aplicação possui uma arquitetura robusta, banco de dados em nuvem e design m
 
 As principais tecnologias usadas neste projeto são:
 
-| Tecnologia             | Descrição                                   |
-|------------------------|---------------------------------------------|
-| **Next.js**            | Framework React para desenvolvimento web moderno |
-| **Tailwind CSS**       | Biblioteca de estilização para design responsivo |
-| **TypeScript**         | Superset de JavaScript com tipagem estática |
-| **Prisma ORM**         | ORM para manipulação de banco de dados      |
-| **Next-Auth**          | Autenticação de usuários                    |
-| **PostgreSQL**         | Banco de dados relacional                   |
-| **Docker**             | Ambientes de desenvolvimento com PostgreSQL |
-| **Vercel**             | Hospedagem da aplicação                    |
-| **Neon Console**       | Gerenciamento de banco de dados em nuvem    |
-| **Git**                | Controle de versão                          |
+| Tecnologia                | Descrição                                              |
+| ------------------------- | ------------------------------------------------------ |
+| **Next.js**               | Framework React para desenvolvimento web moderno       |
+| **Tailwind CSS**          | Biblioteca de estilização para design responsivo       |
+| **TypeScript**            | Superset de JavaScript com tipagem estática            |
+| **Prisma ORM**            | ORM para manipulação de banco de dados                 |
+| **Next-Auth**             | Autenticação de usuários                               |
+| **PostgreSQL**            | Banco de dados relacional                              |
+| **Docker**                | Ambientes de desenvolvimento com PostgreSQL            |
+| **Vercel**                | Hospedagem da aplicação                                |
+| **Neon Console**          | Gerenciamento de banco de dados em nuvem               |
+| **Git**                   | Controle de versão                                     |
 | **Ferramentas de Design** | **Figma, Lucid Dev, ShadeCN** para planejamento visual |
-| **Date-fns**           | Biblioteca de manipulação de datas          |
-| **Ts-node**           | Para instalar o seed no banco de dados |
+| **Date-fns**              | Biblioteca de manipulação de datas                     |
+| **Ts-node**               | Para instalar o seed no banco de dados                 |

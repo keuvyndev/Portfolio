@@ -24,6 +24,8 @@ Here are some of the applications I have developed and are available for access:
 | **app-barbershop**     | [barbershop-app-gamma.vercel.app](https://barbershop-app-gamma.vercel.app/) | A platform that connects users to barbershops, allowing for service searches and bookings.                                                                                                                                                                           |
 | **desktop-finance-ai** | [finance-ai-gamma.vercel.app](https://finance-ai-gamma-ebon.vercel.app/)    | SaaS platform designed to simplify personal financial management. With a modern and functional interface, it allows users to track their financial transactions in real-time and generate AI-driven reports to gain valuable insights and improve financial control. |
 
+| **app-fsw-food** | [fsw-foods-app-mobile.vercel.app](https://fsw-foods-app-mobile.vercel.app/) | Inspired by iFood, this food delivery app provides an intuitive experience for exploring, selecting, and ordering meals. It is designed to offer users an attractive and easy-to-navigate platform, making food ordering practical and enjoyable. |
+
 ---
 
 # [BR] Bem-vindo ao meu Portfólio no GitHub! 👋
@@ -51,3 +53,5 @@ Aqui estão algumas das aplicações que desenvolvi e que estão disponíveis pa
 | ---------------------- | --------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **app-barbershop**     | [barbershop-app-gamma.vercel.app](https://barbershop-app-gamma.vercel.app/) | Uma plataforma que conecta usuários a barbearias, permitindo busca e agendamento de serviços.                                                                                                                                                                                                         |
 | **desktop-finance-ai** | [finance-ai-gamma.vercel.app](https://finance-ai-gamma-ebon.vercel.app/)    | SaaS projetada para facilitar a gestão financeira pessoal. Com uma interface moderna e funcional, permite que os usuários acompanhem suas movimentações financeiras em tempo real e gerem relatórios com inteligência artificial para obter insights valiosos e melhorar o controle de suas finanças. |
+
+| **app-fsw-food** | [fsw-foods-app-mobile.vercel.app](https://fsw-foods-app-mobile.vercel.app/) | Inspirado no iFood, este aplicativo de entrega de comida oferece uma experiência intuitiva para explorar, selecionar e pedir refeições. Ele foi projetado para oferecer aos usuários uma plataforma atraente e fácil de navegar, tornando o pedido de comida prático e agradável. |
