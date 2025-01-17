@@ -13,7 +13,7 @@ const Header = () => {
 
    const { data, status } = useSession();
 
-   const handleSignInClick = () => signIn();
+   const handleSignInClick = () => signIn('google');
    const handleSignOutClick = () => signOut();
 
    return (
